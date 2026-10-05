@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>00 · 索引与阅读指引（v3）</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/d09487df6.md">原文</a><span class="mut">世界观/01-设计与审查/00-索引与阅读指引.md</span></div></div><div class="wrap doc"><h1 id="L1">00 · 索引与阅读指引（v3）</h1>
+<blockquote id="L3"><p id="L1"><strong>📖 给审阅者</strong>：这套文档供<strong>两位作者共同审阅</strong>。文中的重要度用<strong>颜色</strong>标记，越红越需要优先决定；标为「前置条件（暂定）」的内容<strong>任何一方都可以修改或推翻</strong>。<strong>阿丞</strong>（程序 / 数值 / 系统 / 排期）· <strong>卿宝</strong>（世界观 / 角色 / 文案 / 美术 / 音乐）· <strong>共同</strong>（方向与取舍）——只表示关注点不同，<strong>不代表由谁单独决定</strong>。<strong>存放位置</strong>：<code>世界观\01-设计与审查\</code>（与世界观正文分开存放，正文仍在 <code>世界观\</code> 下）。</p></blockquote>
+<hr>
+<h2 id="L9">重要度颜色图例</h2>
+<div class="tw"><table id="L11"><thead><tr><th>标记</th><th>含义</th><th>出现时怎么处理</th></tr></thead><tbody><tr><td>🔴</td><td><strong>阻塞</strong>：不决定就无法开工</td><td>优先安排一次讨论</td></tr><tr><td>🟠</td><td><strong>重要</strong>：影响大、改动代价高</td><td>尽快决定</td></tr><tr><td>🟡</td><td><strong>中等</strong>：影响局部</td><td>可以晚一点</td></tr><tr><td>🟢</td><td><strong>低</strong>：可延后，或直接采纳建议</td><td>先搁置</td></tr><tr><td>🔵</td><td><strong>已定 / 参考信息</strong></td><td>只需确认</td></tr><tr><td>✅</td><td><strong>已完成</strong></td><td>无需动作</td></tr><tr><td>⛔</td><td><strong>建议不做</strong></td><td>采纳即可免答</td></tr><tr><td>⚠️</td><td><strong>风险 / 注意</strong></td><td>提前留意</td></tr></tbody></table></div>
+<blockquote id="L22"><p id="L1">在 <strong>Word 版</strong>（<code>.docx</code>）里，以上标记会<strong>自动带底色与文字颜色</strong>，扫一眼就能看出哪几条最急。Markdown 版用 emoji 标记替代颜色。</p></blockquote>
+<hr>
+<h2 id="L26">一、文档清单</h2>
+<div class="tw"><table id="L28"><thead><tr><th>文件</th><th>作用</th><th>什么时候看</th><th>规模</th></tr></thead><tbody><tr><td><strong><code>00-索引与阅读指引</code></strong></td><td>本文件。导航、状态看板、白话术语表、维护约定</td><td>第一次打开时</td><td>1 页</td></tr><tr><td><strong><code>01-世界观V1.1-审查报告</code></strong></td><td><strong>分析与评价</strong>：评分、R1–R15 结构性问题、33 项闭环审计、可行性体检、术语建议</td><td>想了解"哪里有问题、为什么"</td><td>约 15 页</td></tr><tr><td><strong><code>02-待回答问题清单</code></strong></td><td><strong>问题与决策台账</strong>：Q11–Q57 分 T0–T3，附建议默认答案与重要度/成本标签；另附"建议不做清单"</td><td>准备做决定时</td><td>约 10 页</td></tr><tr><td><strong><code>03-小团队范围与产能方案</code></strong></td><td><strong>范围与执行</strong>：前置条件、现实体检、三条铁律、范围决策表、L0–L3 路线图、机制提案、Unity 新手指南、协作规则、成本账、不做清单</td><td>准备开工时</td><td>约 14 页</td></tr><tr><td><strong><code>04-互动问卷.html</code></strong></td><td><strong>选择题问卷</strong>（双击即开，也可在手机上用网址打开）——两位可以一起填，也可以各自填</td><td>需要做体验/美术向决定时</td><td>单页</td></tr><tr><td><strong><code>05-分章节发布方案.md</code></strong></td><td><strong>把"大 RPG + 长线更新"变成可执行路线</strong>：四步走（社团练手 → 序章发布 → 长线更新 → 完整 RPG）、序章的九项内容、美术方案（含 AI 定位）</td><td><strong>准备开工前必读</strong>，它取代 <code>03</code> §5 对"终点"的定义</td><td>约 8 页</td></tr><tr><td><strong><code>06-给卿宝的一封信.md</code></strong></td><td><strong>给卿宝看的信</strong>：说明为什么她的判断是对的，以及"把发布提前"的方案</td><td><strong>给她看的第一份东西</strong></td><td>约 4 页</td></tr><tr><td><strong><code>07-HD-2D实践路线.md</code></strong></td><td><strong>类八方旅人风格的可复制配方</strong>：URP 后处理三支柱、起始参数表、零基础五阶段路线、九个坑</td><td><strong>零基础开工前必读</strong>；<code>02</code> Q11e 的答案</td><td>约 8 页</td></tr><tr><td><strong><code>08-V1.2-修订要点（挂账）</code></strong></td><td><strong>V1.2 升版前的挂账清单</strong>：13 条待修补项（静默丢失 / 逻辑缺口 / 冲突项 / 访谈遗留 / 编辑数值），逐条含「具体理由 · 具体解释 · 目标方向」，<strong>并已回填卿宝 2026-09-16 的回答</strong></td><td>想知道"V1.2 要改什么、改到哪一步了"</td><td>约 12 页</td></tr><tr><td><strong><code>09-世界观待确认问题单</code></strong></td><td><strong>访谈问题单</strong>：12 问分五轮，按依赖顺序（岛屿状态 → 地图构成 → 世界规则 → 人与社会 → 编辑数值）</td><td><strong>与卿宝逐条谈时</strong>（一轮谈完再进下一轮）</td><td>约 6 页</td></tr><tr><td><strong><code>10-20260916-访谈新增内容</code></strong></td><td><strong>问题之外谈出来的东西</strong>：创世与一周目剧情、岛屿三区结构与巨树、霸主规则、角色相遇剧情、生态生物、机制，以及她交给 AI 的任务</td><td>想找回"聊天里顺带谈出来、但不在问题单上"的设定时</td><td>约 8 页</td></tr><tr><td><strong><code>11-霸主与存在重量·待卿宝复核</code></strong></td><td><strong>给卿宝的复核单</strong>：把她 2026-09-16 边想边说的那一段<strong>原样列出</strong>，逐条请她圈「算数 / 不算 / 要改 / 还没想好」。<br><strong><code>.html</code> 是能点的版本</strong>（点选＋可写字，答完能一键复制回传，手机可开）；<code>.md</code>/<code>.docx</code> 是同一份的静态版</td><td><strong>给她看</strong>（她自己说过那一段"说了很多不太对的"）</td><td>约 4 页</td></tr><tr><td><strong><code>11</code> 的复核结果</strong>（已回传，2026-09-17 重新归类 + 补答）</td><td>见 <code>11</code> §五：<strong>2 算数 / 5 要改 / 2 还没想好 / 1 不算 / 1 待确认（第5条）/ 1 未答（第15条）</strong>；核心命题"重量转移"被否。<strong>已收口（2026-09-17 10:15）</strong>：3 算数 + 4 要改 + 1 作废（第 7 条）+ 2 还没想好 + 2 未定 + 1 不算。回传原文、标记口径、补答与补图在 <code>02-讨论与来源\霸主复核-20260916\</code></td><td>想知道"到底哪些算数"</td><td>—</td></tr><tr><td><strong><code>12-V1.2升版前最后几问（可直接填写）</code></strong></td><td><strong>给卿宝填的最后一页</strong>：4 道选择题（岛的两面怎么摆 / 翻面多久一次 / 死了会怎样 / 航行是玩还是过场），每题都有现成选项 ＋ 填空栏 ＋「还没想好」也算答案</td><td><strong>升版前给她</strong>（填完就能升 V1.2）</td><td>约 3 页</td></tr><tr><td><strong><code>13-世界观设定V1.2（回写稿·待审定）</code></strong></td><td><strong>V1.2 的回写稿</strong>：以 V1.1 正文为底，把挂账表里关掉的条目<strong>逐条落笔</strong>——共 <strong>19 处改动</strong>（每处标 <code>【改N】</code>），文末有<strong>改动对照表</strong>与<strong>重写后的附录B（19 条未决项全部登记）</strong></td><td><strong>两位审定 V1.2 措辞时</strong>（审定后另存为 <code>世界观\世界观设定V1.2.docx</code>）</td><td>约 12 页</td></tr><tr><td><strong><code>14-世界观设定V1.2（清稿·已成版）</code></strong></td><td><strong>V1.2 的干净版正文</strong>：与 <code>13</code> 内容一致，但<strong>去掉全部 <code>【改N】</code> 标记与文末对照表</strong>，读起来就是一份成品——<strong>可直接另存为 <code>世界观\世界观设定V1.2.docx</code></strong></td><td><strong>准备定稿时 / 要给第三方看时</strong></td><td>约 13 页</td></tr><tr><td><strong><code>15-「存在绑在船上」方案（建议·未定案）</code></strong></td><td><strong>她点名要的那份方案</strong>：先说清她已经定下的 6 条，再列出<strong>还要她挑的 5 件事</strong>（绑定怎么发生／船沉后能否再绑／"减轻"减轻什么／代价是什么／船的强弱是否＝承载存在的量），每题都有选项、好处、代价与填空栏</td><td><strong>给她挑的时候</strong>（玩法成型前收口）</td><td>约 4 页</td></tr><tr><td><strong><code>16-「停滞之前的世界」发散（建议·未定案）</code></strong></td><td><strong>她点名要的"帮你想"</strong>：<strong>两星相撞／大法师停滞之前</strong>的世界是什么样——先把 V1.1 已有线索连起来（世界之风与扭曲可能是"被固定"的产物；稳定岛＝那个时代的缩小版），再给四组选择题（有没有翻面／危险是什么／玩家怎么碰到它／和现实要不要有关联）＋ 一组"现在 vs 停滞之前"的调子对撞</td><td><strong>给两位挑的时候</strong>（不卡升版）</td><td>约 5 页</td></tr><tr><td><strong><code>17-20260922-讨论总结（已审核）</code></strong></td><td><strong>已按阿丞的审核意见更正</strong>：五组答复（已确认）＋「旧世界」<strong>名字未定、只是性质上属于旧的世界</strong>＋<strong>多阵营宗教</strong>（怀念旧世界的宗教／以扭曲和痛苦为乐的教派）＋<strong>主线是一周目 bad ending／二周目全新结局（且只是猜想）</strong>＋<strong>上次漏掉的 7 处</strong>（含"被遗忘的世界"她当场收回）＋ 仍属猜想的清单</td><td><strong>要知道这轮谈成了什么、什么还只是猜想时</strong></td><td>约 7 页</td></tr><tr><td><strong><code>18-历史时间线·交接单</code></strong></td><td><strong>给「历史时间线」分支对话的交接单</strong>：这条线要答的三问 · <strong>已确认的</strong>（遗迹／更大的世界／多阵营宗教）· <strong>仍然只是猜想的</strong>（危险／一周目二周目／对撞绑航线熟悉度／"旧世界"名字）· <strong>必须先敲定的那句主线</strong> · 素材在哪 · 建议的推进顺序</td><td><strong>开分支对话时先看这份</strong></td><td>约 4 页</td></tr><tr><td><strong><code>19-主题句·文艺版候选（建议·未定案）</code></strong></td><td><strong>她已选「搭法 4 · 浪花起，云海收」，但说还要改 → 暂定（正文不动）</strong>；文档含 5 种搭法 · <strong>搭法 4 的 5 个变体</strong> · 5 个备选意象 · 一个待确认的出处问题。原本的说明：她已确认「永远无法恢复／恢复只会毁灭／出路是创造全新的命运并拥抱它」这层意思，只想<strong>改文艺一点</strong>；她还很喜欢「<strong>命运之外，便是云与海的彼端</strong>」——文档里给了<strong>用它做收尾的五种搭法</strong>，另附 5 个备选意象与一个要确认的出处问题</td><td><strong>她挑措辞时</strong></td><td>约 4 页</td></tr><tr><td><strong><code>20-v0.1-历史时间线·框架（建议·未定案）</code></strong></td><td><strong>历史时间线的骨格与卡口</strong>：对齐结果四类（✅已确立 9 条／⚠️仍是猜想 6 条／⛔已推翻 5 条／<strong>✅对不齐 3 条已收口</strong>）· <strong>五格骨架</strong>（太初 → 上一个时代 → 转折·命运被固定 → 现在 → 收束）＋ 一条"缝"（旧主城）· <strong>卡口 K1–K3</strong>（K4 已收口）· 与玩法线的 4 处接口（A9 口径已给）· 回写挂账清单 · <strong>§六 提问单（可直接复制 · 第一轮 3 问／第二轮 2 问）</strong>。<strong>每格只留空位、不写故事内容</strong>（内容由她填）</td><td><strong>要问她的时候</strong>（⚠️ 把问题<strong>直接复制发给她</strong>、<strong>不让她填问卷</strong>）</td><td>约 9 页</td></tr><tr><td><strong><code>21-V1.3-修订要点（挂账）</code></strong></td><td><strong>V1.3 的挂账清单</strong>：2026-09-22 玩法线开线前的十条澄清（⚠️ <strong>B 级：阿丞的印象式转述，非她原话</strong>——见 <code>21</code> 顶部与 <code>游戏设计\03-玩法对齐\03-20260922-第一轮答复（阿丞转述）</code> §〇）——地标·暴风眼·庇护点三者的关系 / 能量的密度与抽用 / <strong>术士＝玩家的长期伙伴</strong> / 玩家行为推动不平衡 / <strong>第七条"见附录B"的断链定位</strong> / <strong>"表里世界"废弃</strong> / 星象＋本地征兆共同预测 / 造船与扭曲 / 《图鉴》 / 「锚定」。每条含「她的原话 · 涉及正文 · 回写要点」，另附<strong>连带动作表</strong></td><td>想知道"<strong>V1.3 要改什么、这十条落在哪</strong>"</td><td>约 6 页</td></tr></tbody></table></div>
+<blockquote id="L54"><p id="L1"><strong>📱 怎么在手机上打开（复核单 / 问卷）</strong> <strong>打开后是入口页 <code>index.html</code></strong>，上面只有一件事（「霸主与存在重量·复核」），点进去即可。问卷（<code>04-互动问卷.html</code>）卿宝 2026-09-10 已答完（22/22，见 <code>02</code> 附D，<strong>有答案就够了</strong>），<strong>不再挂在入口页</strong>；文件仍保留在目录里。<strong>给不在同一地的人 → 用公网网址</strong>（推荐）</p>
+<div class="lv" id="L5"><ol><li>临时用：双击 <code>世界观\05-问卷与部署\启动公网问卷.bat</code>，窗口里会直接打印一个 <code>https://xxx.trycloudflare.com</code> 地址（<strong>关掉窗口就失效</strong>）；</li><li>长期用：把 <code>世界观\05-问卷与部署\</code> 文件夹拖到 Netlify Drop / Cloudflare Pages，得到一个<strong>永久</strong>网址（<strong>推荐</strong>，因为她不在同一个 WiFi 时局域网地址无效）；</li><li>把网址发给她，<strong>QQ 里直接就能点开</strong>；她点「📤 分享给 QQ / 微信」或「复制这段文字」就能把结果发回来。</li></ol></div>
+<p id="L9"><strong>两人在同一个 WiFi 时</strong>：双击 <code>世界观\05-问卷与部署\启动问卷服务器.bat</code>，用窗口里打印的 <code>http://192.168.x.x:8788/</code> 即可。</p>
+<p id="L11">（此处内容涉及个人隐私，已隐藏）<strong>本目录下的文档（含 <code>.md</code>）也在共享范围内</strong>——所以写进本目录的东西都当作"两人共阅"。</p></blockquote>
+<p id="L67"><strong>设计原则</strong>：<code>01</code> 回答"<strong>有什么问题</strong>"，<code>02</code> 回答"<strong>要决定什么</strong>"，<code>03</code> 回答"<strong>做什么、不做什么</strong>"，<code>04</code> 负责"<strong>把偏创作向的决定做成好答的选择题</strong>"。文档之间用编号互相引用（R＝问题，Q＝待答问题，M＝机制提案）。</p>
+<hr>
+<h2 id="L71">二、分层结构</h2>
+<pre id="L73"><code>第一层 · 结论层（读这一层就能做事）
+   ├── 01 §0    一句话结论
+   ├── 03 §1    前置条件与三个硬约束
+   ├── 03 §3    三条铁律
+   └── 03 §4    范围决策表（什么阶段做什么）
+
+第二层 · 依据层（想知道"为什么"时读）
+   ├── 01 §1    分维度评分
+   ├── 01 §3    R1–R15 结构性问题
+   ├── 01 §4    33 项闭环审计
+   └── 01 §5    可行性体检（元素级成本对照）
+
+第三层 · 现实层（决定"做不做得完"）
+   ├── 03 §2    现实体检：数字重算（含学习期系数）
+   ├── 03 §5    L0–L3 路线图与验收标准
+   ├── 03 §9    协作规则
+   └── 03 §13   风险清单
+
+第四层 · 决策层（要动手时读）
+   ├── 02 T0    🔴 开工闸门
+   ├── 02 T1    🟠 第一批可玩内容前
+   ├── 02 T2    🟡 批量生产前
+   ├── 02 T3    🟢 延后/可选
+   ├── 02 NX    ⛔ 建议不做（免答）
+   └── 04       互动问卷
+
+第五层 · 执行层（开始做的时候读）
+   ├── 03 §6    机制提案 M1–M8
+   ├── 03 §8    Unity 与零基础技术建议
+   ├── 03 §10   内容生产管线
+   ├── 03 §11   成本口径与锚点
+   ├── 03 §12   不做清单与变更纪律
+   └── 03 §14   里程碑看板</code></pre>
+<hr>
+<h2 id="L111">三、按需求的阅读路径</h2>
+<div class="tw"><table id="L113"><thead><tr><th>你的目的</th><th>只读这些</th></tr></thead><tbody><tr><td><strong>"我只有 10 分钟"</strong></td><td><code>01</code> §0 → <code>03</code> §1 → <code>03</code> §2.2（重算结果）→ <code>03</code> §3</td></tr><tr><td><strong>"我想知道这世界观有哪些硬伤"</strong></td><td><code>01</code> §3（R1–R15）+ <code>01</code> §4（闭环审计）</td></tr><tr><td><strong>"我想知道会不会做不完"</strong></td><td><code>03</code> §2（现实体检）→ <code>03</code> §11（成本账）→ <code>03</code> §12（不做清单）</td></tr><tr><td><strong>"我想知道该做什么游戏"</strong></td><td><code>03</code> §3 → <code>03</code> §6（M1–M8）→ <code>03</code> §7（主线与结局）</td></tr><tr><td><strong>"我完全不熟悉这些词"</strong></td><td>下面的<strong>白话术语表</strong> → <code>01</code> §0 → <code>03</code> §1</td></tr><tr><td><strong>"我想开始动手了"</strong></td><td><code>02</code> 的 <strong>T0</strong> → 答完即可开始 <code>03</code> §5 的<strong>第 0 步</strong></td></tr><tr><td><strong>"我是零基础，从哪学"</strong></td><td><code>03</code> §8 + <code>03</code> §5 第 0 步</td></tr><tr><td><strong>"两人各管什么"</strong></td><td><code>03</code> §9（协作规则）+ <code>02</code> 图例里的 阿丞 / 卿宝 / 共同</td></tr><tr><td><strong>"我在做具体功能"</strong></td><td><code>03</code> §10 生产管线 + §8 技术选型 + §5 对应阶段的验收标准</td></tr><tr><td><strong>"有人提出一个新想法"</strong></td><td><code>03</code> §12.3 变更纪律：<strong>新增必须先砍掉等价内容</strong></td></tr></tbody></table></div>
+<hr>
+<h2 id="L128">四、白话术语表（给不熟悉游戏开发的人）</h2>
+<blockquote id="L130"><p id="L1">这一节是为了让<strong>两位都能顺畅审阅</strong>。看不懂正文里的词时回来看这里。</p></blockquote>
+<div class="tw"><table id="L132"><thead><tr><th>术语</th><th>白话解释</th></tr></thead><tbody><tr><td><strong>箱庭</strong></td><td>一小块精心设计、可以自由走动的关卡区域。比如一座小岛。</td></tr><tr><td><strong>垂直切片</strong></td><td>从游戏里切出一小段"从头到尾都做完"的样本，用来判断整体值不值得继续做。</td></tr><tr><td><strong>核心循环</strong></td><td>玩家反复在做的那件事（打怪 → 拿素材 → 变强 → 打更强的怪）。</td></tr><tr><td><strong>占位美术</strong></td><td>临时用的丑素材（色块、方块）。它的作用是让程序能先跑起来，<strong>不阻塞流程</strong>。</td></tr><tr><td><strong>关键路径</strong></td><td>一件事必须等另一件事做完才能开始。<strong>关键路径越长，项目越容易被拖死。</strong></td></tr><tr><td><strong>U（成本单位）</strong></td><td>本文用的工作量尺子：<strong>1 U ＝ 1 座小岛（含 2 个状态）</strong>。约等于 1–2 个"人月"（有经验者）。</td></tr><tr><td><strong>学习期系数</strong></td><td>新手做同一件事要比有经验的人多花 2–3 倍时间。这不是效率问题，是所有人和所有第一年都这样。</td></tr><tr><td><strong>生态卡</strong></td><td>把"一片地方长什么样"做成一张可以套用的参数卡（植物、颜色、怪物、资源）。换卡＝换生态。</td></tr><tr><td><strong>S.O.（ScriptableObject）</strong></td><td>Unity 里的一种"数据文件"。好处是：<strong>改数值不用改代码</strong>。</td></tr><tr><td><strong>URP</strong></td><td>Unity 的一种渲染模式。它自带"调色／加雾"的功能，是让"翻面后一眼看出变化"最省力的办法。</td></tr><tr><td><strong>锚定</strong></td><td>本方案新造的词：一个东西"被世界记住的程度"。记得它的人越多，它越不容易被世界之风侵蚀。</td></tr><tr><td><strong>翻面</strong></td><td>世界观核心机制：同一座岛在两种状态之间切换（瞬间完成、可预测）。</td></tr><tr><td><strong>世界之风</strong></td><td>世界观里的"狂暴能量"。它侵蚀存在，是<strong>唯一能造成真正死亡</strong>的东西。</td></tr><tr><td><strong>扭曲</strong></td><td>被世界之风侵蚀的结果。设定里<strong>只有被扭曲才算真的死</strong>。</td></tr></tbody></table></div>
+<hr>
+<h2 id="L151">五、状态看板</h2>
+<h3 id="L153">5.0 升版记录</h3>
+<div class="tw"><table id="L155"><thead><tr><th>日期</th><th>事件</th></tr></thead><tbody><tr><td><strong>2026-09-22</strong></td><td>✅ <strong>世界观正文升到 V1.2</strong>：成品 = <code>世界观\世界观设定V1.2.docx</code>；V1.1 归入 <code>世界观\03-历史版本\</code>。依据 = <code>08</code> 的 14 条挂账 ＋ 升版闸门三条 ＋ 阿丞 2026-09-22 的审核；<strong>回写记录见 <code>13</code>，干净版见 <code>14</code></strong>。</td></tr><tr><td>2026-09-08</td><td>V1.1 成品落盘（<code>世界观设定V1.1.docx</code>），随后由 <code>01</code> 审查报告做全面审查</td></tr></tbody></table></div>
+<h3 id="L160">5.1 决策进度</h3>
+<div class="tw"><table id="L162"><thead><tr><th>阶段</th><th>需要答完</th><th>数量</th><th>状态</th></tr></thead><tbody><tr><td><strong>T0 开工闸门</strong></td><td>Q11 ✅ · <strong>Q11e ✅（HD-2D）</strong> · <strong>Q12 ✅（"在被桎梏的命运中追求自由"）</strong> · <strong>Q16 ✅（节点式航行）</strong> · Q14 🟡（她的"倒影"模型，待收敛）· Q15 🟡（双星机制已定、<strong>周期数待澄清</strong>）· Q17 ❌（她还没答）</td><td>8</td><td>🟠 <strong>已完成 4/8</strong>（2026-09-21）</td></tr><tr><td><strong>T1 第一批可玩内容前</strong></td><td>Q18 – Q28</td><td>11</td><td>🟢 待答</td></tr><tr><td><strong>T2 批量生产前</strong></td><td>Q29 – Q43</td><td>15</td><td>🟢 待答</td></tr><tr><td><strong>T3 延后/可选</strong></td><td>Q44 – Q57</td><td>14</td><td>🟢 待答</td></tr><tr><td><strong>NX 建议不做</strong></td><td>—</td><td>12 项</td><td>⛔ 待签字</td></tr><tr><td><strong>互动问卷</strong></td><td>✅ <strong>已回收</strong>（卿宝，22/22，见 <code>02</code> 附D）· 9 条可采纳 / <strong>5 条需排序</strong> / 8 条待共定</td><td>22</td><td>🟠 待与卿宝对话</td></tr><tr><td><strong><code>09</code> 世界观访谈</strong>（2026-09-16 第一轮 + 晚间补问）</td><td>12 问分五轮，<strong>12 条全部有回答</strong>；<strong>Q8 晚间补问并已收口</strong>（C1-c 三件事也答了）</td><td>12</td><td>🟢 <strong>第一轮谈完</strong>；详见 <code>08</code>（挂账）、<code>10</code>（新增内容）与 <code>02-讨论与来源\Q8补问-20260916晚\</code></td></tr><tr><td><strong><code>20</code> 历史时间线</strong>（2026-09-22 开线）</td><td>三问：①停滞之前什么样 ②这个世界怎么毁的 ③主线怎么收</td><td>3</td><td>🟠 <strong>第②问已关</strong>（＝<strong>凝滞了星星</strong>，即<strong>人祸</strong>；她的"攻击核心"由她当场收回）· ①③ 待她填骨架（<code>20</code> 的五个空位）</td></tr><tr><td><strong>玩法线澄清十条</strong>（2026-09-22；⚠️ <strong>B 级：阿丞印象式转述</strong>）</td><td>地标/暴风眼/庇护点 · 能量抽用 · 术士＝玩家的长期伙伴 · 玩家推动不平衡 · <strong>第七条断链</strong> · <strong>"表里世界"废弃</strong> · 星象＋本地征兆 · 造船与扭曲 · 图鉴 · 锚定</td><td>10</td><td>✅ <strong>十条全部已答</strong>；回写要点、涉及正文与连带动作见 <strong><code>21-V1.3-修订要点（挂账）</code></strong></td></tr></tbody></table></div>
+<h3 id="L174">5.2 生产进度</h3>
+<div class="tw"><table id="L176"><thead><tr><th>里程碑</th><th>产出</th><th>投入</th><th>周期</th><th>状态</th></tr></thead><tbody><tr><td><strong>第 0 步</strong> 复刻教程</td><td>跟着教程做完的小游戏，能打包运行</td><td>30–50h</td><td>3–6 周</td><td>🟢 未开始</td></tr><tr><td><strong>L0</strong> 上手</td><td>方块岛 + 一键翻面</td><td>40–80h</td><td>1–2 个月</td><td>🟢 未开始</td></tr><tr><td><strong>L1</strong> 规则闭环</td><td>平衡度轴 + 采集 + 战斗 + 死亡复活</td><td>100–180h</td><td>2–4 个月</td><td>🟢 未开始</td></tr><tr><td><strong>L2</strong> 微切片</td><td>20–30 分钟可通关流程</td><td>200–350h</td><td>4–7 个月</td><td>🟢 未开始</td></tr><tr><td><strong>L3</strong> 序章可发布</td><td>60–120 分钟完整序章（<strong>推荐终点 → 见 <code>05</code></strong>）</td><td>800–1400h</td><td>约 1–1.5 年</td><td>🟢 未开始</td></tr><tr><td><strong>C 长线更新</strong></td><td>每 3–6 个月 +30–60 分钟内容（见 <code>05</code> §4）</td><td>200–400h／次</td><td>每 3–6 个月</td><td>🟢 未开始</td></tr><tr><td></td><td><strong>合计</strong></td><td><strong>640–1110h</strong></td><td><strong>≈1.2–2.2 年</strong></td><td></td></tr></tbody></table></div>
+<blockquote id="L186"><p id="L1"><strong>每一站都是可以停下来的完整成果。</strong>L0 完成本身就是一件值得骄傲的事。</p></blockquote>
+<h3 id="L188">5.3 世界观文档自身的待办</h3>
+<div class="tw"><table id="L190"><thead><tr><th>事项</th><th>重要度</th><th>说明</th><th>2026-09-16 状态</th></tr></thead><tbody><tr><td><strong>协商第七条（"翻面后是全新生态与地图"）的降级方案</strong></td><td>🔴</td><td>这一句与可完成性直接冲突（<code>01</code> §5.2、<code>03</code> §10.4）</td><td>✅ <strong>她已认可实现口径</strong>（骨架复用＋分层改绘），但她提出一条代价："翻面的机制就没有两面那种关联性了"——<strong>需要给出解法</strong>。<strong>2026-09-22 补：第七条那句"（相关设想见附录B）"是断链</strong>——附录B 20 条里<strong>没有</strong>对应条目，断在 <code>13</code> 重写附录B（<strong>改19</strong>）时<strong>漏登记</strong>；定位与补法见 <code>21</code> <strong>G5</strong>，解法本身归玩法线（差异清单 <strong>B7</strong>）</td></tr><tr><td><strong>给"稳定"补上硬约束</strong>（Q8 / C1 · 已答并收口）</td><td>🟠</td><td>要让"不是所有岛都被稳定"从"忙不过来"变成"做不到"（<code>01</code> R8）</td><td>✅ <strong>她已选"加"</strong>，且三件未收口的事当晚就答了：<strong>没有固定配额（三个岛只是举例，因人而异）· 不是失传 · 天时地利人和都要</strong>。⚠️ <strong>2026-09-17 比对更正</strong>：V1.1 第十条<strong>本来就并写了</strong>"不存在累积反噬"与"符文会磨损、需定期修补"，所以<strong>那句不用改</strong>，助手先前提的"限定语"已撤回——详见 <code>08</code> §C1-d</td></tr><tr><td>把 <strong>3 项静默丢失的问题</strong>重新登记进 V1.2 附录B（模因抹除 / 空岛 / 社会结构）</td><td>🟠</td><td>它们既未被回答、也未被决定不做（<code>01</code> §4、R6/R7/R11）</td><td>✅ 模因抹除<strong>已答</strong>（人为、曾短暂出现、已被封禁）· ✅ 空岛与海底<strong>已答</strong>（只定到"特化生物/特殊资源"）· 🔵 社会结构<strong>暂定</strong></td></tr><tr><td>执行<strong>术语收口 + 语域统一</strong></td><td>🟡</td><td>纯编辑工作，回报极高（<code>01</code> 附录A、Q51）</td><td>✅ <strong>她已同意</strong>（"就是太多名词术语了""统一一下口径"）；替换词待她过一遍。<strong>2026-09-22 新增废弃词：「表里世界」确认废弃</strong>（海的镜面功能只用于"倒影"）——见 <code>21</code> <strong>G6</strong></td></tr><tr><td>补一张《尺度表》</td><td>🟡</td><td>岛直径/岛屿数量/航行时长/术士总数（<code>02</code> Q15）</td><td>🟡 <strong>她同意做</strong>，但"后面可以慢慢补"；她另把《图鉴》提到"<strong>必须的</strong>"。<strong>2026-09-22 细化：《图鉴》可开始构建、内容不完全且作用待设计，列为待做事项</strong>——见 <code>21</code> <strong>G9</strong></td></tr><tr><td><strong>把 B2 按"2 算数 + 5 要改"重写</strong>（霸主与存在重量）</td><td>🟠</td><td>复核后：2 条算数当骨架、5 条按她的备注改写、7 条不写</td><td>✅ <strong>5 条要改的改法都明确了</strong>；✅ <strong>复核已收口</strong>：3 算数 / 4 要改 / <strong>1 作废（第 7 条）</strong> / 2 还没想好 / 2 未定 / 1 不算；第 12 条措辞要改。<strong>她要的方案已选</strong>——方案 B ＋ 强度"减轻"；连带谈出<strong>船的整套设定</strong>（见 <code>08</code> §H1、§C3 与 <code>11</code> §5.4）</td></tr><tr><td><strong>改掉船的"价格门槛"写法</strong>（C3 · 🆕 2026-09-17）</td><td>🟠</td><td>V1.1 第十一条写"稀缺且<strong>昂贵</strong>、只有<strong>富人</strong>拥有、去大城市<strong>购买</strong>"；她给的稀缺来源是<strong>产能</strong>（巫师少＋耗法力＋需求大），分配靠"<strong>巫师愿不愿意</strong>"</td><td>✅ <strong>方向已定</strong>：保留"稀缺"，把"昂贵／只有富人拥有／购买"改成"不算便宜但没到垄断／求巫师打造"——见 <code>08</code> §C3</td></tr><tr><td><strong>升版前的完整性核对</strong>（2026-09-17 已做）</td><td>🔴</td><td>核对了本表 14 条 + <code>01</code> 的 R1–R14 + 缺口1–13 + <code>02</code> 的 Q11–Q57</td><td>✅ <strong>闸门三条全闭（2026-09-21 阿丞确认双方共识）</strong>，已产出 <code>13</code> 号回写稿；原查出的 6 条仍是"没进挂账表"的历史记录——<strong>；卡升版的 3 条已做成 <code>12</code> 号问题单，她 2026-09-21 答了两条：</strong>Q16 ✅ 选 B<strong>、</strong>Q14 🟡 给了"倒影"模型<strong>（待收敛）、</strong>Q15 🟡 双星机制清楚但周期数自相矛盾<strong>；</strong>Q17 仍未答<strong>（截图那段是阿丞的草案）。</strong>顺带拿到 Q12 核心情绪 ✅<strong>——见 <code>08</code>「升版闸门」§六</strong>：R1 两面空间（Q14）· R2 时间尺度（Q15）· R3 航行（Q16）· R9 死亡成本（Q17）· R10 驯兽师（Q36）· R12 宗教（Q49），外加缺口4 建筑与港口、缺口7 航线成因——见 <code>08</code> 的「升版闸门」一节</td></tr><tr><td>补一章<strong>社会与政治结构</strong></td><td>🟡</td><td>稳定权归属、派系、宗教（R11/R12、Q46–Q49）</td><td>🔵 <strong>暂定</strong>（巫师是流浪的、看缘分；可能有法师学会＝学院派；主线反派未定）</td></tr><tr><td>补一条<strong>历史时间线</strong>（太初 → 上一个时代 → 转折·命运被固定 → 现在 → 收束）</td><td>🟠</td><td>与 V1.2 的对齐、<strong>五格骨架</strong>与<strong>四个卡口 K1–K4</strong> 见 <code>20</code>；回写清单见 <code>20</code> §五</td><td>🟡 <strong>待她填那五格</strong>（2026-09-22 开线）</td></tr><tr><td><strong>准备 V1.3 回写</strong>（2026-09-22 新增）</td><td>🟠</td><td>十条澄清（⚠️ <strong>B 级：印象式转述，回写前建议过她一遍</strong>）的回写要点见 <code>21</code>：第一条 · 第五条 · 第七条 · 第十条 · 第十四条 · 第十七～二十条 · 第二十二 · 第二十八 · 第二十九条 ＋ <strong>附录B 新增 3 条</strong></td><td>⬜ <strong>待挂账全关之后出回写稿</strong>；另有 2 处待她一句确认（G1 措辞 · G10 附录B 16）</td></tr></tbody></table></div>
+<blockquote id="L204"><p id="L1">逐条的依据、她的原话与关账状态见 <strong><code>08-V1.2-修订要点（挂账）</code></strong>。</p></blockquote>
+<hr>
+<h2 id="L208">六、维护约定</h2>
+<h3 id="L210">6.1 编号规则（一成不变，方便长期引用）</h3>
+<div class="tw"><table id="L212"><thead><tr><th>前缀</th><th>含义</th><th>位置</th></tr></thead><tbody><tr><td><strong>R1–R15</strong></td><td>结构性问题（Review issues）</td><td><code>01</code> §3</td></tr><tr><td><strong>Q11–Q57</strong></td><td>待回答问题，从你们已有的 Q1–Q10 接续（下一个新编号：<strong>Q58</strong>）</td><td><code>02</code></td></tr><tr><td><strong>M1–M8</strong></td><td>机制提案（Mechanics）</td><td><code>03</code> §6</td></tr><tr><td><strong>T0–T3 / NX</strong></td><td>问题分层（Tier）</td><td><code>02</code> 图例</td></tr><tr><td><strong>第 0 步 / L0–L3</strong></td><td>生产阶段</td><td><code>03</code> §5</td></tr><tr><td><strong>U</strong></td><td>相对成本单位（1 U ＝ 1 座小岛含 2 状态）</td><td><code>03</code> §11.1</td></tr><tr><td><strong>⭐ / 阿丞 / 卿宝 / 共同</strong></td><td>已更新过建议 / 由谁拿主意</td><td><code>02</code> 图例</td></tr></tbody></table></div>
+<h3 id="L222">6.2 怎么更新这套文档</h3>
+<div class="lv" id="L224"><ol><li><strong>回答问题</strong>：直接在 <code>02</code> 对应行把 <code>待答</code> 改为 <code>已定</code>，并写下结论（或另附结论表）。<strong>不要删掉问题本身</strong>——保留它，才知道当初为什么这么定。</li><li><strong>两人一起填问卷</strong>：把 <code>04</code> 导出的答案回填进 <code>02</code>，并在 <code>02</code> 附B 标注"已填"。</li><li><strong>新增问题</strong>：接着编号往下排（下一个是 <strong>Q58</strong>），并归入某个 Tier。</li><li><strong>改变结论</strong>：在 <code>02</code> 里写"原定 X → 改为 Y（原因）"，保留变更痕迹。</li><li><strong>新增想法</strong>：一律先记入 <code>02</code> T3 区，<strong>不在 L0/L1 阶段考虑</strong>；要真正做，必须先按 <code>03</code> §12.3 砍掉等价内容。</li><li><strong><code>01</code> 原则上不改</strong>：它是"某一时点的审查快照"。世界观升到 V1.2 时，<strong>新写一份 <code>01b-世界观V1.2-审查报告.md</code></strong>，而不是覆盖 <code>01</code>。</li><li><strong>新增文档要同步进本索引</strong>（<code>00</code> §一 文档清单、§5 状态看板）：本目录下 <code>08</code> 起的新文档，<strong>一落地就补进清单</strong>，不要等下次整理。索引是给别人指路用的，<strong>它没提过的文档，等于不存在</strong>。</li><li><strong>问题单与挂账分家</strong>：<code>09-世界观待确认问题单</code> 只管"问什么"，<code>08-V1.2-修订要点（挂账）</code> 只管"V1.2 要改什么、改到哪了"。<strong>回答完先回填 <code>08</code>，问题单不承载结论</strong>。</li></ol></div>
+<h3 id="L233">6.3 与世界观正文的关系</h3>
+<div class="lv" id="L235"><ul><li><strong>世界观正文（<code>世界观设定V1.2.docx</code>）继续由设定者维护</strong>，本套文档<strong>不改动它</strong>；V1.1 及更早版本已归入 <code>世界观\03-历史版本\</code>；</li><li>本套文档提出的所有建议（如第七条降级、锚定机制、术语替换）都需要<strong>回写到 V1.2</strong> 才生效；</li><li><strong>本套文档里的成本与产能判断，对世界观正文有反向约束</strong>：任何成本 &gt;0.5 U 的新设定，建议在写入正文时就标注其成本等级。</li></ul></div>
+<hr>
+<h2 id="L241">七、三个最该记住的结论</h2>
+<div class="lv" id="L243"><ol><li><strong>世界观不实现成内容量，实现成规则。</strong> 世界观里最珍贵的东西（能量总纲、翻面、死亡非真死）全部是规则，而规则便宜、素材昂贵。</li><li><strong>先写"不做清单"，再写"要做清单"。</strong> <code>03</code> §12 的 12 项不做 + <code>03</code> §12.2 的新手专项不做，能省下 24–38 U——这就是"做得完"的全部来源。</li><li><strong>能做完的第一章，胜过做不完的史诗。</strong> 在现有的时间条件下，<strong>"完整 RPG"需要 15–20 年</strong>。但"做小一点"不是答案——<strong>把"发布"提前才是</strong>（<code>05</code>）：先上线一个 60–120 分钟的<strong>序章</strong>（约 1–1.5 年），之后每 3–6 个月更新一块。设定<strong>一个字不删</strong>，它们就是后续更新的内容池。</li></ol></div>
+<hr>
+<p id="L249"><em>（索引 v3 完）</em></p></div>
+</body>
+</html>

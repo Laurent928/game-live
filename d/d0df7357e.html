@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>玩法线 · 交接单</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/d0df7357e.md">原文</a><span class="mut">游戏设计/04-玩法设计/00-20260922-交接单.md</span></div></div><div class="wrap doc"><h1 id="L1">玩法线 · 交接单</h1>
+<blockquote id="L3"><p id="L1"><strong>这份是给「玩法线」那个分支对话看的。</strong> 你和「历史时间线」是两条并行推进的线，这条管的是<strong>怎么玩</strong>——系统的骨架、手感、节奏、范围与产能。</p>
+<p id="L4"><strong>世界观基线</strong>：<code>世界观\世界观设定V1.2.docx</code>（2026-09-22 升版）。<strong>本线所有产出都以它为底</strong>，不要再引用 V1.1。<strong>权威层级</strong>（阿丞 2026-09-22 确认）：<strong>V1.2 正文 ＞ 卿宝本人的回答（问卷／访谈原话） ＞ 交接单与已定结论 ＞ 助手产出的建议</strong>—— <code>01</code>／<code>02</code>／<code>03</code> 那几份 AI 文档<strong>只当线索</strong>，不当依据。</p></blockquote>
+<hr>
+<h2 id="L12">〇、三分钟进入状态</h2>
+<div class="tw"><table id="L14"><thead><tr><th>项</th><th>现在</th></tr></thead><tbody><tr><td><strong>走到哪了</strong></td><td>① 与 V1.2 对齐 ✅ → ② 玩法大框架 ✅ → ③ 修订挂账 ⏳（<strong>A2／A6／A13／A14／A15 已写</strong>；B 组 <strong>5/18 已回填</strong>） → ④ 回写稿 ⬜</td></tr><tr><td><strong>在等什么</strong></td><td><strong>不等她</strong>——两轮提问（<code>03-玩法对齐\02-20260922-待问清单</code> §一／§二／§五）<strong>都答完了</strong>（实录：<code>02-玩法讨论\答复-20260923\</code>，<strong>① 级</strong>）；现在该做的是<strong>按她的答复把正文侧口径改掉</strong>，再定第三轮问什么</td></tr><tr><td><strong>她答完之后</strong></td><td>回填 B 组 18 条（已 5 条）→ 出 <code>玩法设定V1.1</code> 回写稿 → 两位审定 → 成品</td></tr><tr><td><strong>要动手做 L0 之前</strong></td><td>先看 <code>03-玩法对齐\01-20260922-玩法大框架</code> §一（骨架五格）与 §三（卡口 K1–K5）</td></tr><tr><td><strong>别再用</strong></td><td>手动驾驶航行 · 「表里世界」（<strong>已废弃</strong>）· 前文明＝高科技／机器人 · 船战／登船战 · 自由潜行 · 船员模拟经营 · 4 个可玩职业（<code>02</code> 的 NX 清单是<strong>AI 建议、她没签过字</strong>，只能当倾向）· 全球性镜海／表里通道（<strong>正文级、已作废</strong>）</td></tr></tbody></table></div>
+<hr>
+<h2 id="L24">一、三层分工（阿丞 2026-09-22 定）</h2>
+<div class="tw"><table id="L26"><thead><tr><th>层</th><th>玩法侧</th><th>世界观侧</th></tr></thead><tbody><tr><td><strong>① 成品（最终汇总大文档）</strong></td><td><strong><code>游戏设计\玩法设定V1.1.docx</code></strong> ← <strong>✅ 已定：放大类文件夹的根</strong>（跟世界观侧"根目录只放成品"同一个做法）；<code>玩法设定V1.0</code> 是它的前身，<strong>留在 <code>02-玩法讨论\</code> 当历史</strong></td><td><code>世界观\世界观设定V1.2.docx</code> ＋ <code>角色设定List.docx</code></td></tr><tr><td><strong>② 决策与挂账</strong></td><td><strong><code>04-玩法设计\</code></strong>（挂账 · 回写稿 · 清稿）＋ <strong><code>03-玩法对齐\</code></strong>（差异清单 · 大框架）</td><td><code>世界观\01-设计与审查\</code>（<code>08</code> 挂账 · <code>13</code> 回写稿 · <code>14</code> 清稿 · <code>00-索引</code>）</td></tr><tr><td><strong>③ 讨论与来源</strong></td><td><strong><code>02-玩法讨论\</code></strong>（早期对话 · <code>核心逻辑方案</code> · <code>玩法设定V1.0</code> · <code>玩法问题清单</code>）</td><td><code>世界观\02-讨论与来源\</code></td></tr></tbody></table></div>
+<p id="L32"><strong>两条规矩</strong>：讨论出来的东西<strong>先落 ②</strong>；<strong>只有汇总定稿的结论才进 ①</strong>——<strong>正文不夹带过程</strong>。版本升级照「<strong>先挂账后升版</strong>」走，不在原文件上直接改。</p>
+<hr>
+<h2 id="L37">二、文件地图</h2>
+<h3 id="L39">2.1 本线的三份产出（<strong>按这个顺序读</strong>）</h3>
+<div class="tw"><table id="L41"><thead><tr><th>文件</th><th>是什么</th><th>什么时候看</th></tr></thead><tbody><tr><td><strong><code>03-玩法对齐\00-20260922-差异清单.md</code></strong></td><td><strong>第一份</strong>：<code>玩法设定V1.0</code> × <code>世界观V1.2</code> 的<strong>全部差异</strong>——<strong>A 应改 12 条 / B 待讨论 18 条</strong>，逐条带出处；文首有<strong>权威层级横幅</strong>（判词已按新层级更正）</td><td>要"哪里过期了"时</td></tr><tr><td><strong><code>03-玩法对齐\01-20260922-玩法大框架.md</code></strong></td><td><strong>第二份</strong>：<strong>骨架五格</strong>（30 秒／一座岛／一条航线／长线／失败与代价）＋ <strong>横切四条</strong>（船／阶段／代价机制／两面关联性）＋ <strong>卡口 K1–K5</strong> ＋ <strong>问她的 3 个问题（可直接复制）</strong></td><td><strong>要动手做 L0 之前</strong></td></tr><tr><td><strong><code>03-玩法对齐\02-20260922-待问清单.md</code></strong></td><td><strong>两轮提问的档案</strong>：§一／§二（2026-09-22）与 <strong>§五（2026-09-23）</strong>都已发、都已答，<strong>各留一块存档</strong>；每问都写了"答完解锁什么"</td><td><strong>要看她答过什么时（先看这个）</strong></td></tr><tr><td><strong><code>04-玩法设计\01-20260922-修订要点（挂账）.md</code></strong></td><td><strong>第三份</strong>：升 V1.1 的<strong>挂账</strong>——<strong>A2 · A6 · A13 已写</strong>；<strong>A14 战斗（破坏部位＋行动条）· A15 翻面的表达时序与代价</strong>（09-23 她给的）；<strong>B 组 18 条已回填 5 条</strong>（B5 · B7 · B8 · B10 · B13）</td><td><strong>要回写玩法正文时</strong></td></tr></tbody></table></div>
+<blockquote id="L48"><p id="L1"><strong>📌 本文件自己在哪</strong>：<strong><code>游戏设计\04-玩法设计\00-20260922-交接单.md</code></strong>——2026-09-22 从大类文件夹的<strong>根</strong>移进来的（阿丞：「我不想在大文件夹里看到这个东西」）。<strong>根目录只留成品</strong>：现在是 <code>README.md</code>（入口）＋ 各编号子文件夹，将来放 <code>玩法设定V1.1.docx</code>。</p></blockquote>
+<h3 id="L52">2.2 材料与来源</h3>
+<div class="tw"><table id="L54"><thead><tr><th>文件</th><th>是什么</th><th>什么时候看</th></tr></thead><tbody><tr><td><strong><code>02-玩法讨论\答复-20260923\</code></strong></td><td>⭐ <strong>她 2026-09-23 的答复实录</strong>——三张 QQ 长截图（<code>聊天记录\</code>）＋ <strong>逐段读图、零跳过</strong>的逐条记录（<code>README.md</code>）：<strong>§五 三问的答复</strong> ＋ <strong>当天她主动定的战斗（破坏部位／行动条）与翻面玩法</strong>。<strong>① 级证据</strong></td><td><strong>要知道"她现在怎么想"时（优先级最高）</strong></td></tr><tr><td><code>02-玩法讨论\核心逻辑方案.md</code></td><td>玩法核心逻辑方案稿（四方案 ＋ 合成方案）</td><td>谈玩法方向时</td></tr><tr><td><code>02-玩法讨论\玩法设定V1.0.md</code></td><td>玩法设定 <strong>V1.0</strong>（早于世界观 V1.2）——<strong>成品的前身</strong></td><td>要对照旧版时</td></tr><tr><td><code>02-玩法讨论\玩法问题清单.md</code></td><td>玩法侧问题清单（8 问，每题带 2–3 个方案）——<strong>AI 产出</strong></td><td>要挑题目时</td></tr><tr><td><code>02-玩法讨论\参考-ChatGPT完整对话（128条·带角色）.md</code></td><td>早期那条线的完整对话（<strong>17 万字，很长</strong>）</td><td>想追溯"为什么这么定"时</td></tr><tr><td><code>README.md</code>（<strong>工作区根</strong>）</td><td><strong>全工作区总索引</strong>（2026-09-22 由原 <code>游戏设计\README.md</code> 升级上来）</td><td><strong>先看这个</strong></td></tr></tbody></table></div>
+<h3 id="L63">2.3 动手手册与其他</h3>
+<div class="tw"><table id="L65"><thead><tr><th>文件</th><th>是什么</th></tr></thead><tbody><tr><td><code>01-开发路线\</code>（6 份）</td><td>给零基础的动手手册：<code>00-从这里开始</code> · <code>01-路线图与里程碑</code> · <code>02-技术与环境搭建</code> · <code>03-学习计划与工作节奏</code> · <code>04-第一个月逐周清单</code> · <code>05-常见问题与卡点</code>（每份 <code>.md</code> ＋ <code>.docx</code>）</td></tr><tr><td>（此处内容涉及个人隐私，已隐藏）</td><td></td></tr><tr><td><code>_deploy\pages\</code></td><td><strong>独立仓库</strong>（GitHub Pages，<code>Laurent928/island-game</code>），不是本工作区的文件</td></tr></tbody></table></div>
+<blockquote id="L71"><p id="L1"><strong>📌 沿革（2026-09-22 一天的目录整理）</strong>：原先的 <code>02-玩法讨论\</code>（1 份）与 <code>03-玩法讨论\</code>（3 份）<strong>已合并成一个 <code>02-玩法讨论\</code></strong>（4 份，合并前留了哈希校验过的副本）；空出来的 <code>03</code> 号给了 <code>03-玩法对齐\</code>；随后新开 <code>04-玩法设计\</code>。</p></blockquote>
+<hr>
+<h2 id="L75">三、已经定下来的（<strong>这些不用再议</strong>）</h2>
+<div class="tw"><table id="L77"><thead><tr><th>事项</th><th>状态</th></tr></thead><tbody><tr><td><strong>世界观基线</strong></td><td>✅ <code>世界观设定V1.2.docx</code>（2026-09-22 升版）</td></tr><tr><td><strong>十条澄清（2026-09-22）</strong></td><td>⚠️ B 级：<strong>阿丞的印象式转述</strong>，不是她原话 → <strong>2026-09-22 晚已给她本人看过</strong>（① 级实录：<code>世界观\02-讨论与来源\十条核对-20260922\</code>）：<strong>只有 G3 被当场纠正，其余九条未确认</strong>；她的态度＝「<strong>上手做的时候，有错误再纠正更好</strong>」</td></tr><tr><td><strong>职业与法系（2026-09-23 ① 级）</strong></td><td>🟡 她本人答的：<strong>「术士也是职业之一」</strong>·<strong>「正统学院派是法师」</strong>（<strong>「法师会被外派」</strong>）·<strong>「巫师就是本土的」</strong>（<strong>「类似传承」</strong>）·<strong>「而且还有野路子」</strong>；<strong>主角「有职业」、但「不是」术士</strong> ⇒ 第二十九条 2 那张"战士／巫师／召唤师"的表<strong>要重写</strong>（挂账 <strong>B5</strong>）</td></tr><tr><td><strong>遗迹（2026-09-23 ① 级）</strong></td><td>🟡 <strong>「遗迹没用不是那个没用」</strong>「就是<strong>单纯废弃了</strong>的意思」·<strong>本身不值钱</strong>，价值只在<strong>里面的东西</strong>；<strong>具体玩法定位她说「上手做再说吧」</strong>（挂账 <strong>B10</strong>；与历史线的接口见 §五）</td></tr><tr><td><strong>视角与美术风格</strong></td><td>✅ <strong>HD-2D</strong>（类八方旅人）；实践路线见 <code>07-HD-2D实践路线</code></td></tr><tr><td><strong>战斗手感</strong></td><td>✅ <strong>指令式</strong>（半即时／回合）——<code>02</code> 附D，是"最省产能的一票"</td></tr><tr><td><strong>翻面怎么表达</strong></td><td>✅ <strong>骨架复用 ＋ 分层改绘</strong>（"两面关联性"的解法另算，见差异清单 B7）</td></tr><tr><td><strong>岛屿怎么生产</strong></td><td>✅ <strong>生态卡组合</strong>（美术量降到 6 套生态素材）</td></tr><tr><td><strong>仪表数量 / 岛的状态</strong></td><td>✅ <strong>2026-09-23 定了</strong>：<strong>不给状态表</strong>——给一个<strong>正常时钟</strong>（<strong>不是倒计时</strong>，原话「就是正常时钟啊」「自己算」）｜<strong>各岛翻面时间不统一</strong>（「不同的岛」「翻面时间不一样」）｜<strong>「就搞个前置条件」「后面满足了告诉玩家就行了」</strong>。原"3 个仪表"（含<strong>岛屿平衡度</strong>）<strong>作废</strong>（挂账 <strong>A13</strong> ＋ <strong>A15</strong>）</td></tr><tr><td><strong>战斗（2026-09-23 她主动给的）</strong></td><td>✅ <strong>破坏部位</strong>（破坏→<strong>敌方出招减少</strong>、再打已破坏部位→<strong>加伤害</strong>；取舍＝"补刀 vs 开新部位""降威胁 vs 速杀"）＋ <strong>动态行动条</strong>（人怪各一条、行动消耗、<strong>可攒</strong>、<strong>怪行动时有点可闪避或攻击／没点挨打</strong>、<strong>技能预警</strong>、<strong>条打空＝力竭</strong>）；<strong>战士＝连招降消耗</strong>、<strong>法师＝凹招／咏唱＋需要掩护</strong>（挂账 <strong>A14</strong>）</td></tr><tr><td><strong>翻面的表达与代价（2026-09-23）</strong></td><td>✅ 两面 <strong>生态与动物不同、大致结构相同</strong>｜演出＝<strong>对焦效果 → 黑屏 → 切换</strong>｜<strong>翻面本身不惩罚玩家</strong>（她否掉 debuff：「加了没意义啊宝宝」）；危险走<strong>世界内</strong>＝<strong>暴风眼／避难所</strong>（不躲<strong>团灭</strong>）＋ <strong>暴动怪（精英怪，掉特殊材料）</strong>；玩家侧代价<strong>不做成降数值</strong>（挂账 <strong>A15</strong>）</td></tr><tr><td><strong>目标形态</strong></td><td>✅ 更长的故事，但<strong>发布路线按 <code>05-分章节发布方案</code></strong>（社团练手 → 序章发布 → 长线 → 完整 RPG）</td></tr><tr><td><strong>产能</strong></td><td>✅ <strong>15–19 小时/周</strong>（L3 从 1.2–2.2 年缩到 <strong>0.8–1.4 年</strong>）</td></tr><tr><td><strong>航行</strong></td><td>✅ <strong>节点式</strong>（海图选航线 → 沿途事件；已探索可自动驾驶）；<strong>手动驾驶已列入不做</strong></td></tr><tr><td><strong>死亡与失败</strong></td><td>✅ 有完整阶梯（V1.2 <strong>第二十二条</strong>：掉落物件／篝火或船上复活／无主灵魂／背包与船坞）</td></tr><tr><td><strong>船</strong></td><td>✅ 不是普通的船 · <strong>不会翻面</strong> · <strong>一生只绑一艘</strong> · 绑了翻面影响<strong>减轻</strong>（V1.2 第十七条）</td></tr><tr><td><strong>数值</strong></td><td>✅ <strong>现在一个都不填</strong>——《尺度表》等她说的"玩法成型"（V1.2 附录B 10）；《图鉴》可以先立框架</td></tr><tr><td><strong>进度主轴</strong></td><td>⏳ 她的票是"<strong>知识型进度当主轴</strong>"，但<strong>还没落成条文</strong>——排进大框架 <strong>格④</strong>（那两轮三问都没问到它，<strong>留到第三轮</strong>）</td></tr></tbody></table></div>
+<blockquote id="L98"><p id="L1">上面前 12 条的<strong>依据</strong>分别在 <code>世界观\01-设计与审查\05</code>、<code>07</code>、<code>02</code> 附D、V1.2 正文、以及 <code>00-索引</code> §5.2。<strong>不要凭印象改；要改先回原文件核对。</strong></p></blockquote>
+<hr>
+<h2 id="L103">四、还缺什么（<strong>四个闸门</strong>）</h2>
+<div class="tw"><table id="L105"><thead><tr><th>#</th><th>闸门</th><th>卡在谁那</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td><del><code>02-20260922-待问清单</code> §五 那三问</del></td><td>✅ 已答（2026-09-23）</td><td><strong>岛的状态＝不给表、给正常时钟</strong> · <strong>"找路"＝「不知道」（等剧情）</strong> · <strong>必须不变＝地标／海岸线</strong></td></tr><tr><td>2</td><td><strong>A14／A15 落回写稿</strong>（战斗 ＋ 翻面的表达、时序与代价）</td><td>⬜ 本线</td><td><strong>回写要点已写好</strong>（挂账 §二之二）——<strong>这是现在唯一挡着回写稿的东西</strong></td></tr><tr><td>3</td><td><strong>B 组 18 条逐条处置</strong>（改／留／降级）</td><td>🔵 卿宝 ＋ 阿丞的口径</td><td><strong>已回填 5 条</strong>（B5 · B7 · B8 · B10 · B13，① 级）；剩 13 条</td></tr><tr><td>4</td><td><strong>第三轮问什么</strong>（还没立）</td><td>⬜ 本线</td><td>两条候选：① 序章剧情有雏形后重问"<strong>找路</strong>" ② <strong>职业</strong>（主角是什么职业／能不能自选）。<strong>没准备好的别问</strong></td></tr></tbody></table></div>
+<blockquote id="L112"><p id="L1"><strong>已关的闸门</strong>：<strong>① 2026-09-22 第一轮</strong>（<code>03-玩法对齐\03-20260922-第一轮答复（阿丞转述）</code>，<strong>② 级：实聊后的转述、无原图</strong>）—— <strong>K1</strong>＝上岛最常做的是<strong>「找路」</strong> · <strong>K2</strong>＝<strong>平衡度／代价机制整条作废</strong>（她："这个机制不需要了……玩家还要时刻计算，很不舒服"）· <strong>K3</strong>＝<strong>选项 1 ＋「日食、黑一下就变样」＋「岛屿整体结构不变」</strong> · <strong>A10</strong>＝跟正常人一样观察。<strong>② 2026-09-23 第二轮</strong>（<code>02-玩法讨论\答复-20260923\</code>，<strong>① 级：原图 ＋ 逐段读图、零跳过</strong>）——§五 三问的答复＋ <strong>她当天主动给的战斗（破坏部位／行动条）与翻面那批</strong>（落进挂账 <strong>A14／A15</strong>）。</p></blockquote>
+<blockquote id="L119"><p id="L1"><strong>其余 B 组条目一律押后</strong>——它们是"有答案才谈得动"的，不是"现在必须答"的。</p></blockquote>
+<hr>
+<h2 id="L123">五、与「历史时间线」的接口（4 处）</h2>
+<div class="tw"><table id="L125"><thead><tr><th>#</th><th>玩法线编号</th><th>在等什么</th><th>状态</th></tr></thead><tbody><tr><td>1</td><td><strong>A9</strong> 遗迹的"价值"</td><td>阿丞口径：「<strong>不是遗迹本身值钱，是里面有价值的物品值钱</strong>」</td><td>✅ <strong>已关</strong></td></tr><tr><td>2</td><td><strong>B10</strong> 遗迹／旧主城的<strong>玩法定位</strong></td><td>历史线要给"<strong>遗迹能讲什么</strong>"（它那边的"缝·旧主城"）</td><td>🟡 <strong>口径已清（① 级 2026-09-23）</strong>：遗迹本身<strong>不值钱</strong>、只是<strong>废弃</strong>，价值在<strong>里面的东西</strong>；<strong>"能讲什么"仍在等它</strong>，定位她说了"<strong>上手做再说吧</strong>"</td></tr><tr><td>3</td><td><strong>B11</strong> 空岛／海底要不要在<strong>序章</strong>出远景</td><td>同一份素材的取舍</td><td>⏳ 等它</td></tr><tr><td>4</td><td><strong>B17</strong> 序章关键 NPC 的<strong>下场写法</strong></td><td>按 V1.2 第二十二条：普通死不是真死，只有被世界之风扭曲过才是</td><td>⏳ 等它</td></tr></tbody></table></div>
+<hr>
+<h2 id="L134">六、本线的规矩（跟主工作区一样，别省）</h2>
+<div class="tw"><table id="L136"><thead><tr><th>规矩</th><th>要点</th></tr></thead><tbody><tr><td><strong>设定权</strong></td><td>世界观与设定的最终权力在<strong>卿宝</strong>；阿丞的想法也要先跟她沟通；<strong>助手只能整理 / 指出 / 列选项</strong>，选项必须标「建议·未定案」</td></tr><tr><td><strong>交付物</strong></td><td>只写<strong>具体理由 / 具体解释 / 目标方向</strong>——不写"怎么开口""话术"</td></tr><tr><td><strong>给她的东西</strong></td><td>写成<strong>可直接复制发出去的提问</strong>（她在 QQ 上看文字）：<strong>书面语、不口语化</strong>、<strong>不引用内部编号</strong>、每题自带例子或两三种可能、一轮 2–3 问（<code>AGENTS.md</code> 第一部分<strong>第 11 节</strong>，2026-09-22 修订）</td></tr><tr><td><strong>先比对</strong></td><td>任何"新增 / 新词 / 与正文冲突"，<strong>先跑 <code>_工程\工具链\比对\crosscheck.cjs</code></strong> 查既有语料，写明查过哪里</td></tr><tr><td><strong>先挂账后升版</strong></td><td>版本升级不在原文件上改，另起「修订要点（挂账）」，<strong>全关之后再升版</strong></td></tr><tr><td><strong>改完要核实</strong></td><td>脚本没报错 ≠ 文件改了；<strong>跑完回文件里 grep 一遍</strong>、把结果贴出来才算数</td></tr><tr><td><strong>随手提交</strong></td><td>一个可独立回退的改动单元 = 一次 git commit</td></tr></tbody></table></div>
+<hr>
+<p id="L148"><em>（玩法线交接单 · 2026-09-22 整理版 · 基于世界观 V1.2）</em></p></div>
+</body>
+</html>

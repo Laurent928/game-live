@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>世界观待确认问题单（第一版）</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/d67afbaad.md">原文</a><span class="mut">世界观/01-设计与审查/09-世界观待确认问题单.md</span></div></div><div class="wrap doc"><h1 id="L1">世界观待确认问题单（第一版）</h1>
+<blockquote id="L3"><p id="L1"><strong>本单来源</strong>：<code>08-V1.2-修订要点（挂账）.md</code>。只列<strong>需要与卿宝确认</strong>的条目；已定与仅需回写的另列在末尾。<strong>排序原则</strong>：按依赖顺序 —— <strong>岛屿状态 → 地图构成 → 世界规则 → 人与社会 → 编辑数值</strong>。依据：<code>参考-ChatGPT完整对话（128条·带角色）.md</code> 第 <strong>[78]</strong> 条把采访顺序定为「空间 → 规则 → 文明 → 历史 → 剧情」。<strong>分五轮，建议一轮谈完再进下一轮。</strong> 依据同文件第 <strong>[88]</strong> 条的做法：一次只解决一层，不跨层扩设定。<strong>本单不含任何新设定。</strong> 凡引用既有文档（<code>01</code> 审查报告、<code>02</code> 问题清单、GPT 对话）的建议，<strong>一律标注「尚未定案」</strong>。<strong>本单不含问法。</strong> 每条只给三样：<strong>具体理由 / 具体解释 / 目标方向</strong>。</p></blockquote>
+<hr>
+<h2 id="L12">轮次总览</h2>
+<div class="tw"><table id="L14"><thead><tr><th>轮</th><th>主题</th><th>条数</th><th>为什么排在这里</th></tr></thead><tbody><tr><td><strong>一</strong></td><td>岛屿的状态变化</td><td>2</td><td>GPT 那条线<strong>原本排定的下一轮</strong>，且是"翻面"机制的最后一层</td></tr><tr><td><strong>二</strong></td><td>地图与世界构成</td><td>2</td><td>决定世界地图由什么区域组成</td></tr><tr><td><strong>三</strong></td><td>世界规则</td><td>3</td><td>规则定完，后续玩法与剧情才有依附</td></tr><tr><td><strong>四</strong></td><td>人与社会</td><td>3</td><td>依赖前三轮；决定主线有没有形状</td></tr><tr><td><strong>五</strong></td><td>只需认可（编辑与数值）</td><td>2</td><td>不需要讨论，点头即可</td></tr><tr><td>—</td><td>不必问，只需回写</td><td>1</td><td>她已在 <code>02</code> 附D 的 Q24 表过态</td></tr></tbody></table></div>
+<hr>
+<h1 id="L25">第一轮 · 岛屿的状态变化</h1>
+<blockquote id="L27"><p id="L1">这一轮是 <code>参考-ChatGPT完整对话</code> 第 <strong>[127]</strong> 条末尾<strong>原本排定的下一轮问题</strong>。因为第 <strong>[128]</strong> 条切去整理 QQ 聊天记录，<strong>这两问一直没有得到回答</strong>——它是整个世界观访谈线唯一未答的部分。</p></blockquote>
+<h2 id="L30">Q1 · 一座岛快要翻面的时候，能看到、听到、感觉到什么不一样？</h2>
+<div class="lv" id="L32"><ul><li><strong>具体理由</strong>：出自 GPT 对话第 <code>[127]</code> 条末尾列出的下一轮问题，<strong>从未得到回答</strong>；V1.1 第六条目前只写到抽象层。</li><li><strong>具体解释</strong>：V1.1 第六条原文是——"随着不平衡加剧，原有生态可能变得异常狂暴，并出现自然能量剧烈波动、生态异常以及超自然现象"。<strong>没有具体到可观察的现象</strong>，因此这条现在无法直接用于关卡与美术。</li><li><strong>目标方向</strong>：把第六条从"声明"变成<strong>可写的条款</strong>；它同时是玩法层"翻面前兆"设计的直接依据（<code>02</code> Q27 有个"三段式前兆"的建议 —— <strong>来自既有文档，尚未定案</strong>）。</li><li><strong>状态</strong>：🔴 待确认</li></ul></div>
+<h2 id="L37">Q2 · 一座被稳住的岛，是就此固定了，还是岛上还会有自己的变化？</h2>
+<div class="lv" id="L39"><ul><li><strong>具体理由</strong>：同样出自 GPT 对话第 <code>[127]</code> 条末尾，<strong>未答</strong>。GPT 对它的评价原文是："这个问题很重要，因为它决定了<strong>稳定岛屿是不是静态地图</strong>，也决定了人类文明与自然之间究竟是什么关系。"</li><li><strong>具体解释</strong>：V1.1 第十条只说稳定是"延缓翻面的过程"，<strong>没有说被稳住的岛是否还会自然变化</strong>。这直接决定"稳定岛长期住着会不会腻"。</li><li><strong>目标方向</strong>：定下"稳定岛＝静态地图"还是"稳定岛＝变化更慢的活地图"。</li><li><strong>状态</strong>：🔴 待确认</li></ul></div>
+<hr>
+<h1 id="L46">第二轮 · 地图与世界构成</h1>
+<h2 id="L48">Q3 · 空岛和海底区域，现在要不要给它们一个明确定位？</h2>
+<div class="lv" id="L50"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §4 缺口12 把它判为「❌ 仍开（<strong>静默丢失</strong>）」——"V1.1 未答，附录B 亦未收录"。</li><li><strong>具体解释</strong>：V1.1 <strong>第一条</strong>把空岛写进世界的组成部分（"一部分向上升起成为空岛，一部分向下沉入海底……"），<strong>此后全文再无一字涉及空岛</strong>。<br>⚠️ <strong>但两处依据是相反的，需要你们判断：</strong><ul><li><code>01</code> R7 认为这是漏洞："开头立了一个世界级元素，然后忘了它——玩家一定会问'天上那些岛呢'。"</li><li><code>参考-ChatGPT完整对话</code> 第 <code>[110]</code> 条 <strong>§九明确建议"暂时不要把'空岛'与'海底岛'解释死"</strong>，理由是"这是一个很好的视觉机会……玩家乘船航行时，抬头和低头都可能存在一个世界"。</li></ul></li><li><strong>目标方向</strong>：需要定的<strong>不是"空岛是什么"</strong>，而是<strong>"现在要不要定"</strong>——若要定，定到什么程度（纯远景 / 可抵达 / 暂不涉及）。</li><li><strong>状态</strong>：🔴 待确认</li></ul></div>
+<h2 id="L58">Q4 · 幽灵岛为什么会漂移？</h2>
+<div class="lv" id="L60"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §3 R13 定为 🟡。</li><li><strong>具体解释</strong>：V1.1 第三条补充与第二十九条7 都只写"坐标不固定"，<strong>没有成因</strong>；<code>01</code> 的原话是"幽灵岛是特例而无成因"。</li><li><strong>目标方向</strong>：给幽灵岛一个成因，使它不是随机特例，而是世界规则的一个可见结果。</li><li><strong>状态</strong>：🔴 待确认（<code>01</code> R13 建议"＝失去锚定、正在消散途中的岛屿"—— <strong>来自既有文档，尚未定案</strong>）</li></ul></div>
+<hr>
+<h1 id="L67">第三轮 · 世界规则</h1>
+<h2 id="L69">Q5 · 世界之风为什么会一直聚集在旧主城，而不是散开？</h2>
+<div class="lv" id="L71"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §4 缺口11 判为「⚠️ 部分」；§3 R4 定级 🟠，原话是"世界之风的分布规律只有社会学答案，没有物理学答案"。</li><li><strong>具体解释</strong>：V1.1 第十九条补充给的两条理由是<strong>社会学</strong>的——"其一，有术士等力量进行疏导调节；其二，过于危险的区域本就无人居住"。<code>01</code> R4 指出其漏洞："术士全球只有少数人、且只在有人住的岛；<strong>无人居住的岛恰恰没人疏导</strong>——按此逻辑，无人岛应最先被灌满然后扩散出去。"</li><li><strong>目标方向</strong>：给"世界之风在哪里聚集"补一条<strong>规则层的解释</strong>，能同时回答"为什么聚集在旧主城"和"为什么不会迅速污染全球"。</li><li><strong>状态</strong>：🔴 待确认（<code>01</code> R4 已给出「锚定」方向的建议及六项连带解释 —— <strong>来自既有文档，尚未定案</strong>）</li></ul></div>
+<h2 id="L76">Q6 · 一个存在失去的"重量"，会转移到谁身上？有没有上限？</h2>
+<div class="lv" id="L78"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §4 缺口9 判为「❌ 仍开」；§4 漏洞4 为「⚠️ 部分」。</li><li><strong>具体解释</strong>：V1.1 第二十一条写"一个存在失去的重量会转移并叠加到其他存在上"，并<strong>自己注明</strong>"重量守恒与转移的连锁风险与上限规则<strong>待后续定义</strong>"；而它指向的第二十六条只给了"变强两方案"的草案，<strong>没有定义转移规则本身</strong>。</li><li><strong>目标方向</strong>：明确<strong>转移的方向、对象、承载上限</strong>（以及能否被稳定机制处理）。</li><li><strong>状态</strong>：🔴 待确认</li></ul></div>
+<h2 id="L83">Q7 · 一座重要岛翻面、周边海域跟着剧变之后，航线怎么办？</h2>
+<div class="lv" id="L85"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §4 模块一 漏洞9 判为「❌ <strong>仍开</strong>」，备注原文："未见任何回应，<strong>附录B 亦未收录</strong>"。</li><li><strong>具体解释</strong>：V1.1 第十五条写"岛屿的生态会影响周围海域……因此，岛屿翻面后，其周围海域也可能随新的生态状态发生变化"。而航线、港口与岛间贸易都建立在可预期的海域之上。</li><li><strong>目标方向</strong>：明确"重要岛翻面 → 周边海域剧变"时，<strong>人类的交通与资源循环靠什么维持</strong>。</li><li><strong>状态</strong>：🔴 待确认</li></ul></div>
+<hr>
+<h1 id="L92">第四轮 · 人与社会</h1>
+<h2 id="L94">Q8 · "不是所有岛都被稳定"，靠什么成立？</h2>
+<div class="lv" id="L96"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §3 R8 定级 🟠，处置标为「<strong>核心</strong>（用符文硬约束修）」。<strong>这一条与 V1.1 正文是直接冲突的。</strong></li><li><strong>具体解释</strong>：<ul><li>V1.1 第十条补充<strong>明确写死</strong>："稳定<strong>不存在</strong>'效果上限'式的累积反噬。"（<code>01</code> 注明这是 Q6 讨论中的<strong>有意选择</strong>。）</li><li><strong>⚠️ 补比对（2026-09-17）</strong>：<code>01</code> R8 只引了这半句。V1.1 第十条<strong>同一节里还写着</strong>"符文会<strong>磨损</strong>、<strong>需定期修补</strong>；受到外部冲击会破碎失效。术士缺失或符文失效即可能翻面"——所以"不会有累积反噬"与"符文要维护"在正文里<strong>本来就是并存的</strong>，本问不是"要不要从无到有加硬约束"，而是"要不要把正文已有的维护规则<strong>量化</strong>（频率、数量、制造条件）"。</li><li><code>01</code> R8 认为代价是"'为什么不是每座岛都被稳定'只剩<strong>资源稀缺</strong>这个软理由"，理由是"符文是<strong>放置类魔法、自动生效、无需术士在场</strong>——一个术士花一周立好符文，之后只需偶尔修补，那他一生覆盖的岛屿会远超'稀缺'给人的感觉"；因此建议给符文加硬约束。</li></ul></li><li><strong>目标方向</strong>：确认"选择性稳定"靠<strong>现有理由（人少、资源稀缺）</strong>就够，还是需要<strong>补一条硬约束</strong>。</li><li><strong>状态</strong>：✅ <strong>已答（2026-09-16 20:44–20:54 单独补问）</strong><br><strong>她选了"补一条硬约束"</strong>——不是"人少、材料少、忙不过来"，而是"<strong>根本做不到</strong>"。她的原话要点：<br>"每周都得修补" · "没那么勤奋的巫师只能住在岛上" · "特别厉害的巫师才能长时间固定" · "<strong>撑死能保护三个岛</strong>" ·<br>"能量漩涡？"（阿丞接"越高级的符文需要的能量流越多"）· "制造一个符文需要<strong>天时地利人和</strong>" →</li></ul></div>
+<p id="L106">"大型的岛屿需要的条件很多" · "<strong>不是所有岛屿都符合</strong>"；她另给了两个方案："把岛的命运和星星捆绑 → 需要看星象"，以及并列的三选一："要么就是失传了" / "要么就是画符文需要很久" / "要么就是需要强大的法力流才能画符文 → 需要外来的力量"。</p>
+<div class="lv" id="L108"><ul><li>原始截图与逐句转录：<code>02-讨论与来源\Q8补问-20260916晚\</code></li><li>归类（四条约束）、"两个方案"、<strong>三件未收口的事</strong>、与第十条的关系：<code>08</code> §C1</li></ul></div>
+<h2 id="L111">Q9 · 谁决定哪些岛被稳定、哪些被放弃？</h2>
+<div class="lv" id="L113"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §4 缺口13 判为「❌ 仍开（<strong>静默丢失</strong>）」；V1.0 缺口13 原文："城市社会结构：谁决定哪些岛稳定？贸易联盟？教会？歌女组织？"</li><li><strong>具体解释</strong>：V1.1 里有<strong>大量政治事实</strong>，却没有政治结构——第十一条同时写了"选择性稳定""真正能够进行远距离航海冒险的人属于少数""能够施展符文并稳定岛屿的人同样稀少""船只稀缺且昂贵：需巫师附魔制造，一般只有富人拥有"。</li><li><strong>目标方向</strong>：让"谁决定哪些岛被稳定"这件事<strong>有归属</strong>。<code>01</code> R11 指出这决定"主线没有形状，玩家要反抗谁"。</li><li><strong>状态</strong>：🔴 待确认（<code>01</code> R11 建议"稳定权＝权力本体"，并极小化到 1 个母港＋1 个势力＋1 个对立派系 —— <strong>来自既有文档，尚未定案</strong>）</li></ul></div>
+<h2 id="L118">Q10 · 模因抹除是谁在做？</h2>
+<div class="lv" id="L120"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §4 缺口10 判为「❌ 仍开（<strong>静默丢失</strong>）」；V1.0 缺口10 原文即问"模因抹除的实施者、手段、范围"。</li><li><strong>具体解释</strong>：V1.1 第二十二条完整保留了这个机制（"存在的本质与其能够被世界所认知、锚定的部分有关。模因抹除会使一个存在失去能够维持自身的部分"），但<strong>全文没有一处说明谁在执行、用什么手段、覆盖多大范围</strong>；V1.1 <strong>附录B 里也没有收录它</strong>。<code>01</code> R6 的定性是："一个能'抹除存在'的机制没有实施者，是世界观里最危险的悬空设定。"</li><li><strong>目标方向</strong>：让这一条<strong>有边界</strong>——最低限度要能回答"谁能抹除、抹到什么程度、能不能被阻止"。</li><li><strong>状态</strong>：🔴 待确认（<code>01</code> R6 建议与"锚定"合并、明确执行者，并给了几个候选 —— <strong>来自既有文档，尚未定案</strong>）</li></ul></div>
+<hr>
+<h1 id="L127">第五轮 · 只需认可（不必讨论）</h1>
+<blockquote id="L129"><p id="L1">这两条是编辑与数值，不需要创作取舍，<strong>点头即可</strong>。</p></blockquote>
+<h2 id="L131">Q11 · 术语要不要收口、语域要不要统一？</h2>
+<div class="lv" id="L133"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §3 R5、R14；<code>00-索引与阅读指引</code> §5.3 列为待办。</li><li><strong>具体解释</strong>：①<code>两个面／表里世界／镜海／海底区域／空岛</code> <strong>五套词指涉重叠</strong>，读者无法判断"表里世界"是否就是"两面"；②语域打架——"模因抹除""质点／核心""存在重量"与"符文／术士／咏唱／航海／海藻兽巢"严重不搭。</li><li><strong>目标方向</strong>：每个概念只留<strong>一个名字、一句定义、一条与"翻面"的关系</strong>；术语尽量是"这个世界的水手或术士会说的话"。</li><li><strong>状态</strong>：🟡 待认可（<code>01</code> 附录A 已给出替换方向，例如 模因抹除→「失名」、存在重量→「吃水」、锚定→「系／缆」、质点→「芯」 —— <strong>来自既有文档，尚未定案</strong>）</li></ul></div>
+<h2 id="L138">Q12 · 要不要补一张《尺度表》？</h2>
+<div class="lv" id="L140"><ul><li><strong>具体理由</strong>：<code>01</code> 审查报告 §3 R2 定级 🔴「阻塞」；<code>00-索引与阅读指引</code> §5.3 列为待办。</li><li><strong>具体解释</strong>：V1.1 <strong>全文没有一处给出数量级</strong>——<code>01</code> R2 原文："翻面周期是'可预测的自然周期'，但没说是 3 个月还是 300 年；岛屿多大、世界多少座岛、一趟航行几天、人口多少，全无。"并指出这是"在岔路口不选路"。</li><li><strong>目标方向</strong>：一张表回答四项 —— <strong>岛直径 / 主要岛数量 / 单跳航行时长 / 全球术士总数</strong>。</li><li><strong>状态</strong>：🟡 待认可（<code>01</code> R2 给了建议区间：岛直径 2–8 km、主要岛 12–20 座、单跳 1–3 游戏日、术士总数两位数 —— <strong>来自既有文档，尚未定案</strong>）</li></ul></div>
+<hr>
+<h1 id="L147">不必问 · 只需回写</h1>
+<h2 id="L149">第七条「翻面后的岛屿会进入全新的生态与地图」</h2>
+<div class="lv" id="L151"><ul><li><strong>具体理由</strong>：<code>00-索引与阅读指引</code> §5.3 标 🔴；<code>01</code> 审查报告 §5.2 定性为"<strong>全文档对小团队最不友好的一句话</strong>"。</li><li><strong>具体解释</strong>：第七条原文是——"翻面后的岛屿会进入全新的生态与地图，<strong>而不是简单改变原地图的外观</strong>"。<code>01</code> §5.2 指出"按字面执行，每座岛 × 每个状态 = 一张全新地图，成本直接乘以 2–3.5 倍"。</li><li><strong>已有事实</strong>：<strong>她在 <code>02</code> 附D 的 Q24 已经选了"骨架复用 + 分层改绘"</strong>（游戏实现口径）。</li><li><strong>目标方向</strong>：确认 V1.2 正文是否在第七条后补一句<strong>实现层口径</strong>。</li><li><strong>状态</strong>：✅ <strong>不必问，只需回写</strong>（但正文措辞要不要动，仍需她点头 —— 既定红线是"<strong>不删设定</strong>"）</li></ul></div>
+<hr>
+<h1 id="L159">本单边界说明</h1>
+<div class="lv" id="L161"><ul><li><strong>不含新设定。</strong> 全单只做三件事：引用既有文档、指出缺口与冲突、说明补上它会解锁什么。</li><li><strong>不含问法。</strong> 没有"怎么开口 / 追问方向 / 听什么"这类内容。</li><li><strong>没写进去的，是"现阶段不填"的。</strong> 世界观不继续向外扩设定（用户 2026-09-15 明确）。</li><li><strong>谈完之后的去向</strong>：结论回到 <code>08-V1.2-修订要点（挂账）.md</code> 逐条关闭；<strong>全部关闭后</strong>才执行 V1.2 升版与回写。</li></ul></div></div>
+</body>
+</html>

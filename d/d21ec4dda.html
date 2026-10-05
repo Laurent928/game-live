@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>02 · 技术与环境搭建</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/d21ec4dda.md">原文</a><span class="mut">游戏设计/01-开发路线/02-技术与环境搭建.md</span></div></div><div class="wrap doc"><h1 id="L1">02 · 技术与环境搭建</h1>
+<blockquote id="L3"><p id="L1"><strong>一次做对，之后不用再改。</strong> 这一份是"装好东西、建好项目、配好画面"的清单。HD-2D 的完整配方（含坑清单）在 <code>世界观\01-设计与审查\07-HD-2D实践路线.md</code>；这里只留<strong>动手要用到的部分</strong>。</p></blockquote>
+<hr>
+<h2 id="L8">一、一次性设置清单</h2>
+<div class="tw"><table id="L10"><thead><tr><th>#</th><th>项</th><th>具体做法</th><th>为什么</th></tr></thead><tbody><tr><td>1</td><td><strong>Unity 版本</strong></td><td>装一个 <strong>LTS（长期支持）版</strong>，<strong>把版本号写下来</strong>（例如 <code>6000.x.y LTS</code>），<strong>整个项目周期内不升级</strong></td><td>升级 Unity 是学生项目最常见的"工程突然打不开"原因</td></tr><tr><td>2</td><td><strong>渲染管线</strong></td><td>建项目时选 <strong>URP</strong> 模板（或后期升级到 URP）</td><td><strong>HD-2D 的"高级感"完全来自 URP 的后处理</strong>，这是硬性前提</td></tr><tr><td>3</td><td><strong>版本管理</strong></td><td>装 <strong>GitHub Desktop</strong>（图形界面），建一个<strong>私有</strong>仓库</td><td>零基础不要用命令行 Git；但<strong>一定要用</strong>，否则丢工程是必然事件</td></tr><tr><td>4</td><td><strong>.gitignore</strong></td><td>用下面第七节的 Unity 版本</td><td>否则仓库会被上百 MB 的缓存撑爆</td></tr><tr><td>5</td><td><strong>备份</strong></td><td>除 Git 外，<strong>每周</strong>把整个工程压缩一份放到另一个盘</td><td>Unity 工程可能损坏</td></tr><tr><td>6</td><td><strong>记录版本号</strong></td><td>在仓库根目录放一个 <code>PROJECT-INFO.txt</code>，写上 Unity 版本 + 最后更新时间</td><td>两个人用同一版本</td></tr></tbody></table></div>
+<blockquote id="L19"><p id="L1">⚠️ <strong>两个人必须在同一个 Unity 版本上工作</strong>，否则场景文件会互相打不开。</p></blockquote>
+<hr>
+<h2 id="L23">二、Unity 项目目录结构（建议直接照建）</h2>
+<pre id="L25"><code>Assets/
+├── Art/
+│   ├── Characters/        2D 精灵（角色、NPC、敌人）
+│   ├── Environment/       场景贴图、模块化建筑、道具
+│   ├── UI/                UI 图、图标、字体
+│   └── VFX/               粒子贴图
+├── Audio/
+│   ├── BGM/
+│   └── SFX/
+├── Data/                  ★ ScriptableObject 资产（策划改数值不用改代码）
+│   ├── Ecology/           生态卡
+│   ├── Enemies/           敌人参数
+│   ├── Items/             道具与资源
+│   └── Islands/           岛屿与翻面状态
+├── Prefabs/
+│   ├── Characters/
+│   ├── Environment/       地标、建筑
+│   └── UI/
+├── Scenes/
+│   ├── Boot/              启动场景
+│   ├── Island01/          第一座岛
+│   └── Test/              ★ 试验场（随便折腾，不进最终构建）
+├── Scripts/
+│   ├── Core/              游戏循环、存档、事件总线
+│   ├── World/             翻面、平衡度、生态
+│   ├── Combat/
+│   ├── UI/
+│   └── Data/              SO 的类定义
+└── Settings/              ★ URP Volume 预设、调色 LUT</code></pre>
+<p id="L57"><strong>三个星号的重点</strong>：</p>
+<div class="lv" id="L58"><ul><li><strong><code>Data/</code></strong>：所有数值放这里。改平衡度、改敌人血量<strong>不用改代码、不用重新编译</strong>——这是新手能立刻受益的架构习惯。</li><li><strong><code>Scenes/Test/</code></strong>：试验场。所有试错都在这儿做，不要把试验代码写进主场景。</li><li><strong><code>Settings/</code></strong>：把 URP Volume 预设存成资产。<strong>"翻面"就是切换两个预设</strong>——这是最省力的实现方式。</li></ul></div>
+<hr>
+<h2 id="L64">三、HD-2D 起始参数表（照抄，之后再微调）</h2>
+<div class="tw"><table id="L66"><thead><tr><th>项</th><th>起始值</th><th>备注</th></tr></thead><tbody><tr><td>相机类型</td><td><strong>Perspective（透视）</strong></td><td>⚠️ <strong>不要用正交</strong>，否则退回纯 2D 观感</td></tr><tr><td><strong>相机 FOV</strong></td><td><strong>30°</strong></td><td><strong>最重要的一个数</strong>。FOV 小 → 接近等距但保留深度</td></tr><tr><td>相机俯角</td><td><strong>约 40°</strong>（向下看）</td><td>八方旅人式的斜俯视</td></tr><tr><td>相机距离</td><td>12–16 单位</td><td>配合 FOV 一起调</td></tr><tr><td>角色精灵高度</td><td><strong>64 px</strong></td><td>不要一上来做 128+</td></tr><tr><td>PPU（Pixels Per Unit）</td><td><strong>32</strong></td><td>64px 精灵＝2 个单位高</td></tr><tr><td><strong>网格尺寸</strong></td><td><strong>1 单位 = 1 格</strong></td><td>全项目统一，后期省无数麻烦</td></tr><tr><td>场景贴图</td><td>128–256 px，<strong>Point filter</strong>，Tiling</td><td><strong>场景贴图也要低分辨率像素感</strong>，否则和像素角色不搭</td></tr><tr><td>色板</td><td><strong>限制 32–48 色，全项目统一</strong></td><td>风格统一最便宜的手段</td></tr><tr><td>点光源</td><td><strong>≤3 个</strong>（前期）</td><td>后处理 + 多实时光源会掉帧</td></tr></tbody></table></div>
+<blockquote id="L79"><p id="L1"><strong>相机怎么调</strong>：先设 FOV 30、俯角 40、距离 14，然后<strong>只动距离</strong>——距离决定"看多远"，FOV 决定"透视有多强"。这两个调好，画面就有七成对了。</p></blockquote>
+<hr>
+<h2 id="L83">四、「高级感」的三根支柱（按性价比排序）</h2>
+<blockquote id="L85"><p id="L1"><strong>如果只做三件事，就做这三件。</strong> 它们能让"方块场景 + 像素小人"立刻看起来像有制作的样子。</p></blockquote>
+<div class="tw"><table id="L87"><thead><tr><th>优先级</th><th>效果</th><th>怎么做</th><th>作用</th></tr></thead><tbody><tr><td><strong>①</strong></td><td><strong>景深 Depth of Field</strong></td><td>URP Volume → Depth of Field。Focus Distance ≈ 相机到角色的距离；Aperture 5–8</td><td><strong>最关键</strong>。远景虚化立刻产生电影感，是八方旅人观感的第一来源</td></tr><tr><td><strong>②</strong></td><td><strong>统一调色 Color Grading</strong></td><td>URP Volume → Color Adjustments / Tonemapping</td><td>全场景统一氛围。成本≈0，效果极大</td></tr><tr><td><strong>③</strong></td><td><strong>Bloom（泛光）</strong></td><td>URP Volume → Bloom。Intensity 0.3–0.8，Threshold 0.9</td><td>灯光、魔法、水面发光——夜晚场景的灵魂</td></tr></tbody></table></div>
+<p id="L93"><strong>第四样（可选但很值）</strong>：<strong>体积光 / 光柱</strong>。URP 不自带。最便宜的做法是<strong>手工搓</strong>：一个半透明锥体网格 + 渐变贴图，放在光源下方。效果够用，而且完全可控。</p>
+<blockquote id="L96"><p id="L1">⚠️ <strong>硬规则</strong>：每个效果<strong>只调 3 个参数，全部不超过 2 小时</strong>，然后<strong>冻结</strong>。后处理调优是 HD-2D 最大的时间黑洞。</p></blockquote>
+<hr>
+<h2 id="L100">五、光照：先别碰烘焙</h2>
+<div class="tw"><table id="L102"><thead><tr><th>阶段</th><th>做法</th></tr></thead><tbody><tr><td><strong>前期（现在）</strong></td><td><strong>实时方向光 + 2–3 个点光源</strong>。方向光给主光（偏冷），点光源给火把/灯笼（偏暖）。<strong>暖冷对比 = 氛围</strong></td></tr><tr><td>中期</td><td>场景固定后，再考虑 <strong>Lightmap 烘焙</strong></td></tr><tr><td>永远不要</td><td>一开始就上烘焙——新手最容易卡住，且场景一改就要重烤</td></tr></tbody></table></div>
+<p id="L108"><strong>一个小技巧</strong>：让角色<strong>投下阴影</strong>。Sprite 默认不投影，需要一个带 <strong>ShadowCaster</strong> 通道的 Sprite 材质。<strong>角色有影子对"真实感"的提升远超预期</strong>，投入却很小。</p>
+<hr>
+<h2 id="L112">六、精灵与 3D 的排序（HD-2D 必踩的坑）</h2>
+<p id="L114"><strong>症状</strong>：角色被建筑挡住、或角色穿透墙壁显示在最前面。</p>
+<p id="L116"><strong>根因</strong>：透明材质默认不写入深度缓冲。</p>
+<p id="L118"><strong>解法（照做即可）</strong>：</p>
+<div class="lv" id="L120"><ol><li><strong>精灵材质用 Alpha Cutout（Alpha Test），不要用 Alpha Blend</strong> —— 深度写入正常，<strong>遮挡问题自动解决</strong>。</li><li><strong>相机固定角度</strong>（不旋转）时：把精灵<strong>直接旋转到与相机视平面平行</strong>，<strong>不需要 billboard 脚本</strong>。</li><li>只有相机需要旋转时，才加"始终朝向相机"的 billboard 脚本。</li><li>精灵导入设置：<strong>Filter Mode = Point</strong>、<strong>Compression = None</strong>、<strong>缩放用整数倍</strong>（否则像素会糊）。</li></ol></div>
+<hr>
+<h2 id="L127">七、<code>.gitignore</code>（Unity 用，直接复制）</h2>
+<p id="L129">放在仓库根目录：</p>
+<pre id="L131"><code>[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+[Mm]emoryCaptures/
+[Rr]ecordings/
+
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+.vs/
+.idea/
+.vscode/
+
+*.apk
+*.aab
+*.unitypackage
+*.app
+
+crashlytics-build.properties
+sysinfo.txt</code></pre>
+<blockquote id="L169"><p id="L1"><strong>如果仓库开始变大变慢</strong>（比如放了 PSD 原稿、大音频），再考虑 <strong>Git LFS</strong>。前期不用管。</p></blockquote>
+<hr>
+<h2 id="L173">八、明确不要碰的东西</h2>
+<div class="tw"><table id="L175"><thead><tr><th>不要碰</th><th>为什么</th></tr></thead><tbody><tr><td><strong>HDRP</strong></td><td>为高端画面而生，对你们是灾难性复杂度</td></tr><tr><td><strong>正交相机</strong></td><td>观感退回纯 2D，HD-2D 的意义就没了</td></tr><tr><td><strong>自己写 Shader / Shader Graph</strong></td><td>前期一律用 URP 内置 + 后处理</td></tr><tr><td><strong>DOTS / ECS</strong></td><td>为性能而生，本项目规模用不到</td></tr><tr><td><strong>Timeline 做演出</strong></td><td>前期用不上，改起来慢</td></tr><tr><td><strong>多人联机</strong></td><td>复杂度是单机的数倍</td></tr><tr><td><strong>程序化地形生成</strong></td><td>与手工箱庭抵触，调试困难</td></tr><tr><td><strong>频繁升级 Unity 版本</strong></td><td>工程打不开的头号原因</td></tr><tr><td><strong>大量 Asset Store 插件</strong></td><td>插件之间会冲突；只引入解决当前问题的、且你看得懂的</td></tr></tbody></table></div>
+<hr>
+<h2 id="L189">九、可以放心学的东西</h2>
+<p id="L191"><code>ScriptableObject</code>（最重要）· <code>Cinemachine</code>（相机自动变好看）· <code>ProBuilder</code>（3D 快速搭场景）· <code>新输入系统</code> · <code>URP Volume</code> 后处理 · 免费资源站（Kenney / OpenGameArt / 免费音效库）· <code>Application.persistentDataPath + JSON</code> 存档。</p>
+<hr>
+<p id="L195"><em>（下一份：<code>03-学习计划与工作节奏.md</code>）</em></p></div>
+</body>
+</html>

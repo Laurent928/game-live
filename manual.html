@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>怎么看进度 · 操作手册</title>
+<style>
+  :root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+  --mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;padding:0 0 70px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+    background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+    color:var(--txt);line-height:1.85;font-size:16.5px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  header{padding:34px 0 6px}
+  h1{font-size:26px;margin:0 0 12px;line-height:1.4}
+  h1 .em{color:var(--acc)}
+  .lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+    padding:14px 18px;margin:16px 0 22px;font-size:15px;color:#dbe7f0}
+  .lead b{color:var(--acc)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+  .card h2{margin:0 0 4px;font-size:19px;color:var(--acc)}
+  .card h2 .n{display:inline-flex;width:26px;height:26px;flex:0 0 26px;border-radius:9px;margin-right:9px;
+    background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;font-size:14px;font-weight:800;
+    align-items:center;justify-content:center;vertical-align:-4px}
+  .sub{color:var(--mut2);font-size:13.5px;margin:0 0 10px}
+  .url{background:#0d2134;border:1.5px solid #1f4560;border-radius:12px;padding:12px 14px;margin:10px 0;
+    font-size:16px;word-break:break-all;color:var(--acc)}
+  h3{font-size:16.5px;color:var(--soft);margin:18px 0 8px}
+  .track{display:flex;align-items:center;gap:12px;margin:6px 0 14px}
+  .barwrap{flex:1;height:7px;background:#0a1d2e;border-radius:99px;overflow:hidden;border:1px solid #1d3d57}
+  .fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--acc2),var(--acc));transition:width .3s}
+  .cnt{font-size:13px;color:var(--mut);white-space:nowrap;font-variant-numeric:tabular-nums}
+  .task{display:flex;gap:12px;align-items:flex-start;background:#0d2134;border:1.5px solid #1f4560;
+    border-radius:13px;padding:13px 15px;margin:10px 0;cursor:pointer;transition:all .15s;user-select:none}
+  .task:hover{border-color:#33698a}
+  .task.on{border-color:var(--acc);background:linear-gradient(135deg,rgba(232,192,125,.12),rgba(232,192,125,.03))}
+  .tick{width:21px;height:21px;flex:0 0 21px;margin-top:3px;border-radius:50%;border:1.8px solid #41718f;
+    display:flex;align-items:center;justify-content:center;font-size:12px;color:#102a40;font-weight:800}
+  .task.on .tick{background:var(--acc);border-color:var(--acc)}
+  .task .t{font-size:16px;font-weight:650}
+  .task .d{font-size:14px;color:var(--mut);margin-top:3px}
+  textarea{width:100%;background:#0d2134;border:1.5px solid #1f4560;border-radius:12px;color:var(--txt);
+    padding:12px 14px;font-size:15px;font-family:inherit;resize:vertical;min-height:96px;line-height:1.75;margin:8px 0}
+  textarea:focus{outline:none;border-color:var(--acc)}
+  input[type=text]{width:100%;background:#0d2134;border:1.5px solid #1f4560;border-radius:12px;color:var(--txt);
+    padding:11px 14px;font-size:16px;font-family:inherit;margin:8px 0}
+  input[type=text]:focus{outline:none;border-color:var(--acc)}
+  button{font-family:inherit;font-size:15px;font-weight:650;cursor:pointer;border-radius:11px;
+    padding:11px 18px;border:1.5px solid transparent;transition:all .15s}
+  .b-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a}
+  .b-main:hover{filter:brightness(1.07)}
+  .b-ghost{background:transparent;border-color:#2f5f7d;color:var(--mut)}
+  .b-ghost:hover{border-color:var(--acc);color:var(--acc)}
+  .btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:6px}
+  .ok{color:var(--good);font-size:13.5px}
+  details{background:var(--card2);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:9px 0}
+  summary{cursor:pointer;font-weight:650;font-size:15.5px;color:#dbe7f0;list-style:none}
+  summary::-webkit-details-marker{display:none}
+  summary::before{content:"＋ ";color:var(--acc);font-weight:800}
+  details[open] summary::before{content:"－ "}
+  details p{margin:10px 0 4px;font-size:15px;color:#cddced}
+  .quote{background:#0d2134;border:1.5px dashed #33698a;border-radius:12px;padding:12px 14px;margin:10px 0;
+    font-size:14.5px;color:#d5e5f2;white-space:pre-wrap}
+  footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:36px 0 10px;line-height:1.9}
+  @media (max-width:600px){h1{font-size:22px}.wrap{padding:0 15px}.card{padding:16px 15px}body{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>怎么看进度 · <span class="em">一页就够</span></h1>
+</header>
+
+<div class="lead">
+  这页不是资料索引，是<b>让你不用问阿丞也能跟上项目</b>的操作说明。<br>
+  全部内容三件事，做完大概两分钟。
+</div>
+
+<div class="card">
+  <h2><span class="n">①</span>你只需要记住一个网址</h2>
+  <p class="sub">别的都不用记。这一页会一直开在这儿。</p>
+  <div class="url">https://laurent928.github.io/game-live/</div>
+  <p>打开它，你能看到：<b>现在做到哪了</b> · <b>还有哪些事在等你一句话</b> · <b>全部文档</b>。</p>
+  <p>阿丞每次更新完，这个网址的内容会跟着变，<b>不用重新找他要链接</b>。</p>
+  <p class="sub">手机上建议：用浏览器打开一次，然后「添加到主屏幕」，或者发到自己的 QQ 收藏里。</p>
+</div>
+
+<div class="card">
+  <h2><span class="n">②</span>你要做的三件事</h2>
+  <p class="sub">点一下就算做完（只记在你这台设备的浏览器里，别人看不到）。</p>
+  <div class="track"><div class="barwrap"><div class="fill" id="fill"></div></div><div class="cnt" id="cnt">0 / 3</div></div>
+
+  <div class="task" data-k="t1"><div class="tick">✓</div><div>
+    <div class="t">打开看板，扫一眼「现在到哪了」</div>
+    <div class="d">就看最近更新那几条，不用从头读。</div></div></div>
+
+  <div class="task" data-k="t2"><div class="tick">✓</div><div>
+    <div class="t">把这页的进度喂给你的 GPT</div>
+    <div class="d">下面③有一句话，复制粘过去就行。</div></div></div>
+
+  <div class="task" data-k="t3"><div class="tick">✓</div><div>
+    <div class="t">有想法就写下来发给他</div>
+    <div class="d">下面④帮你把话整理成他要的格式。</div></div></div>
+</div>
+
+<div class="card">
+  <h2><span class="n">③</span>让你的 GPT 也跟上进度</h2>
+  <p class="sub">你自己用 AI 的时候，把下面这段发过去，它就把项目最新的东西全读完了 —— 之后你可以直接跟它聊，不用每次从头解释。</p>
+  <div class="quote" id="prompt">我在和一个朋友一起做一个游戏项目。项目的最新进度、已经定下来的东西、以及还在等我决定的事，都整理在这个网址上：
+https://laurent928.github.io/game-live/ai.md
+
+请你先读完这个网址（如果打不开就告诉我），然后用五句话以内总结：目前进度到哪、还有什么在等我定。总结完我们就开始讨论。
+
+注意：这里面有已经定案的、也有还没定案的，请分清。</div>
+  <div class="btns">
+    <button class="b-main" id="copyPrompt">复制这段话</button>
+    <span class="ok" id="okPrompt"></span>
+  </div>
+  <h3>如果它说打不开网址</h3>
+  <p>用手机上自带的浏览器先打开一次 <b>https://laurent928.github.io/game-live/ai.md</b>，全选复制，然后粘给 GPT，说「这是我项目的进度，先读一下」。效果一样。</p>
+</div>
+
+<div class="card">
+  <h2><span class="n">④</span>有想法 / 想改设定，怎么回给他</h2>
+  <p class="sub">在下面写，点一下生成，复制走发 QQ 就行 —— 你不需要会任何格式。</p>
+  <input type="text" id="topic" placeholder="这件事大概是什么？（例：岛上要不要有商店）">
+  <textarea id="words" placeholder="想说什么就写什么，不用讲究。想到哪写到哪都行。"></textarea>
+  <div class="btns">
+    <button class="b-main" id="make">生成要发的内容</button>
+    <button class="b-ghost" id="copyOut">复制</button>
+    <span class="ok" id="okOut"></span>
+  </div>
+  <textarea id="out" style="min-height:150px;font-size:14px" placeholder="生成的内容会出现在这里"></textarea>
+  <p class="sub">为什么不能直接写进文件：文件都在阿丞的电脑上，这个网址只是给你看的窗口。你发过去，他那边一键就能归档，不用重新整理。</p>
+</div>
+
+<div class="card">
+  <h2>常见问题</h2>
+
+  <details><summary>这个网址别人能打开吗？</summary>
+    <p>能 —— 它是公开的，只要知道网址谁都能看。所以这里<b>只放项目本身的内容</b>（玩法、设定、进度），不放你们俩的私下聊天。这一点阿丞每次发布前都会过一遍。</p></details>
+
+  <details><summary>网址会不会变？</summary>
+    <p>不会。它跟电脑开不开机没关系，阿丞关电脑你也能打开。</p></details>
+
+  <details><summary>为什么有的文档点进去是长表格，看着头大？</summary>
+    <p>那些是给工作用的原始记录，不用逐字读。<b>先看看板上的「还要你定的事」</b>，那里只列跟你有关的几条；想知道上下文再点「来源」进去看那一段。</p></details>
+
+  <details><summary>我想回的东西不在「还要你定的事」里</summary>
+    <p>照样用④写。看到哪里不对、想加一句、或者突然想起来一个点子，都可以发。</p></details>
+
+  <details><summary>他发的提问我看不太懂怎么办？</summary>
+    <p>把那个问题连同上面③那段话一起发给你的 GPT，让它用大白话解释一遍，并且给你几个可选项。它读完项目进度之后，解释会准得多。</p></details>
+
+  <details><summary>我想自己动手改文档，可以吗？</summary>
+    <p>可以，但那是另一套做法（需要在你电脑上装点东西），现在先不用管。等你觉得「每次都要发过去好麻烦」的时候，跟阿丞说一声，他会带你弄。</p></details>
+</div>
+
+<footer>这一页就是全部说明，不用找别的。有任何一步卡住，直接问阿丞。</footer>
+</div>
+
+<script>
+(function(){
+  // 勾选进度
+  var tasks = [].slice.call(document.querySelectorAll('.task'));
+  var fill = document.getElementById('fill'), cnt = document.getElementById('cnt');
+  function key(k){ return 'gamelive.manual.' + k; }
+  function render(){
+    var done = tasks.filter(function(t){ return t.classList.contains('on'); }).length;
+    fill.style.width = (done / tasks.length * 100) + '%';
+    cnt.textContent = done + ' / ' + tasks.length;
+  }
+  tasks.forEach(function(t){
+    var k = t.getAttribute('data-k');
+    var on = false;
+    try { on = localStorage.getItem(key(k)) === '1'; } catch(e){}
+    if (on) t.classList.add('on');
+    t.addEventListener('click', function(){
+      t.classList.toggle('on');
+      try { localStorage.setItem(key(k), t.classList.contains('on') ? '1' : '0'); } catch(e){}
+      render();
+    });
+  });
+  render();
+
+  // 复制
+  function copy(text, okEl){
+    var done = function(){ if(!okEl) return; okEl.textContent = '已复制 ✓'; setTimeout(function(){ okEl.textContent=''; }, 1800); };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function(){ fb(); });
+    } else { fb(); }
+    function fb(){
+      var a = document.createElement('textarea');
+      a.value = text; a.style.position='fixed'; a.style.opacity='0';
+      document.body.appendChild(a); a.select();
+      try { document.execCommand('copy'); done(); }
+      catch(e){ alert('复制不了，请长按选中文字手动复制'); }
+      document.body.removeChild(a);
+    }
+  }
+  document.getElementById('copyPrompt').addEventListener('click', function(){
+    copy(document.getElementById('prompt').textContent, document.getElementById('okPrompt'));
+  });
+
+  // 生成回传内容
+  document.getElementById('make').addEventListener('click', function(){
+    var topic = document.getElementById('topic').value.trim();
+    var words = document.getElementById('words').value.trim();
+    if (!words) { alert('先写两句想说的话吧'); return; }
+    var d = new Date();
+    var ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+    var out = '【卿宝的回复】' + ds + '\n' +
+              '【主题】' + (topic || '（没写主题）') + '\n' +
+              '【原话】\n' + words + '\n';
+    document.getElementById('out').value = out;
+    copy(out, document.getElementById('okOut'));
+  });
+  document.getElementById('copyOut').addEventListener('click', function(){
+    var v = document.getElementById('out').value;
+    if (!v) { alert('先点「生成要发的内容」'); return; }
+    copy(v, document.getElementById('okOut'));
+  });
+})();
+</script>
+</body>
+</html>

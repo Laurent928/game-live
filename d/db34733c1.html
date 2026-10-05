@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>07 · HD-2D（类八方旅人）实践路线</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/db34733c1.md">原文</a><span class="mut">世界观/01-设计与审查/07-HD-2D实践路线.md</span></div></div><div class="wrap doc"><h1 id="L1">07 · HD-2D（类八方旅人）实践路线</h1>
+<blockquote id="L3"><p id="L1"><strong>这份文档解决一件事</strong>：你们决定做"类八方旅人"风格，而你是零基础——<strong>到底怎么一步步做出来</strong>。<strong>对应问题</strong>：<code>02</code> <strong>Q11e（游戏视角与美术风格）—— 本文件即为该题的答案</strong>，<code>02</code> 该行已更新为「HD-2D」。<strong>相关</strong>：<code>05-分章节发布方案.md</code>（路线）、<code>03</code> §8（Unity 与零基础技术建议）。</p></blockquote>
+<hr>
+<h2 id="L9">1. 先纠正一句话，再确认这个选择是对的</h2>
+<h3 id="L11">1.1 需要纠正的：难度并不对称</h3>
+<p id="L13">"不会比 2D 难上太多"这句话，<strong>对美术成立，对程序不成立</strong>：</p>
+<div class="tw"><table id="L15"><thead><tr><th>方面</th><th>相对纯 2D 的成本</th><th>说明</th></tr></thead><tbody><tr><td><strong>美术</strong></td><td><strong>+10–20%</strong>（几乎一样）</td><td>角色还是<strong>画 2D 像素精灵</strong>——和纯 2D 的工作量没区别。多出来的只是场景贴图与模块化建筑</td></tr><tr><td><strong>程序</strong></td><td><strong>+30–60%</strong></td><td>3D 场景搭建、相机、后处理、光照、精灵与 3D 的遮挡排序、性能</td></tr><tr><td><strong>总计</strong></td><td><strong>约 +25–40%</strong></td><td>序章从 800–1400h 变成 <strong>约 1000–1900h</strong>，时间从 1–1.5 年变成 <strong>约 1.2–2 年</strong></td></tr></tbody></table></div>
+<p id="L21"><strong>所以要诚实地把时间线放宽一点。</strong> 但下面才是重点。</p>
+<h3 id="L23">1.2 为什么这个选择仍然是对的（而且理由比"不会难太多"更强）</h3>
+<blockquote id="L25"><p id="L1"><strong>HD-2D 的本质是：2D 精灵 + 3D 场景 + 后处理。</strong>也就是说——<strong>画的东西没变，卖相提升了一个档次。</strong></p></blockquote>
+<p id="L28">这一点直接命中她的顾虑：</p>
+<div class="lv" id="L30"><ul><li>她说"<strong>纯 2D 太掉价</strong>"——这个直觉是对的。而 HD-2D 恰好让"像素小人"变成一种<strong>被主流认可的高级风格</strong>：《八方旅人》本身就是商业大作。<strong>这不是妥协，是选了更聪明的表达方式。</strong></li><li>她的美术工作量<strong>几乎不变</strong>，但画面从"平面手绘"变成"有景深、有光照、有氛围的立体世界"。</li></ul></div>
+<p id="L33"><strong>结论</strong>：这个决定我支持，而且它会显著提高你们"做给别人看"的说服力——<strong>这正是她最在意的那件事</strong>。</p>
+<hr>
+<h2 id="L37">2. HD-2D 的技术配方（可直接照抄）</h2>
+<blockquote id="L39"><p id="L1">这一节是整份文档最实用的部分。<strong>照这个配，第一周就能看到"那个感觉"。</strong></p></blockquote>
+<h3 id="L41">2.1 引擎与管线（必须）</h3>
+<div class="tw"><table id="L43"><thead><tr><th>项</th><th>选择</th><th>为什么</th></tr></thead><tbody><tr><td>引擎</td><td><strong>Unity（LTS 版，整个项目不升级）</strong></td><td>与 <code>03</code> §8 一致</td></tr><tr><td>渲染管线</td><td><strong>URP</strong>（不是 Built-in，也不是 HDRP）</td><td><strong>HD-2D 的"高级感"完全来自 URP 的 Volume 后处理</strong>，这是硬性前提</td></tr><tr><td>相机</td><td><strong>透视相机（Perspective）</strong>，不是正交</td><td>这是"3D 感"的来源。用正交就退回纯 2D 观感了</td></tr><tr><td>角色</td><td><strong>Sprite Renderer</strong>（2D 精灵）</td><td>美术成本低的关键</td></tr><tr><td>场景</td><td><strong>3D 网格</strong>（ProBuilder 或模块化模型）</td><td>提供空间感与光照承载</td></tr></tbody></table></div>
+<h3 id="L51">2.2 起始参数表（照抄，之后再微调）</h3>
+<div class="tw"><table id="L53"><thead><tr><th>项</th><th>起始值</th><th>备注</th></tr></thead><tbody><tr><td>相机类型</td><td><strong>Perspective</strong></td><td>关键</td></tr><tr><td><strong>相机 FOV</strong></td><td><strong>30°</strong></td><td><strong>最重要的一个数</strong>。FOV 小 → 透视畸变低、接近等距，但保留深度</td></tr><tr><td>相机俯角</td><td><strong>约 40°</strong>（向下看）</td><td>八方旅人式的斜俯视</td></tr><tr><td>相机距离</td><td>12–16 单位</td><td>配合 FOV 一起调</td></tr><tr><td>角色精灵高度</td><td><strong>64 px</strong></td><td>不要一上来做 128+</td></tr><tr><td>PPU（Pixels Per Unit）</td><td><strong>32</strong></td><td>64px 的精灵＝2 个单位高</td></tr><tr><td><strong>网格尺寸</strong></td><td><strong>1 单位 = 1 格</strong></td><td>全项目统一，后期省无数麻烦</td></tr><tr><td>场景贴图</td><td>128–256 px，<strong>Point filter</strong>，Tiling</td><td><strong>贴图也要是低分辨率像素感</strong>——否则高清场景 + 像素角色会不搭</td></tr><tr><td>色板</td><td><strong>限制 32–48 色，全项目统一</strong></td><td>风格统一最便宜的手段</td></tr><tr><td>点光源</td><td><strong>≤3 个</strong>（前期）</td><td>后处理 + 多实时光源会掉帧</td></tr></tbody></table></div>
+<h3 id="L66">2.3 「高级感」的三根支柱（按性价比排序）</h3>
+<blockquote id="L68"><p id="L1"><strong>如果只做三件事，就做这三件。</strong> 它们能让"方块小人 + 简陋场景"立刻看起来像有制作的样子。</p></blockquote>
+<div class="tw"><table id="L70"><thead><tr><th>优先级</th><th>效果</th><th>Unity 里怎么做</th><th>作用</th></tr></thead><tbody><tr><td><strong>① </strong></td><td><strong>景深 Depth of Field</strong></td><td>URP Volume → Depth of Field。Focus Distance ≈ 相机到角色的距离；Aperture 5–8</td><td><strong>最关键的一个</strong>。远景虚化立刻产生"电影感"，是八方旅人观感的第一来源</td></tr><tr><td><strong>②</strong></td><td><strong>统一调色 Color Grading</strong></td><td>URP Volume → Color Adjustments / Tonemapping</td><td>全场景统一氛围。成本≈0，效果极大</td></tr><tr><td><strong>③</strong></td><td><strong>Bloom（泛光）</strong></td><td>URP Volume → Bloom。Intensity 0.3–0.8，Threshold 0.9</td><td>灯光、魔法、水面发光——夜晚场景的灵魂</td></tr></tbody></table></div>
+<p id="L76"><strong>第四样（可选但很值）</strong>：<strong>体积光 / 光柱</strong>。URP 不自带，两个办法：① 用免费的体积光资源包；② <strong>手工搓</strong>——一个半透明锥体网格 + 渐变贴图，放在光源下方。第②种最便宜、效果也够用，而且完全可控。</p>
+<h3 id="L79">2.4 光照：先别碰烘焙</h3>
+<div class="tw"><table id="L81"><thead><tr><th>阶段</th><th>做法</th></tr></thead><tbody><tr><td><strong>前期（推荐）</strong></td><td><strong>实时方向光 + 2–3 个点光源</strong>。方向光给主光，点光源给火把/灯笼/魔法（暖色），环境光给冷色补光。<strong>暖冷对比 = 氛围</strong></td></tr><tr><td>中期</td><td>场景固定后，再考虑 <strong>Lightmap 烘焙</strong>（省性能、更细腻）</td></tr><tr><td>永远不要</td><td>一开始就上烘焙——它是新手最容易卡住的地方，而且场景一改就要重烤</td></tr></tbody></table></div>
+<p id="L87"><strong>一个小技巧</strong>：让角色<strong>投下阴影</strong>。Sprite 默认不投影，需要一个带 ShadowCaster 通道的 Sprite 材质。<strong>角色有影子这件事对"真实感"的提升远超预期</strong>，投入却很小。</p>
+<h3 id="L89">2.5 精灵与 3D 的排序问题（HD-2D 必踩的坑）</h3>
+<p id="L91"><strong>症状</strong>：角色被建筑挡住、或者角色穿透墙壁显示在最前面。</p>
+<p id="L93"><strong>根因</strong>：透明材质默认不写入深度缓冲。</p>
+<p id="L95"><strong>解法（照做即可）</strong>：</p>
+<div class="lv" id="L96"><ol><li><strong>精灵材质用 Alpha Cutout（Alpha Test），不要用 Alpha Blend</strong> —— 这样深度写入正常，<strong>遮挡问题自动解决</strong>。</li><li>相机<strong>固定角度</strong>（不旋转）时：把精灵<strong>直接旋转到与相机视平面平行</strong>，<strong>不需要 billboard 脚本</strong>——最省事。</li><li>只有当相机需要旋转时，才加一个"始终朝向相机"的 billboard 脚本。</li><li>精灵导入设置：<strong>Filter Mode = Point</strong>、<strong>Compression = None</strong>、<strong>缩放用整数倍</strong>（否则像素会糊）。</li></ol></div>
+<h3 id="L101">2.6 明确不要碰的东西（HD-2D 版）</h3>
+<div class="tw"><table id="L103"><thead><tr><th>不要碰</th><th>为什么</th></tr></thead><tbody><tr><td><strong>HDRP</strong></td><td>为高端画面而生，对你们是灾难性的复杂度</td></tr><tr><td><strong>路径追踪 / 光线追踪</strong></td><td>完全不需要</td></tr><tr><td><strong>自己写 Shader</strong></td><td>前期一律用 URP 内置 + 后处理</td></tr><tr><td><strong>后处理调优成瘾</strong></td><td><strong>最大的时间黑洞</strong>。规则：每个效果只调 3 个参数，全部不超过 2 小时，然后<strong>冻结</strong></td></tr><tr><td><strong>高分辨率写实场景贴图</strong></td><td>会破坏像素风格的统一，还更贵</td></tr></tbody></table></div>
+<hr>
+<h2 id="L113">3. 零基础实践路线（五个阶段，每步都有可见产出）</h2>
+<blockquote id="L115"><p id="L1"><strong>排序原则</strong>：把这个项目<strong>最大的不确定性放在最前面验证</strong>。你们最大的不确定性不是"能不能写代码"，而是——<strong>"我们到底能不能做出那个感觉"。</strong> 所以第 1 阶段就是去验证它。</p></blockquote>
+<h3 id="L118">阶段 0 · Unity + C# 基础（2–3 周）</h3>
+<div class="lv" id="L120"><ul><li><strong>做什么</strong>：跟完一个官方 2D 或 3D 小游戏教程，<strong>做到能打包运行</strong></li><li><strong>产出</strong>：一个能跑起来的小游戏（内容与你们的项目无关）</li><li><strong>通过标准</strong>：能独立打包 / 看懂教程里 80% 的代码 / 改一个数值能看到游戏变化</li><li>⚠️ <strong>不要跳过这一步。</strong> 零基础同时面对"学工具"和"做设计"两个未知，几乎必然卡死</li></ul></div>
+<h3 id="L125">阶段 1 · 🎯 做出「一张截图」（2–3 周）— <strong>最重要的一步</strong></h3>
+<p id="L127"><strong>这一阶段不写任何游戏逻辑，只做画面。</strong></p>
+<div class="lv" id="L129"><ul><li><strong>做什么</strong>：<ol><li>ProBuilder 搭一小块空地 + 2–3 个建筑盒子 + 一棵树（<strong>全部用低分辨率像素贴图</strong>）</li><li>放一个精灵角色（先用免费素材或 AI 生成的占位图）</li><li>相机：<strong>Perspective、FOV 30°、俯角 40°、距离 14</strong></li><li>URP Volume：加 <strong>景深 + 调色 + Bloom</strong></li><li>光照：一个方向光（冷）+ 两个点光源（暖），角色开阴影</li><li>加一点点粒子（漂浮的光尘）</li></ol></li><li><strong>产出</strong>：<strong>一张截图。这张截图就是你们的美术方向定稿。</strong></li><li><strong>为什么值得放在这么前</strong>：<ul><li>它是这个项目<strong>唯一的高风险未知</strong>，越早验证越好；</li><li>它是<strong>给卿宝看的第一件东西</strong>——"看，我们的游戏长这样"。这一件事对信心的作用，超过十份文档；</li><li>它同时确定了美术规格（精灵多大、色板多少、光照风格），后面所有人都照着它做。</li></ul></li><li><strong>通过标准</strong>：把截图给不知情的人看，对方会说"这个看起来像八方旅人那种"。</li></ul></div>
+<h3 id="L143">阶段 2 · 让角色动起来（3–4 周）</h3>
+<div class="lv" id="L145"><ul><li>角色移动 + 碰撞 + 相机跟随（<strong>Cinemachine</strong>）</li><li>4 方向（或 8 方向）行走动画——<strong>先用免费素材</strong>，不要现在就让卿宝画全套</li><li><strong>产出</strong>：一个能在场景里走动的小世界</li><li><strong>顺带学会</strong>：输入系统、Cinemachine、动画状态机</li></ul></div>
+<h3 id="L150">阶段 3 · 加入「翻面」（对应 <code>03</code> §5 的 <strong>L0</strong>）</h3>
+<div class="lv" id="L152"><ul><li>按键触发：换场景贴图/材质、换 Volume 预设（调色）、显隐地标、开关点光源</li><li><strong>产出</strong>：按一个键，<strong>同一个 HD-2D 场景"翻面"</strong></li><li><strong>通过标准</strong>：录一段 15 秒视频，别人能看出"世界变了"</li><li><strong>这一步的额外意义</strong>：HD-2D 的"翻面"会非常好表现——<strong>换调色 + 换光照 + 换雾</strong>，观感差异极大，而成本几乎为零</li></ul></div>
+<h3 id="L157">阶段 4 及之后 · 回到 <code>03</code> §5 的 L1–L3</h3>
+<p id="L159">之后按 <code>03</code> 的 L1（规则闭环）→ L2（微切片）→ L3（序章）继续，技术路线固定为 HD-2D。</p>
+<hr>
+<h2 id="L163">4. 对现有方案的影响</h2>
+<div class="tw"><table id="L165"><thead><tr><th>文档</th><th>需要改什么</th></tr></thead><tbody><tr><td><code>02</code> <strong>Q11e（视角与美术风格）</strong></td><td>✅ <strong>已定：HD-2D</strong>（2D 精灵 + 3D 场景 + URP 后处理）。这是 T0 三个闸门里补上的第一个</td></tr><tr><td><code>03</code> §8.2（视角选择表）</td><td>结论改为：「<strong>C · 3D 低多边形</strong>」的升级形态 = <strong>HD-2D</strong>（精灵贴图 + 3D 场景 + 后处理）</td></tr><tr><td><code>05</code> §5.1（美术风格倒推表）</td><td>"低多边形 3D" 一行更新为 <strong>HD-2D</strong>；仍然建议<strong>精灵从 64px 起步</strong></td></tr><tr><td><code>05</code> 序章产能</td><td>800–1400h → <strong>约 1000–1900h</strong>；时间 1–1.5 年 → <strong>约 1.2–2 年</strong></td></tr><tr><td><code>03</code> §11 成本锚点</td><td>新增一条：<strong>HD-2D 场景搭建 ≈ 纯 2D 场景的 1.3–1.6 倍</strong></td></tr></tbody></table></div>
+<hr>
+<h2 id="L175">5. 坑清单（按踩到的概率排序）</h2>
+<div class="tw"><table id="L177"><thead><tr><th>#</th><th>坑</th><th>后果</th><th>对策</th></tr></thead><tbody><tr><td>1</td><td><strong>后处理调优成瘾</strong></td><td>数周时间消失，画面只好了 5%</td><td>硬规则：每效果 ≤3 个参数、总共 ≤2 小时，然后冻结</td></tr><tr><td>2</td><td><strong>精灵被建筑挡住 / 穿透</strong></td><td>看起来像 bug</td><td>精灵材质用 <strong>Alpha Cutout</strong>；相机固定角度则直接旋转精灵对齐</td></tr><tr><td>3</td><td><strong>一开始就上光照烘焙</strong></td><td>卡住数天，且场景一改就重烤</td><td>先用实时光照；场景定型后再考虑</td></tr><tr><td>4</td><td><strong>场景用高清贴图</strong></td><td>和像素角色不搭，风格撕裂</td><td>场景贴图也是 <strong>128–256px + Point filter</strong></td></tr><tr><td>5</td><td><strong>精灵被非整数缩放</strong></td><td>像素糊掉，"像素风"变成"模糊风"</td><td>缩放用整数倍；导入设 Point + 不压缩</td></tr><tr><td>6</td><td><strong>点光源开太多</strong></td><td>掉帧，且后处理叠加</td><td>前期 ≤3 个</td></tr><tr><td>7</td><td><strong>正交相机</strong></td><td>观感退回纯 2D，HD-2D 的意义没了</td><td>必须 <strong>Perspective</strong></td></tr><tr><td>8</td><td><strong>HDRP / 自写 Shader</strong></td><td>复杂度爆炸</td><td>一律不碰</td></tr><tr><td>9</td><td><strong>把场景做太大</strong></td><td>第一张图就失去控制</td><td>阶段 1 只做<strong>一小块空地</strong>，能出效果就够</td></tr></tbody></table></div>
+<hr>
+<h2 id="L191">6. 下一步（按顺序）</h2>
+<div class="tw"><table id="L193"><thead><tr><th>#</th><th>动作</th><th>谁</th><th>时长</th></tr></thead><tbody><tr><td>1</td><td>装 Unity <strong>LTS</strong> + 建 URP 项目</td><td>阿丞</td><td>半天</td></tr><tr><td>2</td><td>完成<strong>阶段 0</strong>（跟完一个教程小游戏并打包）</td><td>阿丞</td><td>2–3 周</td></tr><tr><td>3</td><td><strong>完成阶段 1，做出那张截图</strong></td><td>阿丞</td><td>2–3 周</td></tr><tr><td>4</td><td><strong>把截图发给卿宝</strong>，确认"这就是我们的游戏"</td><td>两人</td><td>一次对话</td></tr><tr><td>5</td><td>如果她认可 → 这张截图同时成为<strong>美术规格基准</strong>（色板、精灵尺寸、光照风格）</td><td>两人</td><td>—</td></tr><tr><td>6</td><td>继续阶段 2–3，并入 <code>03</code> §5 的 L0</td><td>阿丞</td><td>1–2 个月</td></tr></tbody></table></div>
+<blockquote id="L202"><p id="L1"><strong>第 3、4 步别跳过。</strong> 它是这个项目里"投入产出比最高的一次验证"，而且它同时给卿宝提供了她最需要的东西——<strong>一个看得见、值得为之投入的具体画面。</strong></p></blockquote>
+<hr>
+<p id="L206"><em>（HD-2D 实践路线完）· 配套：<code>05-分章节发布方案.md</code> · <code>03</code> §8 技术建议 · <code>02</code> Q11e</em></p></div>
+</body>
+</html>

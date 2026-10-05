@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>游戏底层核心逻辑 · 四个方案与一个合成方案</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/deaa49703.md">原文</a><span class="mut">游戏设计/02-玩法讨论/核心逻辑方案.md</span></div></div><div class="wrap doc"><h1 id="L1">游戏底层核心逻辑 · 四个方案与一个合成方案</h1>
+<blockquote id="L3"><p id="L1"><strong>用途</strong>：确定 demo（2 座岛 + 1–2 职业）的<strong>底层循环</strong>。<strong>背景</strong>：两位作者此前在方向上存在分歧——一方主张<strong>高可玩性的战斗刷刷刷</strong>，另一方主张<strong>高表现力的电影化叙事与剧情</strong>。<strong>本文档的结论</strong>：这个分歧<strong>不需要折中</strong>，因为世界观里已经存在一个机制能同时供两边使用：<strong>翻面</strong>。</p></blockquote>
+<hr>
+<h2 id="L9">0. 先把分歧重新描述一遍（这一步很重要）</h2>
+<p id="L11">分歧通常被描述成"<strong>战斗 vs 剧情</strong>"，于是它看起来像是一道<strong>时间分配题</strong>——谁多一点，谁就少一点。</p>
+<p id="L13"><strong>但它其实不是时间分配题，而是"什么是那个可重复的最小单元"的问题。</strong></p>
+<div class="tw"><table id="L15"><thead><tr><th></th><th>需要什么</th></tr></thead><tbody><tr><td><strong>刷刷刷</strong></td><td>一个<strong>可重复</strong>、且重复起来仍有变化的最小单元</td></tr><tr><td><strong>电影化叙事</strong></td><td><strong>不可重复</strong>、高密度、有分量的时刻</td></tr></tbody></table></div>
+<p id="L20"><strong>关键洞察</strong>：</p>
+<blockquote id="L22"><p id="L1">如果让"<strong>重复的单元</strong>"本身产出"<strong>不可重复的东西</strong>"，两者就不再争夺同一条时间线，而是互相喂养。</p></blockquote>
+<p id="L24">而你们的世界观里<strong>恰好有一个机制天然就是这样</strong>：</p>
+<div class="tw"><table id="L26"><thead><tr><th>翻面的性质</th><th>服务的诉求</th></tr></thead><tbody><tr><td>翻面 ＝ 世界状态切换 → 资源 / 敌人 / 地形全变 → <strong>天然可重复</strong>（同一张地图，两份内容）</td><td><strong>她的"刷"</strong></td></tr><tr><td>翻面 ＝ 灾难事件 + 道德抉择 + <strong>不可逆</strong>后果 → <strong>天然不可重复</strong></td><td><strong>他的"叙事"</strong></td></tr></tbody></table></div>
+<p id="L31"><strong>所以四个方案的区别，本质上是「翻面在这个循环里处于什么位置」。</strong></p>
+<hr>
+<h2 id="L35">1. 一个必须先说清楚的 demo 现实</h2>
+<blockquote id="L37"><p id="L1"><strong>在 60–120 分钟、2 座岛的 demo 里，做不出"练级到 99"式的刷。</strong></p></blockquote>
+<p id="L39">"长周期数值积累"型的刷需要 <strong>40 小时的内容量</strong>才有满足感；2 座岛撑不起来。所以 demo 期的"刷"必须是：</p>
+<div class="tw"><table id="L41"><thead><tr><th>✅ 应该是</th><th>❌ 不应该是</th></tr></thead><tbody><tr><td><strong>短周期</strong>（每次 10–20 分钟）</td><td>长周期（刷 10 小时才升一级）</td></tr><tr><td><strong>高变化</strong>（每次敌人组合/结果不同）</td><td>纯重复（同一套敌人打一百遍）</td></tr><tr><td><strong>带决策</strong>（要判断撤不撤、值不值）</td><td>纯点击（无脑按攻击）</td></tr><tr><td><strong>roguelite 式"远征"</strong></td><td>MMO 式"练级"</td></tr></tbody></table></div>
+<p id="L48"><strong>这一条决定了后面所有方案的设计取向。</strong></p>
+<h3 id="L50">附带解决一个隐患：指令式战斗容易"重复到腻"</h3>
+<p id="L52">你们已定<strong>指令式战斗</strong>（这是最省的选择，我支持）。但指令式战斗重复起来比动作战斗更容易腻。三个解法：</p>
+<div class="lv" id="L54"><ol><li><strong>敌人组合与弱点变化</strong>（由"图鉴 / 知识型进度"驱动——已定为主轴）</li><li><strong>能量与平衡度的风险回报</strong>（见方案 C）</li><li><strong>翻面切换敌人表</strong>（同一张地图两套敌人）</li></ol></div>
+<p id="L58"><strong>方案 C 恰好就是"让指令式战斗值得刷"的那个机制</strong>——这一点下面会展开。</p>
+<hr>
+<h2 id="L62">2. 四个方案</h2>
+<p id="L64">每个方案的核心区别是：<strong>循环的心脏是什么。</strong></p>
+<hr>
+<h3 id="L68">方案 A · 翻面驱动：「远征」</h3>
+<p id="L70"><strong>一句话</strong>：每次翻面就是一次远征；玩家在翻面倒计时内进入岛屿，达成目标，然后世界改变。</p>
+<div class="tw"><table id="L72"><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td><strong>核心循环</strong></td><td>接委托 → 备战（装备/船员/符文）→ 进入岛屿 → <strong>在翻面倒计时内</strong>达成目标 → 翻面发生 → 世界状态改变 → 新资源新敌人 → 再来</td></tr><tr><td><strong>重复单元</strong></td><td>一次<strong>远征</strong>（10–20 分钟）</td></tr><tr><td><strong>变化从哪来</strong></td><td>翻面后<strong>同一座岛变成另一套生态/敌人/资源表</strong>——同样的地图，两份内容</td></tr><tr><td><strong>目标多样性</strong></td><td>抢资源（贪）／救人（善）／稳定（智）／催化（恶）／打霸主（力）——<strong>同一个系统，五种动机</strong></td></tr><tr><td><strong>她的诉求</strong></td><td>✅✅ 刷的载体天然存在：两种状态各刷一次；目标多样，不是单纯打怪</td></tr><tr><td><strong>他的诉求</strong></td><td>✅✅ 每次翻面都是<strong>事件</strong>：有前兆、有抉择、有不可逆后果</td></tr><tr><td><strong>成本</strong></td><td>中（需要倒计时系统 + 备战系统）</td></tr><tr><td><strong>风险</strong></td><td>翻面周期要做成"可玩节奏"：太慢刷不了，太快叙事没时间铺</td></tr><tr><td><strong>demo 可行性</strong></td><td><strong>高</strong></td></tr></tbody></table></div>
+<hr>
+<h3 id="L86">方案 B · 航线驱动：「航段」</h3>
+<p id="L88"><strong>一句话</strong>：航线就是时间轴；每个航段推进剧情，抵达岛屿后进入箱庭。</p>
+<div class="tw"><table id="L90"><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td><strong>核心循环</strong></td><td>选航线 → 航行事件（战斗/抉择/发现）→ 抵达岛屿 → 岛屿任务 → 回港 → 新航线</td></tr><tr><td><strong>重复单元</strong></td><td>一次<strong>航段</strong>（5–15 分钟）</td></tr><tr><td><strong>变化从哪来</strong></td><td>航线上的随机事件（海怪/风暴/浮岛/漂流物）+ 抵达后的岛屿任务</td></tr><tr><td><strong>她的诉求</strong></td><td>✅ 航行事件可重复刷（海怪、资源点），但<strong>深度有限</strong>——需要有事件表支撑</td></tr><tr><td><strong>他的诉求</strong></td><td>✅✅ 结构最清晰、天然章节化；<strong>演出可以集中放在"关键抵达"</strong>，性价比最高</td></tr><tr><td><strong>成本</strong></td><td><strong>最低</strong>（最像八方旅人，最容易做）</td></tr><tr><td><strong>风险</strong></td><td>⚠️ 航行<strong>若做成过场就完全没得刷</strong>——必须做成"节点式 + 事件表"</td></tr><tr><td><strong>demo 可行性</strong></td><td><strong>最高</strong></td></tr></tbody></table></div>
+<hr>
+<h3 id="L103">方案 C · 平衡度驱动：「代价」</h3>
+<p id="L105"><strong>一句话</strong>：战斗消耗的是<strong>本地能量</strong>；刷得越狠，世界越接近翻面。</p>
+<div class="tw"><table id="L107"><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td><strong>核心循环</strong></td><td>战斗/施法 → 消耗本地能量 → <strong>岛屿平衡度下降</strong> → 生态失控 / 敌人变强 → 必须撤离或稳定 → 翻面 → 新状态</td></tr><tr><td><strong>重复单元</strong></td><td>一次"探索 → 消耗 → 撤离"的循环（10–20 分钟）</td></tr><tr><td><strong>变化从哪来</strong></td><td><strong>玩家自己的行为在改变世界</strong>——同一个岛，因为你上次刷得狠，这次已经不一样了</td></tr><tr><td><strong>她的诉求</strong></td><td>✅✅ <strong>"越刷越危险"制造了真正的风险回报张力</strong>——这才是让人想"再刷一次"的东西</td></tr><tr><td><strong>他的诉求</strong></td><td>✅✅✅ <strong>机制即主题</strong>：玩家的贪婪被直接写进世界状态。设定里"人类的手段本身在加速灾难"，在这里变成了可操作的规则</td></tr><tr><td><strong>成本</strong></td><td>中高（数值平衡比 A/B 难）</td></tr><tr><td><strong>风险</strong></td><td>⚠️ 只有惩罚没有解压阀 → 刷变成负担。<strong>必须给"稳定/撤离/庇护"作为解压阀</strong></td></tr><tr><td><strong>demo 可行性</strong></td><td>中——但<strong>最能展示这个世界观的独特性</strong></td></tr></tbody></table></div>
+<p id="L118"><strong>为什么它值得优先考虑</strong>：它是四个方案里<strong>唯一一个"战斗系统本身在讲故事"</strong>的设计。她想要的"刷"在这里不是白刷，<strong>刷在写故事</strong>。</p>
+<hr>
+<h3 id="L122">方案 D · 日志驱动：「记录」</h3>
+<p id="L124"><strong>一句话</strong>：玩家的"知识"就是进度轴；记录即变强。</p>
+<div class="tw"><table id="L126"><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td><strong>核心循环</strong></td><td>探索 → 记录（海图/图鉴/怪物弱点）→ 获得<strong>锚定</strong>与情报 → 解锁新航线与打法 → 探索更深</td></tr><tr><td><strong>重复单元</strong></td><td>一次<strong>发现</strong>（1–5 分钟，可以很碎）</td></tr><tr><td><strong>变化从哪来</strong></td><td>收集与解锁；知识本身是进度</td></tr><tr><td><strong>她的诉求</strong></td><td>✅ 收集型刷刷刷（图鉴全收、资源采集、词条解锁）</td></tr><tr><td><strong>他的诉求</strong></td><td>✅✅ <strong>玩家写下的字就是叙事</strong>；"航海日志"是密度最高、成本最低的叙事载体</td></tr><tr><td><strong>成本</strong></td><td><strong>低</strong>（已是既定方向：Q40 知识型进度为主轴）</td></tr><tr><td><strong>风险</strong></td><td>⚠️ 单靠它会很"安静"，需要战斗与演出配合</td></tr><tr><td><strong>demo 可行性</strong></td><td><strong>高</strong></td></tr></tbody></table></div>
+<hr>
+<h2 id="L139">3. 合成方案（本文档的推荐）</h2>
+<blockquote id="L141"><p id="L1"><strong>骨架 = B（航线）· 心脏 = C（平衡度）· 长线 = D（日志）· 高潮 = A（翻面远征）</strong></p></blockquote>
+<p id="L143">四个方案<strong>不是四选一</strong>——它们处在循环的不同层级：</p>
+<div class="tw"><table id="L145"><thead><tr><th>层级</th><th>采用</th><th>作用</th></tr></thead><tbody><tr><td><strong>骨架</strong>（怎么串联）</td><td><strong>B · 航线</strong></td><td>最稳、最易做、天然章节化；提供"抵达 → 演出"的挂点</td></tr><tr><td><strong>心脏</strong>（为什么想再玩一次）</td><td><strong>C · 平衡度</strong></td><td>世界独有的张力；<strong>机制即主题</strong>；让指令式战斗值得刷</td></tr><tr><td><strong>长线</strong>（玩 10 小时后还剩什么）</td><td><strong>D · 日志</strong></td><td>最便宜的长线目标；两个人都受益</td></tr><tr><td><strong>高潮</strong>（每座岛的顶点）</td><td><strong>A · 翻面远征</strong></td><td>提供峰值体验：倒计时 + 抉择 + 不可逆后果</td></tr></tbody></table></div>
+<p id="L152"><strong>一句话说明这个合成为什么成立</strong>：</p>
+<blockquote id="L154"><p id="L1">玩家沿着<strong>航线</strong>（B）抵达一座岛，在岛上<strong>探索与记录</strong>（D），用<strong>战斗</strong>解决问题——而每一次战斗都在<strong>消耗这座岛的能量</strong>（C）。当他消耗得足够多，这座岛会<strong>翻面</strong>（A）。而翻面之后，<strong>世界记得他做过什么</strong>。</p></blockquote>
+<p id="L156"><strong>在这个结构里，"刷"和"剧情"不是两件事，而是同一件事的两面。</strong></p>
+<h3 id="L158">配比建议（demo 期）</h3>
+<div class="tw"><table id="L160"><thead><tr><th>内容</th><th>占比</th></tr></thead><tbody><tr><td>战斗</td><td><strong>≈ 50%</strong></td></tr><tr><td>探索与记录</td><td><strong>≈ 25%</strong></td></tr><tr><td>叙事与抉择</td><td><strong>≈ 25%</strong></td></tr></tbody></table></div>
+<p id="L166">⚠️ <strong>但关键不在配比，而在这句话</strong>：</p>
+<blockquote id="L168"><p id="L1"><strong>叙事不是"看演出"，而是"在战斗中/战斗后通过选择产生"。</strong></p></blockquote>
+<p id="L170">过场动画是最贵的叙事手段；<strong>"因为你怎么打，所以故事变成这样"</strong> 是最便宜的。demo 期应该把钱花在后者。</p>
+<hr>
+<h2 id="L174">4. 两座岛怎么承载这个平衡</h2>
+<p id="L176">这是把上面的理论落到<strong>具体关卡设计</strong>的一块。</p>
+<h3 id="L178">岛 1 · 老家（教学 + 情感锚点）</h3>
+<div class="tw"><table id="L180"><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td><strong>目的</strong></td><td>教机制 + 让玩家<strong>在乎</strong></td></tr><tr><td><strong>内容</strong></td><td>走动 · 战斗基础 · 第一次"小翻面"（<strong>安全的、有预告的</strong>）· 1 个 NPC 关系 · 1 个小委托</td></tr><tr><td><strong>配比</strong></td><td>叙事 40% / 战斗 35% / 探索 25%</td></tr><tr><td><strong>关键设计</strong></td><td>这里的翻面是<strong>安全的</strong>（剧情保护），让玩家理解规则而<strong>不受惩罚</strong></td></tr><tr><td><strong>结尾</strong></td><td>老家发生一次<strong>玩家无法阻止的小翻面</strong> → 情感钩子 + 推动出海</td></tr><tr><td><strong>给谁</strong></td><td>这整座岛是<strong>给他的</strong>（情感与叙事密度）</td></tr></tbody></table></div>
+<h3 id="L189">岛 2 · 展示岛（完整机制 + 可刷内容）</h3>
+<div class="tw"><table id="L191"><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td><strong>目的</strong></td><td>展示这款游戏<strong>完整的样子</strong></td></tr><tr><td><strong>内容</strong></td><td>完整的平衡度系统 · <strong>可重复的远征</strong>（2–3 种目标）· 可刷的资源点与敌人 · <strong>一次大翻面事件（3 种解法）</strong> · 1 个 boss · 1 条支线 · 港口</td></tr><tr><td><strong>配比</strong></td><td>战斗 50% / 探索 25% / 叙事 25%</td></tr><tr><td><strong>关键设计</strong></td><td><strong>可重复的远征</strong>（她的刷）+ <strong>不可逆的抉择</strong>（他的叙事）同时存在</td></tr><tr><td><strong>结尾</strong></td><td>玩家的选择<strong>改变岛的状态</strong>，而且<strong>不会恢复</strong> → "世界记得你做过什么"</td></tr><tr><td><strong>给谁</strong></td><td>这整座岛是<strong>给她的</strong>（可玩性与重复价值），同时用来证明"这个系统能撑起长线"</td></tr></tbody></table></div>
+<blockquote id="L200"><p id="L1"><strong>两座岛＝两种倾向各自主导一次。</strong> 这比"每座岛都五五开"更好：<strong>各自都有一个能证明自己的舞台，而且能看清对方的诉求长什么样。</strong></p></blockquote>
+<hr>
+<h2 id="L204">5. 1–2 个职业怎么设计（让职业选择本身表达核心张力）</h2>
+<p id="L206">建议的两个职业不是"战士 vs 法师"这种数值差异，而是<strong>两种与世界的关系</strong>：</p>
+<div class="tw"><table id="L208"><thead><tr><th>职业</th><th>机制</th><th>与世界的关系</th><th>服务谁</th></tr></thead><tbody><tr><td><strong>职业 1 · 剑士</strong>（强化自身漩涡）</td><td>低能量消耗、直接、数值成长清晰、靠自身变强</td><td><strong>改变自己</strong></td><td><strong>她的"爽"</strong>：纯战斗向，刷起来有明确的变强感</td></tr><tr><td><strong>职业 2 · 术士</strong>（调用能量）</td><td>可施放<strong>影响岛屿平衡度</strong>的法术：抽取 / 稳定 / 催化</td><td><strong>改变世界</strong></td><td><strong>他的"主题"</strong>：玩家能直接操作世界状态，机制即叙事</td></tr></tbody></table></div>
+<p id="L213"><strong>这个设计的好处</strong>：两个职业的差异不是"哪个伤害高"，而是<strong>"你要不要为力量负责"</strong>。玩家选职业时，其实是在选<strong>立场</strong>。</p>
+<blockquote id="L215"><p id="L1">如果只做一个职业，推荐 <strong>职业 2 · 术士</strong>——因为它直接暴露这个游戏最独特的东西。如果做两个，<strong>职业 1 是给她的，职业 2 是给他的</strong>，正好再平衡一次。</p></blockquote>
+<hr>
+<h2 id="L220">6. 需要你们决定的问题</h2>
+<div class="tw"><table id="L222"><thead><tr><th>#</th><th>问题</th><th>谁定</th></tr></thead><tbody><tr><td><strong>G1</strong></td><td>四个方案里，你最想要的<strong>心脏</strong>是哪个？（A/B/C/D）</td><td>两位各自</td></tr><tr><td><strong>G2</strong></td><td>合成方案（骨架 B + 心脏 C + 长线 D + 高潮 A）是否接受？</td><td>两位</td></tr><tr><td><strong>G3</strong></td><td>战斗 / 探索 / 叙事 的配比，你希望是？（50/25/25 是建议值）</td><td>两位各自</td></tr><tr><td><strong>G4</strong></td><td>两座岛的配比方案（岛1 叙事主导、岛2 战斗主导）是否接受？</td><td>两位</td></tr><tr><td><strong>G5</strong></td><td>做 <strong>1 个还是 2 个</strong>职业？如果做 2 个，是否接受"剑士/术士"这个划分？</td><td>两位</td></tr><tr><td><strong>G6</strong></td><td>"翻面倒计时"能不能接受？（它会让玩家有时限压力）</td><td>两位</td></tr></tbody></table></div>
+<hr>
+<h2 id="L233">7. 一句话总结</h2>
+<blockquote id="L235"><p id="L1"><strong>不要问"战斗多一点还是剧情多一点"。</strong>问"<strong>什么是那个让人想再来一次的单元，以及它能不能顺便产出故事</strong>"。在你们的世界观里，答案是：<strong>翻面</strong>。</p></blockquote>
+<hr>
+<p id="L241"><em>（配套：可交互的对比与投票页面 <code>index.html</code>——两位可以各自评分，页面会自动标出一致与分歧）</em></p></div>
+</body>
+</html>

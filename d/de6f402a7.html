@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>玩法设定 V1.0</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/de6f402a7.md">原文</a><span class="mut">游戏设计/02-玩法讨论/玩法设定V1.0.md</span></div></div><div class="wrap doc"><h1 id="L1">玩法设定 V1.0</h1>
+<blockquote id="L3"><p id="L1"><strong>这份是什么</strong>：把这款游戏<strong>具体怎么玩</strong>写出来——具体到"玩家按哪个键、岛上会发生什么"。它不是选项题，是一份<strong>草案</strong>。目的是先有一个东西可以看、可以嫌、可以改。</p>
+<p id="L4"><strong>为什么要写这么具体</strong>：之前那两版问卷问的是"你想要什么感觉"，那种问题答不出来。这份反过来——<strong>我们先把方案写出来，你只需要说"这块对/这块不对/我想改成那样"。</strong></p></blockquote>
+<hr>
+<h2 id="L11">一、你是谁</h2>
+<p id="L13">你是<strong>航海士</strong>。有一艘船（师傅给的，很破）。</p>
+<p id="L15">你身上有一样别人没有的东西：<strong>你能感觉到一座岛稳不稳</strong>。就像老水手能感觉到天气要变一样——你站在岸上，就知道这座岛离翻面还有多久。</p>
+<p id="L18">这个能力让你能提前做准备。但它也让你无法假装看不见。</p>
+<hr>
+<h2 id="L22">二、你在游戏里具体做七件事</h2>
+<div class="tw"><table id="L24"><thead><tr><th>#</th><th>做的事</th><th>具体是什么</th></tr></thead><tbody><tr><td>1</td><td><strong>掌舵</strong></td><td>在海图上点一个目的地，开过去。路上会有事（天气、海怪、漂来的东西）</td></tr><tr><td>2</td><td><strong>上岸</strong></td><td>在岛上走动，和人说话，进屋子、下洞</td></tr><tr><td>3</td><td><strong>探</strong></td><td>找资源、找遗迹、找路。有些东西只在特定时候出现</td></tr><tr><td>4</td><td><strong>打</strong></td><td>遇到怪就打。<strong>指令式</strong>——选攻击、技能、道具</td></tr><tr><td>5</td><td><strong>施</strong></td><td>用"风"。这是你唯一的法术资源，<strong>从脚下的土地里吸</strong></td></tr><tr><td>6</td><td><strong>记</strong></td><td>把见到的记进航海日志：岛的形状、特产、怪物、航线</td></tr><tr><td>7</td><td><strong>选</strong></td><td>关键时刻做决定。有些决定改不回来</td></tr></tbody></table></div>
+<hr>
+<h2 id="L36">三、战斗具体是什么样</h2>
+<p id="L38"><strong>指令式</strong>。回合或半即时，敌人多的时候按速度排顺序。</p>
+<p id="L40">每个回合你能选四件事：</p>
+<div class="lv" id="L42"><ul><li><strong>普通攻击</strong>（不耗"风"）</li><li><strong>技能</strong>（耗一点体力，不耗"风"）</li><li><strong>用"风"</strong>（很强，但会抽干脚下的地——见第四节）</li><li><strong>道具 / 撤离</strong></li></ul></div>
+<p id="L47"><strong>敌人有弱点</strong>：怕火、怕水、怕风、怕打、怕砍。打中弱点会<strong>打断</strong>敌人的动作——所以"试弱点"本身就是玩法。</p>
+<p id="L50">你有两条槽：</p>
+<div class="lv" id="L51"><ul><li><strong>体力</strong>（会掉血，会死）</li><li><strong>风</strong>（施法资源，用完就没了，得回岸上补）</li></ul></div>
+<blockquote id="L54"><p id="L1"><strong>序章只有你一个人</strong>。后面会有伙伴（一人一回合，可以换人）。</p></blockquote>
+<hr>
+<h2 id="L58">四、核心机制：「风」和平衡度</h2>
+<p id="L60"><strong>这是这款游戏跟别的 RPG 最不一样的地方。</strong></p>
+<p id="L62">每座岛有一个数字：<strong>平衡度</strong>，0 到 100。</p>
+<div class="tw"><table id="L64"><thead><tr><th>平衡度</th><th>岛的状态</th><th>玩家能感觉到的</th></tr></thead><tbody><tr><td>70–100</td><td>正常</td><td>天亮、风平、人和动物都正常</td></tr><tr><td>40–70</td><td>开始不稳</td><td>天色偏灰、鸟开始往别处飞、有些地方起雾</td></tr><tr><td>10–40</td><td>生态失控</td><td>怪变强、出现异常现象、地面开裂、植物变形</td></tr><tr><td><strong>0</strong></td><td><strong>翻面</strong></td><td>整座岛变成另一个样子</td></tr></tbody></table></div>
+<p id="L71"><strong>你在岛上做的事会让平衡度往下掉：</strong></p>
+<div class="tw"><table id="L73"><thead><tr><th>你做的事</th><th>掉多少</th></tr></thead><tbody><tr><td>用"风"施法</td><td><strong>掉得多</strong></td></tr><tr><td>大量杀生</td><td>掉一点</td></tr><tr><td>把一片资源点采空</td><td>掉一点</td></tr><tr><td>打赢盘踞在岛上的霸主</td><td><strong>掉很多</strong></td></tr></tbody></table></div>
+<p id="L80"><strong>什么能让它涨（解压阀）：</strong></p>
+<div class="lv" id="L82"><ul><li>找到并修复符文</li><li>把采走的东西还回祭坛</li><li>完成"稳住这座岛"的支线</li></ul></div>
+<blockquote id="L86"><p id="L1"><strong>于是产生一个真正的两难</strong>：<strong>用"风"你就打得过，但岛会更快翻面；不用"风"，你可能根本过不去。</strong>这不是道德说教——这是每次战斗都要做的算术。</p></blockquote>
+<hr>
+<h2 id="L92">五、翻面会发生什么（具体到每一步）</h2>
+<p id="L94">翻面<strong>不是突然的</strong>，它有过程：</p>
+<div class="tw"><table id="L96"><thead><tr><th>时间</th><th>发生什么</th></tr></thead><tbody><tr><td><strong>翻面前 1–2 天</strong></td><td>天象变（云、星、潮水）；动物开始迁走</td></tr><tr><td><strong>翻面前几小时</strong></td><td>地上出现异常现象：裂缝、怪吼、植物变色</td></tr><tr><td><strong>最后一段</strong></td><td>只有天象和氛围，<strong>不给数字倒计时</strong>。玩家得自己判断</td></tr><tr><td><strong>翻面</strong></td><td><strong>一瞬间</strong>。地貌、生态、怪、资源，全换</td></tr><tr><td><strong>翻面之后</strong></td><td>没躲进庇护所的人会被扭曲；外面的人会受伤</td></tr></tbody></table></div>
+<p id="L104"><strong>躲哪里能保住命</strong>：符文旁边、地标附近（那里像暴风眼，中心是静的）。</p>
+<hr>
+<h2 id="L108">六、一座岛的"两个面"具体长什么样</h2>
+<p id="L110">举展示岛的例子：</p>
+<div class="tw"><table id="L112"><thead><tr><th></th><th><strong>A 面（翻面前）</strong></th><th><strong>B 面（翻面后）</strong></th></tr></thead><tbody><tr><td>地貌</td><td>长满密林，有条河</td><td><strong>干燥的沙漠</strong>，河床干了</td></tr><tr><td>村子</td><td>下游小村，人靠打渔采药</td><td>只剩残墙</td></tr><tr><td>地标</td><td>岛中心一座<strong>符文塔</strong></td><td><strong>半截埋在沙里的塔尖</strong></td></tr><tr><td>能拿到的东西</td><td>药草、木材、鱼</td><td><strong>地下的古代遗迹</strong>（A 面拿不到）</td></tr><tr><td>怪</td><td>林间的兽</td><td>沙里的东西</td></tr></tbody></table></div>
+<p id="L120"><strong>两面都在的那一个东西</strong>：村口那棵枯树。A 面它是绿的，B 面它是焦的。<strong>玩家靠它认出"这还是那座岛"。</strong></p>
+<hr>
+<h2 id="L125">七、倒下之后会怎样</h2>
+<div class="lv" id="L127"><ul><li>体力空了 → 倒下</li><li>倒下后<strong>灵魂还在，但开始流失</strong></li><li><strong>附近有符文 / 队友 / 庇护所</strong> → 能拉回来。损失一些资源，掉一段记忆</li><li><strong>独自倒在无人海域</strong> → 灵魂流失，被附近的什么东西吃掉一部分。<strong>会丢东西</strong></li><li><strong>被"世界之风"侵蚀而死</strong> → <strong>永久死亡</strong>。这是这个世界唯一的真死</li></ul></div>
+<blockquote id="L133"><p id="L1">意思是：<strong>普通战斗输了不致命，但输在海上是要付账的。</strong></p></blockquote>
+<hr>
+<h2 id="L137">八、你怎么变强</h2>
+<p id="L139"><strong>两条路，都要走。</strong></p>
+<p id="L141"><strong>第一条：数值</strong>等级、装备、素材。靠打怪和探。</p>
+<p id="L144"><strong>第二条：记录</strong>（这条更重要）你记下的东西会变成能力：</p>
+<div class="tw"><table id="L147"><thead><tr><th>你记下什么</th><th>你就得到什么</th></tr></thead><tbody><tr><td>一座岛的航线</td><td>以后可以直航，省时间、少遇险</td></tr><tr><td>一种怪</td><td>能看到它的弱点和剩余血量</td></tr><tr><td>一座岛的地形</td><td>地图上会标出资源点</td></tr><tr><td>一条海流</td><td>航行更快，能走原来走不了的路</td></tr></tbody></table></div>
+<blockquote id="L154"><p id="L1"><strong>记下的东西越多，你在那片海上越"稳"。</strong>因为这个世界靠"被记住"来确认自己存在——<strong>你写下它，它就还在。</strong></p></blockquote>
+<hr>
+<h2 id="L159">九、序章具体长什么样</h2>
+<h3 id="L161">岛 1 · 老家（约 20 分钟）</h3>
+<div class="lv" id="L163"><ol><li><strong>开场</strong>：你在修船。师傅走过来，说了一句话，把船给你。</li><li><strong>教学</strong>：走动、对话、采集。教你怎么看岛稳不稳。</li><li><strong>第一次战斗</strong>：海边几只小怪。教指令式战斗和弱点。</li><li><strong>第一次翻面（安全的）</strong>：师傅带你去岛的另一头，你亲眼看到一小片地貌翻过去。天变了一下，又变回来。<strong>只是看，不会受伤。</strong></li><li><strong>回村，夜里。</strong></li><li><strong>第二天早上，码头那边翻面了。</strong> 这次是<strong>你无法阻止的</strong>。师傅为了护住符文塔没回来。</li><li><strong>你上船，出海。</strong></li></ol></div>
+<h3 id="L171">岛 2 · 展示岛（约 40–60 分钟）</h3>
+<div class="lv" id="L173"><ol><li><strong>抵达</strong>。港口。接第一个委托。</li><li><strong>自由探索</strong>：村子、密林、河、符文塔遗迹。可以采集、可以打怪、可以和人聊天。</li><li><strong>发现岛在变得不稳</strong>（天象开始变了）。</li><li><strong>关键事件</strong>：<ul><li>村里人求你帮他们<strong>修符文塔</strong>，把岛稳住。</li><li>同时，一支外来商队想让你帮他们<strong>催翻面</strong>——因为翻面后地下会露出遗迹，那值很多钱。</li></ul></li><li><strong>你选</strong>：帮村里人 / 帮商队 / 谁也不帮，只拿走自己要的</li><li>无论选什么，<strong>最后都会翻面</strong>（或者差点翻面），岛变成另一个样子。</li><li><strong>世界记住你的选择。</strong> 下次回来，村子还在，或者不在了。</li></ol></div>
+<hr>
+<h2 id="L185">十、一整章的走法（这就是游戏循环）</h2>
+<blockquote id="L187"><p id="L1"><strong>出海 → 航程（路上有事）→ 抵岛 → 上岸探 → 遇到人和事 → 打 → 岛开始不稳 → 做决定 → 翻面 → 岛变样 → 带着变化回港 → 下一个目的地</strong></p></blockquote>
+<p id="L189">每一座岛，就是一章。</p>
+<hr>
+<h2 id="L193">十一、她之前想要的那些东西，分别放在哪</h2>
+<div class="tw"><table id="L195"><thead><tr><th>她想要的</th><th>这份草案里怎么安排</th></tr></thead><tbody><tr><td><strong>大 RPG</strong></td><td>一座岛＝一章，一路更下去，不砍</td></tr><tr><td><strong>长线更新</strong></td><td>每次更新加一座岛或一条支线</td></tr><tr><td><strong>做给别人看的</strong></td><td>序章就是可发布的第一章</td></tr><tr><td><strong>战斗刷刷刷</strong></td><td>翻面前 / 翻面后<strong>两套怪和资源</strong> → 同一座岛有得刷</td></tr><tr><td><strong>电影化叙事</strong></td><td><strong>每次"翻面"就是一场演出</strong>，是全章的高潮</td></tr><tr><td><strong>很多角色</strong></td><td>序章出场 2 个，其他以"被提到的名字"出现，设定全留</td></tr><tr><td><strong>空岛、多势力、多结局</strong></td><td>序章只做远景/2 个结局，其余排队，一个不删</td></tr></tbody></table></div>
+<hr>
+<p id="L207"><em>（玩法设定 V1.0 完 · 配套问题见《玩法问题清单》）</em></p></div>
+</body>
+</html>

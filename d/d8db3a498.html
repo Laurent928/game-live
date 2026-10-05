@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>玩法问题清单（针对《玩法设定 V1.0》）</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/d8db3a498.md">原文</a><span class="mut">游戏设计/02-玩法讨论/玩法问题清单.md</span></div></div><div class="wrap doc"><h1 id="L1">玩法问题清单（针对《玩法设定 V1.0》）</h1>
+<blockquote id="L3"><p id="L1"><strong>怎么用</strong>：每个问题下面<strong>都已经给了 2–3 个具体方案</strong>，你只需要说"我选 A"或者"我想要别的，是这样的……"。<strong>不需要自己想方案</strong>——这是这次跟上次最大的区别。<strong>不用全答</strong>。如果只回答 <strong>问题 1、问题 3、问题 7</strong>，就够开工了。</p></blockquote>
+<hr>
+<h2 id="L9">问题 1 · 用「风」施法，该不该让岛屿变不稳？</h2>
+<p id="L11"><strong>草案里是这么写的</strong>：</p>
+<blockquote id="L12"><p id="L1">用"风"施法 → 平衡度<strong>掉得多</strong>。于是产生两难：<strong>用风你就打得过，但岛会更快翻面。</strong></p></blockquote>
+<p id="L14"><strong>为什么这是个真问题</strong>：这是整个玩法最亮的一句话，但它也意味着<strong>玩家可能舍不得用法术</strong>，法术就成了摆设。</p>
+<div class="tw"><table id="L16"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td>用风<strong>就掉平衡度</strong>。打得越狠，岛越早翻面</td><td>每一次施法都是一次选择；"人祸"变成玩家自己的行为，而不是设定里的一句话</td><td>玩家可能舍不得用，法术变摆设</td></tr><tr><td><strong>B</strong></td><td>不掉。只有<strong>大型行为</strong>（布符文、仪式、催化翻面）才掉</td><td>战斗爽快，没有心理负担</td><td>少一层张力；最亮的那句话没了</td></tr><tr><td><strong>C</strong></td><td>不掉，但<strong>翻面时算总账</strong>——用得越多，翻面后的岛越糟</td><td>打得爽 + 迟来的后果</td><td>因果隔得远，玩家可能意识不到是自己造成的</td></tr></tbody></table></div>
+<blockquote id="L22"><p id="L1"><strong>需要你回答</strong>：A / B / C，或者"我想要别的"。若选 A，可以补一句"每次掉多少"。</p></blockquote>
+<hr>
+<h2 id="L26">问题 2 · 翻面之前，玩家能提前知道多久？</h2>
+<p id="L28"><strong>草案里是这么写的</strong>：</p>
+<blockquote id="L29"><p id="L1">前 1–2 天有天象和动物迁徙；最后几小时有异常现象；<strong>不给数字倒计时</strong>，玩家得自己判断。</p></blockquote>
+<p id="L31"><strong>为什么这是个真问题</strong>：给不给倒计时，决定了这游戏是<strong>紧张</strong>还是<strong>清楚</strong>——两者很难兼得。</p>
+<div class="tw"><table id="L33"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td>有天象、动物、地貌这些<strong>前兆</strong>，但<strong>不给数字</strong></td><td>玩家有时间准备（撤离/抢收/布符文），但要自己判断</td><td>有人会没看懂，翻面时手忙脚乱</td></tr><tr><td><strong>B</strong></td><td>给明确数字（"还有 3 天"）</td><td>最清楚，谁都不会误判</td><td>像任务计时器，破坏氛围</td></tr><tr><td><strong>C</strong></td><td>完全没有前兆，突然翻面</td><td>震撼</td><td>玩家会觉得不公平、被耍了</td></tr></tbody></table></div>
+<blockquote id="L39"><p id="L1"><strong>需要你回答</strong>：A / B / C。你也可以说"前兆要有，但最后一小时给个提示"。</p></blockquote>
+<hr>
+<h2 id="L43">问题 3 · 翻面之后，原来那面的人怎么办？</h2>
+<p id="L45"><strong>草案里是这么写的</strong>：</p>
+<blockquote id="L46"><p id="L1">没躲进庇护所的人会被扭曲；外面的人会受伤。</p></blockquote>
+<p id="L48"><strong>为什么这是个真问题</strong>：这一条决定了<strong>这个游戏有多重</strong>。它也是"为了材料让一村人没了家"这句话能不能成立的前提。</p>
+<div class="tw"><table id="L50"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td>没走的<strong>会被扭曲，变成敌人</strong>；走了的变成船民</td><td>道德分量最重；玩家的每个决定都有重量</td><td>比较残酷，玩家会难受</td></tr><tr><td><strong>B</strong></td><td>会被"转到"另一面继续活着（两面的人各过各的）</td><td>不残忍，玩家不背负</td><td>翻面失去分量，变成"换地图"</td></tr><tr><td><strong>C</strong></td><td>随翻面一起<strong>换形态</strong>——人变成另一种东西，但不是死</td><td>奇观感强，很有这个世界的气质</td><td>玩家可能看不懂，也不觉得愧疚</td></tr></tbody></table></div>
+<blockquote id="L56"><p id="L1"><strong>需要你回答</strong>：A / B / C。这条我建议你多想一下——它会决定整个游戏的情绪底色。</p></blockquote>
+<hr>
+<h2 id="L60">问题 4 · 玩家能不能主动"催"翻面？</h2>
+<p id="L62"><strong>草案里是这么写的</strong>：</p>
+<blockquote id="L63"><p id="L1">外来商队想让你帮他们<strong>催翻面</strong>——因为翻面后地下会露出遗迹，那值很多钱。</p></blockquote>
+<p id="L65"><strong>为什么这是个真问题</strong>：能不能主动作恶，是"玩家是应对者"还是"玩家是共犯"的分界线。</p>
+<div class="tw"><table id="L67"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td><strong>能</strong>。花资源推动某座岛翻面，为了拿 B 面独有的资源</td><td>整个游戏最强的道德选择</td><td>要专门做一套"催化"的内容</td></tr><tr><td><strong>B</strong></td><td>不能。翻面只能被动接受</td><td>省事，玩家永远是应对者</td><td>少了主动作恶的可能，戏剧性减一半</td></tr><tr><td><strong>C</strong></td><td>能，但代价是<strong>自己的失衡值上升</strong>（离"被扭曲"更近一步）</td><td>保留主动作恶，又加一层对自己风险</td><td>多一个要平衡的系统</td></tr></tbody></table></div>
+<blockquote id="L73"><p id="L1"><strong>需要你回答</strong>：A / B / C。</p></blockquote>
+<hr>
+<h2 id="L77">问题 5 · 战斗是「打完就完」还是「有得刷」？</h2>
+<p id="L79"><strong>草案里是这么写的</strong>：</p>
+<blockquote id="L80"><p id="L1">翻面前 / 翻面后是<strong>两套怪和两套资源</strong>，所以同一座岛有得刷。</p></blockquote>
+<p id="L82"><strong>为什么这是个真问题</strong>：这是"战斗刷刷刷"和"电影化叙事"这两件事的落点。</p>
+<div class="tw"><table id="L84"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td>同一座岛翻面前后<strong>两套怪和资源</strong></td><td>一张地图两份内容；<strong>想刷的人有得刷，成本还低</strong></td><td>每种怪要做两套数值</td></tr><tr><td><strong>B</strong></td><td>打完就完，主要靠推进剧情</td><td>最省事，节奏紧凑</td><td>没有重复游玩价值</td></tr><tr><td><strong>C</strong></td><td>可以刷，但<strong>刷久了岛会不稳</strong>（和问题 1 联动）</td><td>刷有了意义和代价</td><td>可能让想刷的人不敢刷</td></tr></tbody></table></div>
+<blockquote id="L90"><p id="L1"><strong>需要你回答</strong>：A / B / C。如果你想要"刷"，说一下你希望<strong>刷一轮大概多久</strong>（10 分钟？半小时？）。</p></blockquote>
+<hr>
+<h2 id="L94">问题 6 · 主角倒下之后，代价要多重？</h2>
+<p id="L96"><strong>草案里是这么写的</strong>：</p>
+<blockquote id="L97"><p id="L1">灵魂会流失。附近有符文/队友能拉回来；独自倒在无人海域会丢东西。<strong>被"世界之风"侵蚀而死 → 永久死亡。</strong></p></blockquote>
+<p id="L100"><strong>为什么这是个真问题</strong>：死亡代价决定了远航是"冒险"还是"送死"。</p>
+<div class="tw"><table id="L102"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td>会流失；有人拉就能回来，<strong>独自死在海上会丢东西</strong></td><td>远航有分量，输在海上真要付账</td><td>玩家可能觉得惩罚重</td></tr><tr><td><strong>B</strong></td><td>直接回最近港口，不丢东西</td><td>最轻松，不打扰节奏</td><td>"死亡"完全没重量</td></tr><tr><td><strong>C</strong></td><td>倒下就<strong>少一段记忆</strong>——忘掉一个已记录的图鉴或航线</td><td>很贴世界观：丢的是"记录"而不是"数值"</td><td>玩家可能为了不丢记录而过于保守</td></tr></tbody></table></div>
+<blockquote id="L108"><p id="L1"><strong>需要你回答</strong>：A / B / C。方案 C 是我比较喜欢的，因为丢"记录"和这个世界的主题是一回事。</p></blockquote>
+<hr>
+<h2 id="L112">问题 7 · 展示岛的结局，玩家能不能阻止翻面？</h2>
+<p id="L114"><strong>草案里是这么写的</strong>：</p>
+<blockquote id="L115"><p id="L1">村里人求你修符文塔稳住岛；商队求你催翻面。<strong>无论选什么，最后都会翻面。</strong></p></blockquote>
+<p id="L118"><strong>为什么这是个真问题</strong>：玩家努力了却阻止不了，可能显得无力；但能阻止，就看不到另一面了。</p>
+<div class="tw"><table id="L120"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td><strong>不能阻止，但能决定代价由谁承担</strong>（救村子 / 帮商队 / 只管自己）</td><td>翻面一定发生，主题立住；玩家又有真实选择权</td><td>会有"我努力了但没用"的挫败感，需要剧情接住</td></tr><tr><td><strong>B</strong></td><td>玩家可以<strong>真的稳住</strong>，不翻面</td><td>努力有回报，玩家爽</td><td>就看不到 B 面了；也削弱"翻面不可阻挡"的设定</td></tr><tr><td><strong>C</strong></td><td>可以<strong>推迟</strong>，但不能取消</td><td>折中，努力有可见效果</td><td>要多做一套"推迟后"的中间状态</td></tr></tbody></table></div>
+<blockquote id="L126"><p id="L1"><strong>需要你回答</strong>：A / B / C。若选 A，说一下你希望"最善良的玩法"能得到什么回报。</p></blockquote>
+<hr>
+<h2 id="L130">问题 8 · 序章要几个结局？分别是什么？</h2>
+<div class="tw"><table id="L132"><thead><tr><th>方案</th><th>具体是什么</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A（推荐）</strong></td><td><strong>2 个</strong>：①你保住了村子，但岛还是翻了；②你拿走了遗迹的东西，村子没了</td><td>两种代价都尝到，成本可控</td><td>—</td></tr><tr><td><strong>B</strong></td><td><strong>1 个</strong>：无论怎么选你都得走，但世界留下的样子不一样</td><td>最省</td><td>可能觉得"选了半天结果一样"</td></tr><tr><td><strong>C</strong></td><td><strong>3 个</strong>：再加一个"你把师傅的符文塔修好了"</td><td>多一条"最好"的路，玩家有盼头</td><td>多一套内容</td></tr></tbody></table></div>
+<blockquote id="L138"><p id="L1"><strong>需要你回答</strong>：A / B / C。她之前说过想要更多结局——这里的 A/B/C 是<strong>序章</strong>的数量，后面每一章都可以再加。</p></blockquote>
+<hr>
+<h2 id="L142">回答完之后</h2>
+<p id="L144">你把答案给我，我会：</p>
+<div class="lv" id="L146"><ol><li>把答案填进《玩法设定 V1.0》，升到 <strong>V1.1</strong>；</li><li>针对新版本再出一轮问题（像当年 Q1→Q2→…… 那样）；</li><li>每一步都保证<strong>草案具体、问题带方案</strong>，不让你从零想。</li></ol></div>
+<hr>
+<p id="L152"><em>（问题清单完 · 配套草案见《玩法设定 V1.0》）</em></p></div>
+</body>
+</html>

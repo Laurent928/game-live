@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>05 · 常见问题与卡点</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/de082d4c8.md">原文</a><span class="mut">游戏设计/01-开发路线/05-常见问题与卡点.md</span></div></div><div class="wrap doc"><h1 id="L1">05 · 常见问题与卡点</h1>
+<blockquote id="L3"><p id="L1">卡住的时候来这里查。按"出现的概率"排序。</p></blockquote>
+<hr>
+<h2 id="L7">一、环境类</h2>
+<p id="L9"><strong>Q：Unity Hub 下载特别慢 / 下载失败</strong>换时间段（凌晨通常快），或者换一个镜像源。<strong>不要因为下载慢就换引擎</strong>——这会把前面所有进度清零。</p>
+<p id="L12"><strong>Q：不确定该装哪个版本</strong>装列表里<strong>最上面的 LTS</strong>。不要选标着 Beta / Preview / Tech Stream 的。</p>
+<p id="L15"><strong>Q：场景打不开 / 报版本不一致</strong>八成是两个人用了<strong>不同的 Unity 版本</strong>。约定一个版本写进 <code>PROJECT-INFO.txt</code>，<strong>两个人都用同一个</strong>。工程周期内不升级。</p>
+<p id="L18"><strong>Q：工程突然损坏 / 打不开</strong>这就是为什么：</p>
+<div class="lv" id="L20"><ol><li><strong>每天 Push</strong>（Git 就是你的后悔药）；</li><li><strong>每周额外压缩一份备份</strong>放到另一个盘。</li></ol></div>
+<p id="L22">坏了就回退到最近一次提交。</p>
+<p id="L24"><strong>Q：Git 仓库变得特别大 / 推不动</strong>检查 <code>.gitignore</code> 是不是漏了 <code>Library/</code>。这个是必须忽略的（Unity 的缓存，动辄几个 GB）。已经提交过的话，需要把 <code>Library/</code> 从历史里移除。</p>
+<p id="L27"><strong>Q：Git 冲突了，看不懂</strong> <strong>不要自己硬解。</strong> 冲突通常发生在场景文件（二进制，无法合并）。做法：</p>
+<div class="lv" id="L29"><ol><li>两个人<strong>约定不同时改同一个场景</strong>；</li><li>真冲突了 → 保留一份能打开的，另一份从提交历史里取需要的东西；</li><li>找社团的人帮你看一次，看一次就会了。</li></ol></div>
+<hr>
+<h2 id="L35">二、画面类（HD-2D 特有）</h2>
+<p id="L37"><strong>Q：画面很平，一点都不像八方旅人</strong>按这个顺序查：</p>
+<div class="lv" id="L39"><ol><li>相机是不是 <strong>Perspective</strong>？（用了正交就全完了）</li><li><strong>FOV 是不是 30 左右</strong>？（FOV 太大就没有"贴近平面的等距感"）</li><li><strong>有没有加景深 Depth of Field</strong>？这一项贡献了一半的效果</li><li><strong>有没有统一调色</strong>？</li><li><strong>场景贴图是不是也低分辨率</strong>？高清场景 + 像素小人 = 风格撕裂</li></ol></div>
+<p id="L45"><strong>Q：像素糊了，不像像素风</strong></p>
+<div class="lv" id="L46"><ul><li>精灵导入：<strong>Filter Mode = Point</strong>、<strong>Compression = None</strong></li><li>缩放用<strong>整数倍</strong>（比如 2×、3×，不要 1.7×）</li></ul></div>
+<p id="L49"><strong>Q：角色被建筑挡住 / 角色穿透墙显示在最前面</strong>精灵材质改成 <strong>Alpha Cutout（Alpha Test）</strong>，不要用 Alpha Blend。深度写入正常后遮挡就对了。（见 <code>02-技术与环境搭建.md</code> §6）</p>
+<p id="L53"><strong>Q：后处理调了好久还是不满意</strong>停。<strong>硬规则</strong>：每个效果只调 3 个参数、总共不超过 2 小时，然后冻结。第一版的目标是"有那个感觉"，不是"完美"。<strong>调优是这个项目最大的时间黑洞。</strong></p>
+<p id="L57"><strong>Q：掉帧</strong></p>
+<div class="lv" id="L58"><ul><li>实时点光源减到 <strong>3 个以内</strong></li><li>关掉暂时不用的后处理效果</li><li>先别管性能，等能跑了再优化</li></ul></div>
+<p id="L62"><strong>Q：光照很假 / 建筑没有影子</strong>先用<strong>实时方向光 + 点光源</strong>。想让角色投阴影，需要一个带 <strong>ShadowCaster</strong> 通道的 Sprite 材质。<strong>烘焙（Lightmap）先不要碰</strong>——场景一改就要重烤，新手会卡在这里好几天。</p>
+<hr>
+<h2 id="L68">三、做法类</h2>
+<p id="L70"><strong>Q：不知道下一步做什么</strong>看 <code>01-路线图与里程碑.md</code> 的里程碑看板，找<strong>第一个没打勾的</strong>。只做那一个。</p>
+<p id="L73"><strong>Q：想加一个新玩法 / 新系统</strong> <strong>先砍掉一个等价的旧系统</strong>（铁律二）。如果砍不掉，说明现在不该加。</p>
+<p id="L76"><strong>Q：范围越做越大，序章迟迟做不完</strong>回 <code>01</code> §3 看那 9 项内容清单。<strong>9 项之外的一切都不做</strong>，写进"后续"列表里。</p>
+<p id="L79"><strong>Q：某个设定必须定了才能写代码</strong>只需要定<strong>那一条</strong>，不要顺手把整个世界观重新过一遍。定完立刻回去写代码。</p>
+<p id="L82"><strong>Q：我在"研究怎么做"上花了太多时间</strong>一个自检：<strong>这周我改的东西，能不能让画面/游戏多动一下？</strong> 不能的话，那大概率是拖延。</p>
+<hr>
+<h2 id="L87">四、协作类</h2>
+<p id="L89"><strong>Q：两个人都忙，进度停了很久</strong>正常。看 <code>03</code> §7：<strong>停两个月不叫失败。</strong> 唯一要做的是停之前把状态写进 <code>PROGRESS.md</code>。</p>
+<p id="L92"><strong>Q：我一个人在做，感觉像独自扛</strong>这是真实的感受，也是最容易被低估的成本。三个建议：</p>
+<div class="lv" id="L94"><ol><li><strong>社团那条路要真的走</strong>——你在那边也能获得"被认可"和"进度感"，不必把全部的自我价值都押在这一个项目上；</li><li><strong>把"每周 2 小时并肩时段"当成硬日程</strong>，不是可选项；</li><li><strong>不要记账</strong>（"我做了多少小时她做了多少"）。这笔账永远算不平，而且本来也不该按小时算。</li></ol></div>
+<p id="L98"><strong>Q：想催，但不能催</strong>不要催。改成做三件事：</p>
+<div class="lv" id="L100"><ol><li><strong>把任务池建起来</strong>（<code>03</code> §3）——她有空自己拿一张，你不需要开口；</li><li><strong>每周并肩时段只展示、不问进度</strong>：跑一遍最新版本，说"这周游戏变了什么"；</li><li><strong>她交了东西就立刻进游戏</strong>，并告诉她"进游戏了"。</li></ol></div>
+<p id="L103">（正反馈的最短回路，比任何催促都有效）</p>
+<p id="L105"><strong>Q：她做的东西一直没进游戏</strong>那她很快就会停止产出。<strong>她给的东西当周就必须进游戏</strong>——哪怕是当占位图放进去。</p>
+<hr>
+<h2 id="L110">五、心态类</h2>
+<p id="L112"><strong>Q：感觉做不完了</strong>看 <code>01</code> 的里程碑看板，<strong>只看第一个没打勾的</strong>。项目是按"每 3–6 个月可见进展"设计的，不是按"两年后一次交付"设计的。</p>
+<p id="L115"><strong>Q：做出来的东西很丑，很受打击</strong>阶段 1 的目标就是"丑但有那个感觉"。<strong>HD-2D 的优势恰恰是：丑的素材在正确的相机、光照和后处理下，也能看起来像样。</strong></p>
+<p id="L118"><strong>Q：没动力了</strong>回到最小的那个动作：<strong>打开 Unity，让它跑起来，改一个数值，看看变化。</strong> 五分钟就够。动力通常是从"动了"里长出来的，不是等来的。</p>
+<p id="L121"><strong>Q：这个游戏到底有没有意义</strong>这是一个可以问的问题，但<strong>它不该由进度来回答</strong>。项目做完了、没做完、做得好、做得烂——都不改变做它的人是谁。</p>
+<hr>
+<h2 id="L126">六、求助优先级</h2>
+<div class="tw"><table id="L128"><thead><tr><th>顺序</th><th>渠道</th><th>适合什么问题</th></tr></thead><tbody><tr><td>1</td><td><strong>社团的人</strong></td><td>需要看屏幕的问题、Git 冲突、打包报错</td></tr><tr><td>2</td><td><strong>搜索 + 官方文档</strong></td><td>90% 的问题都有人问过。搜报错信息的<strong>前半句</strong></td></tr><tr><td>3</td><td><strong>Unity 论坛 / 中文社区</strong></td><td>找了两轮还找不到的</td></tr><tr><td>4</td><td><strong>把问题写成一句话</strong></td><td>很多问题在写清楚的那一刻就解了</td></tr></tbody></table></div>
+<p id="L135"><strong>提问模板</strong>：</p>
+<blockquote id="L136"><p id="L1">「我想做 X。我试了 Y。结果是 Z（附报错）。我用的是 Unity 版本 A。」</p></blockquote>
+<hr>
+<p id="L140"><em>（开发路线手册完）</em></p></div>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>部署说明 · 把问卷变成永久公网网址</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/d3cc4abfa.md">原文</a><span class="mut">世界观/05-问卷与部署/部署说明.md</span></div></div><div class="wrap doc"><h1 id="L1">部署说明 · 把问卷变成永久公网网址</h1>
+<blockquote id="L3"><p id="L1"><strong>这个文件夹里只有一个文件：<code>index.html</code></strong>（就是问卷本身）。它被命名为 <code>index.html</code>，是为了让部署后的根网址直接打开问卷，不需要带文件名。（此处内容涉及个人隐私，已隐藏）</p></blockquote>
+<hr>
+<h2 id="L9">为什么需要另外部署</h2>
+<div class="tw"><table id="L11"><thead><tr><th>方式</th><th>网址</th><th>有效期</th><th>手机能开</th><th>需要账号</th></tr></thead><tbody><tr><td>局域网（<code>05-问卷与部署\启动问卷服务器.bat</code>）</td><td><code>http://172.19.35.120:8788/</code></td><td>电脑开着 + 同一 WiFi</td><td>✅</td><td>不需要</td></tr><tr><td><strong>Cloudflare 临时隧道</strong></td><td><code>https://xxx.trycloudflare.com</code></td><td><strong>电脑关了就失效，重启会换地址</strong></td><td>✅</td><td>不需要</td></tr><tr><td><strong>部署到静态托管（本文档）</strong></td><td><code>https://xxx.netlify.app</code> 等</td><td><strong>永久</strong></td><td>✅</td><td><strong>免费账号</strong></td></tr></tbody></table></div>
+<p id="L17">结论：<strong>发给她慢慢填</strong> → 用本文档的方式部署；<strong>只是现在想给她看一眼</strong> → 用隧道地址就够。</p>
+<hr>
+<h2 id="L21">路线 A · Netlify Drop（最快，推荐）</h2>
+<div class="lv" id="L23"><ol><li>电脑浏览器打开 <strong>https://app.netlify.com/drop</strong></li><li>把这个 <code>05-问卷与部署</code> 文件夹<strong>整个拖进</strong>页面中间的虚线框</li><li>几秒后它给出一个网址，形如 <code>https://random-name-123456.netlify.app</code></li><li>想长期保留，用邮箱/ GitHub 免费注册一下，就能在后台改名、固定地址</li></ol></div>
+<blockquote id="L28"><p id="L1">特点：不用命令行、不用装东西。适合"我只想赶紧拿到一个链接"。</p></blockquote>
+<hr>
+<h2 id="L32">路线 B · GitHub Pages（如果你有 GitHub 账号）</h2>
+<div class="lv" id="L34"><ol><li>新建一个仓库，例如 <code>island-questionnaire</code>，<strong>设为 Public</strong></li><li>把 <code>index.html</code> 上传到仓库根目录（网页上「Add file → Upload files」即可）</li><li>进 <strong>Settings → Pages</strong>，Source 选 <code>Deploy from a branch</code>，Branch 选 <code>main</code> + <code>/ (root)</code>，保存</li><li>等 1–2 分钟，网址是 <code>https://你的用户名.github.io/island-questionnaire/</code></li></ol></div>
+<blockquote id="L39"><p id="L1">特点：永久、免费、以后更新只要覆盖 <code>index.html</code>。缺点：仓库是公开的（内容本身也只有问卷）。</p></blockquote>
+<hr>
+<h2 id="L43">路线 C · Cloudflare Pages</h2>
+<div class="lv" id="L45"><ol><li>打开 <strong>https://pages.cloudflare.com</strong>，用邮箱注册（免费）</li><li>选 <strong>Upload assets</strong>（直接上传，不用连 Git）</li><li>把 <code>05-问卷与部署</code> 文件夹拖进去，项目名随便填</li><li>得到 <code>https://项目名.pages.dev</code></li></ol></div>
+<blockquote id="L50"><p id="L1">特点：速度快（国内访问通常比 GitHub Pages 稳），永久。</p></blockquote>
+<hr>
+<h2 id="L54">部署完之后</h2>
+<div class="lv" id="L56"><ol><li>用手机（<strong>QQ 里</strong>）打开那个网址试一次：能正常显示题目、点选项有反应、点「生成回传链接」能出链接。</li><li>把网址发给她。QQ 里点开就能填。</li><li><strong>如果 QQ 内置浏览器显示异常</strong>，让她点右上角「···」→「在浏览器打开」。</li><li>她填完 → 点「📤 分享给 QQ / 微信」直接发回来，或者点「复制这段文字」再粘贴回来。</li></ol></div>
+<hr>
+<h2 id="L63">更新问卷内容</h2>
+<p id="L65">问卷改过之后（比如又加了题），重新生成一份：</p>
+<div class="lv" id="L67"><ol><li>用最新的 <code>01-设计与审查\04-互动问卷.html</code> 覆盖本文件夹里的 <code>index.html</code>；</li><li>回到托管平台重新拖一次 / 重新上传。</li></ol></div>
+<p id="L70">她之前填的答案不会被覆盖（答案是存在<strong>她手机浏览器里</strong>的，不在这个文件里）。</p>
+<hr>
+<h2 id="L74">关于隐私</h2>
+<div class="lv" id="L76"><ul><li>页面已加 <code>&lt;meta name="robots" content="noindex, nofollow"&gt;</code>，<strong>搜索引擎不会收录</strong>；</li><li>但网页本身是<strong>公开</strong>的：<strong>任何拿到链接的人都能看到内容</strong>。内容里出现了"阿丞""卿宝"两个名字，以及游戏设计的问题；</li><li>链接是随机生成的，不会被猜到，正常使用没问题；如果介意名字，可以让我把两个名字替换成中性词再部署一版。</li></ul></div>
+<hr>
+<p id="L82"><em>（部署说明完）</em></p></div>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>V1.2 升版前 · 最后三个问题（＋一个顺手的）</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/da017008f.md">原文</a><span class="mut">世界观/01-设计与审查/12-V1.2升版前最后几问（可直接填写）.md</span></div></div><div class="wrap doc"><h1 id="L1">V1.2 升版前 · 最后三个问题（＋一个顺手的）</h1>
+<blockquote id="L3"><p id="L1"><strong>这份是给卿宝的。</strong>世界观现在只差最后这几条就能整体升级到 V1.2 了。<strong>下面每一题都有现成的选项，圈一个或者写一句就行。</strong></p>
+<p id="L4"><strong>怎么填</strong>：在每题最后的「<strong>你的选择</strong>」那一栏写个字母（<code>A</code> / <code>B</code> / <code>C</code>），或者直接写你的想法。<strong>「还没想好」也是一个答案</strong>——我会把它记成"挂起"，不会替你决定。</p>
+<p id="L7">每题都标了「<strong>谁建议的</strong>」：凡是写「<strong>文档建议</strong>」的，都来自 <code>01</code> 审查报告和 <code>02</code> 问题清单，<strong>那两份也是 AI 产出的、还没定案</strong>——最终怎么定，全看你和阿丞。</p></blockquote>
+<hr>
+<h2 id="L14">第 1 问 · 岛的两面，到底是怎么摆的？</h2>
+<p id="L16"><strong>为什么非问不可</strong>：这一条不定，<strong>一张地图都没法开始画</strong>。</p>
+<p id="L18"><strong>现在的情况</strong>：设定里说"翻面"会让岛变成另一个样子，但<strong>从头到尾没说那"另一面"到底在哪</strong>——是在岛的底下？是整个翻过去了？还是同一个地方换了个样子？</p>
+<div class="tw"><table id="L21"><thead><tr><th>选项</th><th>怎么理解</th><th>好处</th><th>代价</th></tr></thead><tbody><tr><td><strong>A · 上下两层</strong></td><td>岛＝上下两层；翻面＝上下互换。<strong>海底就是"里层"，蓝洞是从表层钻进去的通道</strong></td><td>顺手盘活"海底探索 / 深潜 / 蓝洞"这三样已经写好的设定</td><td>要再定一层"两层怎么连通"的规则</td></tr><tr><td><strong>B · 硬币翻转</strong></td><td>字面意思翻过去，另一面朝下没进水里</td><td>最直观、最好懂</td><td>和"空岛"那套打架</td></tr><tr><td><strong>C · 相位共存</strong></td><td>两面在同一个地方、只是"相位"不同，平常办法过不去</td><td>最玄、最有味道</td><td>"同时存在"就变成一句漂亮话，实际用不上</td></tr></tbody></table></div>
+<blockquote id="L27"><p id="L1"><strong>文档建议：A（上下两层）</strong>。而且就算选 A，<strong>第一阶段也可以先按 B 的简单做法做</strong>——先只做"按一个键，世界变了"，两层的连通规则可以以后再补。</p>
+<p id="L4"><strong>顺带一个小问题</strong>：要不要把"<strong>表里世界 / 镜海</strong>"这套叫法废掉，统一就说"<strong>表 / 里两面</strong>"？<strong>文档建议：废掉，统一。</strong></p></blockquote>
+<p id="L33"><strong>你的选择</strong>：＿＿＿＿＿＿＿＿＿＿</p>
+<p id="L35"><strong>想补充的话</strong>：＿＿＿＿＿＿＿＿＿＿</p>
+<hr>
+<h2 id="L39">第 2 问 · 翻面多久发生一次？</h2>
+<p id="L41"><strong>为什么非问不可</strong>：这一个数字，决定这游戏是<strong>"一辈子赶上几次翻面"的故事游戏</strong>，还是<strong>"刷状态、攒资源"的循环游戏</strong>；也决定玩家能不能"<strong>预测翻面、提前准备</strong>"。</p>
+<div class="tw"><table id="L44"><thead><tr><th>选项</th><th>怎么理解</th><th>会变成什么样的游戏</th></tr></thead><tbody><tr><td><strong>A · 都很快</strong></td><td>所有岛的翻面周期＝<strong>几周到几个月</strong></td><td>变成刷状态 / 资源管理游戏</td></tr><tr><td><strong>B · 都很慢</strong></td><td>所有岛的翻面周期＝<strong>几十年到几百年</strong></td><td>变成叙事游戏，一辈子赶上几次</td></tr><tr><td><strong>C · 两层（推荐）</strong></td><td><strong>小岛 / 浅层＝几周到几个月</strong>（玩得到、能干预）；<strong>大陆块 / 主城级＝几十年到几百年</strong>（主线级事件，一辈子一次）</td><td>两种体验都有，而且<strong>顺手解释了旧主城为什么那么特殊</strong></td></tr></tbody></table></div>
+<blockquote id="L50"><p id="L1"><strong>文档建议：C（两层）</strong>。具体数值：小岛 <strong>4–12 游戏周</strong>，主城级 <strong>100 年以上</strong>。落了地以后，游戏里其实只要<strong>一个数字</strong>（这座岛还有几天翻面）＋ 一个倒计时条。</p></blockquote>
+<p id="L53"><strong>你的选择</strong>：＿＿＿＿＿＿＿＿＿＿</p>
+<p id="L55"><strong>想补充的话</strong>：＿＿＿＿＿＿＿＿＿＿</p>
+<hr>
+<h2 id="L59">第 3 问 · 死了会怎么样？</h2>
+<p id="L61"><strong>为什么非问不可</strong>：现在设定里写着"<strong>这个世界的人理论上可以永生，只是意外比较多</strong>"。这句话一写，<strong>"打输了"就没有任何代价了</strong>——游戏最基本的那个反馈没了。而<strong>改好它只需要一条规则</strong>。</p>
+<p id="L65"><strong>文档建议的"损失阶梯"</strong>（从轻到重）：</p>
+<blockquote id="L67"><p id="L1">受伤 → <strong>躯体消散</strong>（能复活，但<strong>得有人接住你的灵魂</strong>）→ <strong>灵魂受损</strong>（记忆缺一块、能力丢掉一些）→ <strong>被扭曲</strong>（这才是真死）→ <strong>沦为憎恶</strong>（变成别人的敌人）</p></blockquote>
+<p id="L70"><strong>关键的一条</strong>：<strong>灵魂如果没人收，会被别的存在吸走，或者自己汇进憎恶。</strong>这样一来，"死"就从"读档"变成了"<strong>一件事</strong>"——队友能救你、敌人能截胡你。</p>
+<p id="L73"><strong>三个小问题</strong>：</p>
+<div class="tw"><table id="L75"><thead><tr><th>#</th><th>问题</th><th>文档建议</th></tr></thead><tbody><tr><td><strong>3a</strong></td><td>上面这条损失阶梯，用不用？</td><td><strong>用</strong></td></tr><tr><td><strong>3b</strong></td><td><strong>玩家角色能不能被"扭曲"？</strong>（也就是会不会真死）</td><td><strong>能</strong>——不然"世界之风"的威胁就不可信。可以做成真结局，或者只在最高难度永久</td></tr><tr><td><strong>3c</strong></td><td>会不会出现"<strong>死了，但灵魂被人夺走</strong>"的情况？</td><td><strong>会</strong></td></tr></tbody></table></div>
+<blockquote id="L81"><p id="L1">第一阶段的极简做法只要三行：死亡 → 掉一部分资源 ＋ 弹一句"记忆缺了一块" → 在最近的庇护点复活。</p></blockquote>
+<p id="L83"><strong>你的选择</strong>：</p>
+<div class="lv" id="L85"><ul><li>3a：＿＿＿＿　3b：＿＿＿＿　3c：＿＿＿＿</li></ul></div>
+<p id="L87"><strong>想补充的话</strong>：＿＿＿＿＿＿＿＿＿＿</p>
+<hr>
+<h2 id="L91">第 4 问（可以不答，但很便宜）· 航行是"玩"的，还是"过场"？</h2>
+<p id="L93"><strong>为什么问</strong>：正文第三条明写「<strong>航行本身为线性过程</strong>」，可文档里同时又写了<strong>航线风险物、风暴让航向偏移、船够强可以硬闯风暴、船员打海怪、船只可以改造</strong>—— <strong>这些东西在线性过场里没有地方放。</strong></p>
+<div class="tw"><table id="L97"><thead><tr><th>选项</th><th>怎么理解</th><th>做起来难不难</th></tr></thead><tbody><tr><td><strong>A · 纯过场</strong></td><td>选航线 → 加载 → 到了</td><td>极低</td></tr><tr><td><strong>B · 节点式（推荐）</strong></td><td>在<strong>海图界面</strong>上选航线、配船员和货、处理沿途事件；<strong>走过的航线可以一键快进</strong></td><td><strong>低</strong>（本质是界面＋事件表，没有实时开船）</td></tr><tr><td><strong>C · 手动驾驶</strong></td><td>实时操船、风向海况、海怪追、跳帮战</td><td><strong>极高</strong>（已经在"不做清单"里）</td></tr></tbody></table></div>
+<blockquote id="L103"><p id="L1"><strong>文档建议：B</strong>，并把正文那句"线性过程"改写成「<strong>已探索的航线可以自动驾驶</strong>」——这样"线性"就从<strong>世界的性质</strong>降级成<strong>一个可选的无障碍功能</strong>，设定和产能一起得救。另外：<strong>航行是很后面才做的东西</strong>，前面阶段直接用"点海图上的岛 → 切场景"代替。</p></blockquote>
+<p id="L107"><strong>你的选择</strong>：＿＿＿＿＿＿＿＿＿＿</p>
+<p id="L109"><strong>想补充的话</strong>：＿＿＿＿＿＿＿＿＿＿</p>
+<hr>
+<h2 id="L113">另外两件事（不用你现在答，只是让你知道）</h2>
+<div class="lv" id="L115"><ol><li><strong>还有 4 条不卡升版的</strong>：驯兽师的上限规则、宗教／信仰、翻面后建筑与港口怎么办、<br>航线到底是怎么形成的。<strong>这些可以等你以后想</strong>，我会把它们<strong>逐条登记进 V1.2 的附录B</strong>，<br><strong>不会让它们像上一版那样"悄悄消失"</strong>。</li><li><strong>还有一件跟世界观无关的</strong>：<code>Q12 核心情绪</code>（这个游戏的一句话是什么）也还没定，<br>它属于"开工闸门"，但<strong>不影响这次升版</strong>。</li></ol></div>
+<hr>
+<p id="L123"><em>（V1.2 升版前待定 · 2026-09-17 整理）</em></p></div>
+</body>
+</html>

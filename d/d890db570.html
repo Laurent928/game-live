@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<title>待问清单</title>
+<style>
+:root{--bg:#0b1a2b;--bg2:#102639;--card:#132c44;--card2:#183650;--line:#26536f;--txt:#eaf2f8;
+--mut:#9ab4c9;--mut2:#71889c;--acc:#e8c07d;--acc2:#d9a441;--soft:#4fd1c5;--good:#68d391;--bad:#f6ad55}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;
+background:linear-gradient(180deg,#07121d 0%,var(--bg) 35%,var(--bg2) 100%);background-attachment:fixed;
+color:var(--txt);line-height:1.85;font-size:16.5px;padding-bottom:60px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+a{color:var(--acc)}
+header{padding:30px 0 4px}
+h1{font-size:26px;margin:0 0 10px;line-height:1.4}
+.lead{background:rgba(232,192,125,.09);border-left:3px solid var(--acc);border-radius:0 12px 12px 0;
+padding:13px 17px;margin:14px 0 22px;font-size:15px;color:#dbe7f0}
+.lead b{color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin:14px 0}
+.card h2{margin:0 0 10px;font-size:19px;color:var(--acc)}
+.card h3{margin:16px 0 8px;font-size:16.5px;color:var(--soft)}
+.mut{color:var(--mut2);font-size:13.5px}
+.bar{position:sticky;top:0;z-index:50;background:rgba(7,18,29,.94);backdrop-filter:blur(10px);
+border-bottom:1px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;gap:14px;align-items:center;font-size:14px}
+.bar a{color:var(--mut)}
+.doc h1,.doc h2{border-bottom:1px solid var(--line);padding-bottom:8px;margin:28px 0 12px}
+.doc h1{font-size:24px}.doc h2{font-size:20px}.doc h3{font-size:17px;margin:20px 0 8px;color:var(--soft)}
+.doc h4,.doc h5,.doc h6{font-size:15.5px;margin:16px 0 6px;color:var(--mut)}
+.doc p{margin:10px 0}
+.doc blockquote{margin:12px 0;padding:8px 0 8px 14px;border-left:3px solid var(--line);
+background:rgba(255,255,255,.02);border-radius:0 8px 8px 0;color:#cfe0ee;font-size:15.5px}
+.doc blockquote>*:first-child{margin-top:0}.doc blockquote>*:last-child{margin-bottom:0}
+.doc code{background:#0d2134;border:1px solid #1f4560;border-radius:5px;padding:1px 5px;
+font-family:ui-monospace,Consolas,monospace;font-size:14px}
+.doc pre{background:#0d2134;border:1px solid #1f4560;border-radius:10px;padding:12px 14px;overflow-x:auto}
+.doc pre code{border:0;background:none;padding:0}
+.doc ul,.doc ol{padding-left:24px;margin:10px 0}
+.doc li{margin:4px 0}
+.doc hr{border:0;border-top:1px solid var(--line);margin:24px 0}
+.tw{overflow-x:auto;margin:14px 0;-webkit-overflow-scrolling:touch}
+.doc table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:420px}
+.doc th,.doc td{border:1px solid var(--line);padding:8px 10px;text-align:left;vertical-align:top}
+.doc th{background:#183650;color:var(--soft);font-weight:650;white-space:nowrap}
+.doc tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+.doc a{word-break:break-word}
+.pill{display:inline-block;font-size:12.5px;color:#20160a;background:var(--acc);border-radius:99px;padding:2px 9px;margin-left:6px}
+.pend{border-left:3px solid var(--acc);padding:8px 0 8px 13px;margin:10px 0;background:rgba(232,192,125,.06);border-radius:0 8px 8px 0}
+.pend .src{display:block;font-size:12.5px;color:var(--mut2);margin-top:5px}
+.big{font-size:17px;font-weight:650;color:var(--acc);word-break:break-all}
+.btn{display:inline-block;font-family:inherit;font-size:14.5px;font-weight:650;cursor:pointer;border-radius:10px;
+padding:9px 16px;border:1.5px solid #2f5f7d;background:transparent;color:var(--mut);text-decoration:none}
+.btn:hover{border-color:var(--acc);color:var(--acc)}
+.btn-main{background:linear-gradient(135deg,var(--acc2),var(--acc));color:#20160a;border-color:transparent}
+.btn-main:hover{filter:brightness(1.07);color:#20160a}
+footer{text-align:center;color:var(--mut2);font-size:12.5px;margin:40px 0 10px;line-height:1.9}
+@media(max-width:600px){body{font-size:16px}.wrap{padding:0 15px}h1{font-size:22px}.card{padding:16px 15px}}
+</style>
+</head>
+<body>
+<div class="bar"><div class="wrap"><a href="../index.html">← 回看板</a><a href="../raw/d890db570.md">原文</a><span class="mut">游戏设计/03-玩法对齐/02-20260922-待问清单.md</span></div></div><div class="wrap doc"><h1 id="L1">待问清单</h1>
+<blockquote id="L3"><p id="L1"><strong>这份是什么</strong>：把散在 <code>01-20260922-玩法大框架</code> §四与 <code>04-玩法设计\01-…（挂账）</code> §二里的提问<strong>单独抽出来</strong>，让阿丞<strong>打开就能复制</strong>（不用在长文档里翻）。</p>
+<p id="L4"><strong>怎么用</strong>：<strong>§一／§二 是 2026-09-22 那一轮、§五 是 2026-09-23 那一轮，两轮都已发、都已答</strong>（各自留了存档块，见§一之一 与 §五之一）。<strong>下一轮要问什么，等这一批消化完再立</strong>——实录在 <code>02-玩法讨论\答复-20260923\</code>。<strong>写法口径</strong>（<code>AGENTS.md</code> 第一部分第 11 节）：<strong>书面语、简单易懂、不口语化</strong>；<strong>不引用任何内部编号 / 文件名</strong>；每题自带例子。</p>
+<p id="L8"><strong>她答完之后</strong>：把她的原话照抄回来（<strong>说"还没想好"也算答案</strong>），我会回填 B 组 18 条、再出 <code>玩法设定V1.1</code> 回写稿。</p>
+<p id="L10"><em>（2026-09-22 · 玩法线）</em></p></blockquote>
+<hr>
+<h2 id="L16">一、第一轮 · 主问题（✅ 2026-09-22 已答）</h2>
+<blockquote id="L18"><p id="L1"><strong>她的答复</strong>：① 上岛最常做的是<strong>「找路」</strong>；② <strong>「这个机制不需要了…玩家还要时刻计算，很不舒服」→ 作废</strong>；③ <strong>选项 1 ＋「日食，黑一下就变样」＋「岛屿整体结构不变」</strong>。详见 <code>03-20260922-第一轮答复（阿丞转述）</code>。</p></blockquote>
+<h2 id="L21">一之一、当时发出去的那块（存档）</h2>
+<pre id="L23"><code>有三个关于"玩家实际怎么玩"的问题，想听听你的想法。
+不用一次全答完，只答有感觉的那部分也可以；暂时没想好的，直接说"还没想好"，我先记下来。
+
+一、玩家登上一座岛之后，最常做的一件事应该是什么？
+例如：四处走动看风景；采集资源；寻找怪物战斗；寻找道路与遗迹；和岛上的人交谈。
+你希望其中哪一件占的时间最多？如果一时没有想法，也可以说说玩家上岛后最先做的那件事。
+
+二、你之前说过，玩家在岛上做的事会推动岛屿的不平衡。那玩家需不需要"看得出来"这件事？
+两种可能：
+1. 一进岛就能看到岛的状态，心里有数；
+2. 平时看不出来，直到岛上出现异象（动物迁徙、海水退潮这类）才意识到。
+你更想要哪一种？
+
+三、翻面发生的那一刻，你希望玩家在哪里、看到什么？
+三种可能：
+1. 玩家站在岛上，亲眼看着它变成另一副样子；
+2. 玩家被带回船上，从远处看着它变化；
+3. 不交代过程，一黑一亮，玩家已经在别处。
+你更倾向哪一种？或者你有没有自己设想过的一幕？</code></pre>
+<hr>
+<h2 id="L47">二、第一轮 · 顺带一问（✅ 已答：<strong>跟正常人一样观察</strong>）</h2>
+<pre id="L49"><code>再问一个关于主角本人的问题。
+
+现在主角的身份是航海士，而且他一上岸就能感觉出一座岛稳不稳、离翻面还有多久。
+但按我们定的世界规则，看天象和岛上的征兆来判断翻面，其实是所有人都懂的常识。
+所以这种"感觉得到"的本事，在故事里算哪一种？
+
+1. 算他的天赋：别人要靠经验慢慢看，他一上岸心里就有数；
+2. 算练出来的眼力：不是天生的，是跑的地方多、见得多才变准；
+3. 不算特殊能力：主角和别人一样，靠天象和岛上现象判断。
+
+你倾向哪一种？或者在你脑子里，他"知道"这件事的时候是什么样子？</code></pre>
+<hr>
+<h2 id="L65">三、这些提问分别对应什么（<strong>内部看，不用发</strong>）</h2>
+<p id="L67"><strong>第一轮（2026-09-22 已答）</strong></p>
+<div class="tw"><table id="L69"><thead><tr><th>问题</th><th>对应</th><th>答完之后解锁什么</th></tr></thead><tbody><tr><td>一 · 上岛后最常做什么</td><td>卡口 <strong>K1</strong>（<code>01-20260922-玩法大框架</code> §三）</td><td>✅ 答<strong>「找路」</strong> → L0 的玩家动作就定在这上面</td></tr><tr><td>二 · 代价看不看得见</td><td>卡口 <strong>K2</strong></td><td>❌ <strong>整条作废</strong>（她否认说过这个机制）→ 挂账 <strong>A13</strong> 立、V1.0 §四 撤</td></tr><tr><td>三 · 翻面那一刻在哪</td><td>卡口 <strong>K3</strong></td><td>✅ <strong>选项 1 ＋「日食」＋「结构不变」</strong> → 翻面按"演出 ＋ 规则"写</td></tr><tr><td>四 · 主角的感知</td><td><code>04-玩法设计\01-…（挂账）</code> <strong>A10</strong></td><td>✅ <strong>跟正常人一样观察</strong> → 原三选一作废</td></tr></tbody></table></div>
+<p id="L76"><strong>下一轮（§五 · ✅ 2026-09-23 已答）</strong></p>
+<div class="tw"><table id="L78"><thead><tr><th>问题</th><th>对应</th><th>她答了什么</th><th>解锁了什么</th></tr></thead><tbody><tr><td>一 · 岛的状态要不要额外显示</td><td>挂账 <strong>A13</strong> 第 3 点 · 大框架 §二 横切 <strong>C</strong></td><td><strong>不给状态表</strong>，给<strong>正常时钟</strong>（不是倒计时、玩家自己算）＋<strong>前置条件满足后再提示</strong>；各岛时间不统一</td><td><strong>L1 界面</strong>：状态表撤掉，只做"时钟"这一件</td></tr><tr><td>二 · "找路"发生在岛上还是海上</td><td>骨架 <strong>格①／格③</strong></td><td><strong>「不知道」</strong>（「主要是没开始写剧情」）</td><td>⬜ <strong>没解锁</strong>——等序章剧情有雏形再问</td></tr><tr><td>三 · 翻面后哪些"必须不变"</td><td>大框架 §二 横切 <strong>D</strong>（V1.2 第七条要求的两面关联性）</td><td><strong>地标 · 海岸线</strong>不变，<strong>路可以变一下</strong></td><td><strong>L0 最小实现</strong>：靠地标与海岸线认岛，<strong>不必另造"恒定物"</strong></td></tr></tbody></table></div>
+<h2 id="L84">四、答复回来记在哪</h2>
+<div class="tw"><table id="L86"><thead><tr><th>记到哪</th><th>记什么</th></tr></thead><tbody><tr><td><code>04-玩法设计\01-20260922-修订要点（挂账）</code> §三</td><td>B 组 18 条的<strong>处置栏</strong>（改 / 留 / 降级）逐条回填——<strong>已回填 3 条</strong>（B5 · B8 · B10，依据 2026-09-23 ① 级答复）</td></tr><tr><td>同一份 §一／§二 · A2／A6／A13</td><td>有连带影响时在同节补一句</td></tr><tr><td><code>03-玩法对齐\01-20260922-玩法大框架</code> §一 · 格①②③ 与 §二 横切 C／D</td><td>答案落到<strong>骨架五格 / 横切四条</strong>的对应格里</td></tr><tr><td>（此处内容涉及个人隐私，已隐藏）</td><td></td></tr></tbody></table></div>
+<hr>
+<h2 id="L95">五、下一轮（✅ <strong>2026-09-23 已答</strong>）</h2>
+<blockquote id="L97"><p id="L1"><strong>她的答复</strong>（<strong>① 级原话</strong>，逐段读图的实录：<code>02-玩法讨论\答复-20260923\README.md</code>）：</p>
+<div class="tw"><table id="L3"><thead><tr><th>问</th><th>答复</th></tr></thead><tbody><tr><td><strong>Q1 · 岛的状态要不要额外显示</strong></td><td>🟡 <strong>她没挑选项，直接给了自己的设计</strong>：<strong>不给状态表</strong>，给一个<strong>正常时钟</strong>（「可以做个钟表来看」「<strong>不是</strong>倒计时」「类似于时钟」「<strong>就是正常时钟啊</strong>」「<strong>自己算</strong>」）；<strong>各岛翻面时间不一样、不统一</strong>（「不同的岛」「翻面时间不一样」），玩家靠<strong>亲身经历</strong>或<strong>购买情报</strong>知道；<strong>「就搞个前置条件」「后面满足了告诉玩家就行了」</strong></td></tr><tr><td><strong>Q2 · "找路"在岛上还是海上</strong></td><td>❌ <strong>「不知道」</strong>（「真的哦」「<strong>主要是没开始写剧情</strong>」「我也不知道该怎么引导」）⇒ <strong>方向未定、不追问</strong>；她自己给的理由是<strong>时机未到</strong>，等序章剧情有雏形再问</td></tr><tr><td><strong>Q3 · 翻面后哪些"必须不变"</strong></td><td>✅ <strong>「地标」「海岸线」「路可以变一下」</strong> ⇒ 这就是 V1.2 第七条"两面关联性"要的答案</td></tr></tbody></table></div>
+<p id="L9"><strong>同一场对话还带出四条</strong>（同样是 ① 级，见实录 <strong>§二</strong>）：① 两面<strong>生态与动物不同、大致结构相同</strong>；② 翻面演出＝<strong>对焦效果 → 黑屏 → 切换</strong>；③ <strong>翻面本身不惩罚玩家</strong>（她否掉 debuff：「加了没意义啊宝宝」；代价方向＝<strong>精神压力／认知受影响</strong>＋<strong>护身符文</strong>这类对策）；④ <strong>战斗</strong>：她<strong>主动提的破坏部位机制</strong> ＋ <strong>动态行动条／行动点</strong> ＋ 战士连招／法师咏唱要掩护。</p>
+<p id="L14"><strong>提问法记一笔</strong>：这一轮 <strong>Q1／Q3 成功、Q2 失败</strong>——失败的<strong>不是写法，是时机</strong>（Q2 依赖还没写的剧情）。规律继续成立：<strong>带具体锚点／给例子的题她答得动；要她凭空描述没写到的地方，她答不动</strong>。</p></blockquote>
+<h2 id="L113">五之一、当时发出去的那块（存档）</h2>
+<pre id="L115"><code>有三个关于"玩家在游戏里看到什么、做什么"的问题，想听听你的想法。
+不用一次全答完，暂时没想好的直接说"还没想好"，我先记下来。
+
+一、按照现在定的世界规则，一座岛快要翻面之前会出现一些征兆：海水退潮、动物提前迁徙、世界突然安静、植物叶子发光。
+　那在游戏里，除了这些征兆，要不要再额外、明确地告诉玩家"这座岛现在是什么状态"？
+　三种可能：
+　1. 要：除了岛上的征兆，界面上也直接给玩家一个看得见的东西（比如一个图标、一种颜色或一条状态条）；
+　2. 不要：什么都不给，玩家自己看天、看岛上的异象判断；
+　3. 只在出事的时候给一下：平时不显示，等岛上真的开始出异象了再提示。
+　你更想要哪一种？
+
+二、上次你说玩家上岛以后最常做的是"找路"，我想再确认一下——找的是哪一种路？
+　两种可能：
+　1. 在岛上找路：找能走的路、找进山或下洞的入口、找遗迹或村子在哪里；
+　2. 在海上找路：对着海图找一条没走过的航线，决定下一站去哪座岛。
+　你希望"找路"更多发生在岛上，还是发生在海上？还是两边都有、只是哪边多一点？
+
+三、翻面之后你说过"岛屿整体结构不变"。那有没有一两样东西，你希望玩家翻面之后再看一眼就能认出"这还是刚才那座岛"？
+例如：海岸线的形状、岛中间那座山、村子的位置、某一座塔或一棵大树。
+只要说你觉得"必须不变"的那一两样就行。</code></pre>
+<p id="L138"><em>（待问清单 · 2026-09-22 立 · 2026-09-23 按提问法教训重写 §五 · 基于世界观 V1.2）</em></p></div>
+</body>
+</html>
